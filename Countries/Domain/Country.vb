@@ -1,35 +1,43 @@
 ﻿Public Class Country
 
-    Public Property PersonID As String
-    Public Property PersonName As String
-    Public ReadOnly Property PerDAO As CountryDAO
+    Public Property CountryID As String
+    Public Property CountryName As String
+    Public Property CountryPopulation As Integer
+    Public ReadOnly Property CouDAO As CountryDAO
 
     Public Sub New()
-        Me.PerDAO = New CountryDAO
+        Me.CouDAO = New CountryDAO
     End Sub
 
     Public Sub New(id As String)
-        Me.PerDAO = New CountryDAO
-        Me.PersonID = id
+        Me.CouDAO = New CountryDAO
+        Me.CountryID = id
+    End Sub
+
+    Public Sub New(id As String, name As String, population As Integer)
+        Me.CouDAO = New CountryDAO
+        Me.CountryID = id
+        Me.CountryName = name
+        Me.CountryPopulation = population
     End Sub
 
     Public Sub ReadAllPersons()
-        Me.PerDAO.ReadAll()
+        Me.CouDAO.ReadAll()
     End Sub
     Public Sub ReadPerson()
-        Me.PerDAO.Read(Me)
+        Me.CouDAO.Read(Me)
     End Sub
 
     Public Function InsertPerson() As Integer
-        Return Me.PerDAO.Insert(Me)
+        Return Me.CouDAO.Insert(Me)
     End Function
 
     Public Function UpdatePerson() As Integer
-        Return Me.PerDAO.Update(Me)
+        Return Me.CouDAO.Update(Me)
     End Function
 
     Public Function DeletePerson() As Integer
-        Return Me.PerDAO.Delete(Me)
+        Return Me.CouDAO.Delete(Me)
     End Function
 
 End Class

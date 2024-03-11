@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frmPersons
+Partial Class frmCountry
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -155,7 +155,7 @@ Partial Class frmPersons
         Me.MinimizeBox = False
         Me.Name = "frmPersons"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Databases - Project2"
+        Me.Text = "FormulaOne - Databases - Project 3"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

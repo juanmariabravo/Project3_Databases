@@ -1,4 +1,4 @@
-﻿Public Class frmPersons
+﻿Public Class frmCountry
     Private p As Country
     Private db As DBBroker
 
@@ -13,8 +13,8 @@
             btnDelete.Enabled = True
             ' initialize the listbox
             lstPersons.Items.Clear()
-            For Each p In p.PerDAO.Persons
-                lstPersons.Items.Add(p.PersonID)
+            For Each p In p.CouDAO.Countries
+                lstPersons.Items.Add(p.CountryID)
             Next
         Catch ex As Exception
             MessageBox.Show("Connection not opened " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -27,8 +27,8 @@
         Try
             p = New Country(lstPersons.SelectedItem.ToString)
             p.ReadPerson()
-            txtID.Text = p.PersonID
-            txtName.Text = p.PersonName
+            txtID.Text = p.CountryID
+            txtName.Text = p.CountryName
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
@@ -38,12 +38,12 @@
     Private Sub BtnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Try
             p = New Country(txtID.Text)
-            p.PersonName = txtName.Text
+            p.CountryName = txtName.Text
             p.InsertPerson()
             lstPersons.Items.Clear()
             p.ReadAllPersons()
-            For Each p In p.PerDAO.Persons
-                lstPersons.Items.Add(p.PersonID)
+            For Each p In p.CouDAO.Countries
+                lstPersons.Items.Add(p.CountryID)
             Next
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -54,12 +54,12 @@
     Private Sub BtnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         Try
             p = New Country(txtID.Text)
-            p.PersonName = txtName.Text
+            p.CountryName = txtName.Text
             p.UpdatePerson()
             lstPersons.Items.Clear()
             p.ReadAllPersons()
-            For Each p In p.PerDAO.Persons
-                lstPersons.Items.Add(p.PersonID)
+            For Each p In p.CouDAO.Countries
+                lstPersons.Items.Add(p.CountryID)
             Next
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -73,8 +73,8 @@
             p.DeletePerson()
             lstPersons.Items.Clear()
             p.ReadAllPersons()
-            For Each p In p.PerDAO.Persons
-                lstPersons.Items.Add(p.PersonID)
+            For Each p In p.CouDAO.Countries
+                lstPersons.Items.Add(p.CountryID)
             Next
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)

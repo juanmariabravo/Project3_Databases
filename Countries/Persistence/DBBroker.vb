@@ -5,7 +5,7 @@
     Private Shared connectionString As String
 
     Private Sub New()
-        DBBroker.connectionString = "server=localhost;database=mydb;uid=root;pwd=root"
+        DBBroker.connectionString = "server=localhost;database=countries;uid=root;pwd=root"
         DBBroker.connection = New MySql.Data.MySqlClient.MySqlConnection(DBBroker.connectionString)
     End Sub
 
