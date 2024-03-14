@@ -40,7 +40,7 @@ Partial Class frmFormulaOne
         'btnOpenDB
         '
         Me.btnOpenDB.Location = New System.Drawing.Point(85, 367)
-        Me.btnOpenDB.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.btnOpenDB.Margin = New System.Windows.Forms.Padding(5)
         Me.btnOpenDB.Name = "btnOpenDB"
         Me.btnOpenDB.Size = New System.Drawing.Size(161, 68)
         Me.btnOpenDB.TabIndex = 0
@@ -52,7 +52,7 @@ Partial Class frmFormulaOne
         Me.lstCountries.FormattingEnabled = True
         Me.lstCountries.ItemHeight = 21
         Me.lstCountries.Location = New System.Drawing.Point(85, 80)
-        Me.lstCountries.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.lstCountries.Margin = New System.Windows.Forms.Padding(5)
         Me.lstCountries.Name = "lstCountries"
         Me.lstCountries.Size = New System.Drawing.Size(287, 235)
         Me.lstCountries.TabIndex = 1
@@ -99,7 +99,7 @@ Partial Class frmFormulaOne
         '
         Me.btnClear.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnClear.Location = New System.Drawing.Point(907, 374)
-        Me.btnClear.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(5)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(90, 54)
         Me.btnClear.TabIndex = 6
