@@ -29,6 +29,7 @@
             c.ReadCountry()
             txtID.Text = c.CountryID
             txtName.Text = c.CountryName
+            txtPopulation.Text = c.CountryPopulation.ToString
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
@@ -39,6 +40,7 @@
         Try
             c = New Country(txtID.Text)
             c.CountryName = txtName.Text
+            c.CountryPopulation = Integer.Parse(txtPopulation.Text)
             c.InsertCountry()
             lstCountries.Items.Clear()
             c.ReadAllCountries()
@@ -55,6 +57,7 @@
         Try
             c = New Country(txtID.Text)
             c.CountryName = txtName.Text
+            c.CountryPopulation = Integer.Parse(txtPopulation.Text)
             c.UpdateCountry()
             lstCountries.Items.Clear()
             c.ReadAllCountries()
@@ -85,13 +88,22 @@
     Private Sub BtnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         txtID.Text = ""
         txtName.Text = ""
+        txtPopulation.Text = ""
     End Sub
 
     Private Sub txtName_TextChanged(sender As Object, e As EventArgs) Handles txtName.TextChanged
 
     End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles lblPopulation.Click
+    Private Sub txtID_TextChanged(sender As Object, e As EventArgs) Handles txtID.TextChanged
+
+    End Sub
+
+    Private Sub lblPopulation_Click(sender As Object, e As EventArgs) Handles lblPopulation.Click
+
+    End Sub
+
+    Private Sub lblCountryID_Click(sender As Object, e As EventArgs) Handles lblCountryID.Click
 
     End Sub
 End Class

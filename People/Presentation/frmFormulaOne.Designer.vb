@@ -32,14 +32,14 @@ Partial Class frmFormulaOne
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.lblCountryID = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblName = New System.Windows.Forms.Label()
         Me.txtPopulation = New System.Windows.Forms.TextBox()
         Me.lblPopulation = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnOpenDB
         '
-        Me.btnOpenDB.Location = New System.Drawing.Point(85, 367)
+        Me.btnOpenDB.Location = New System.Drawing.Point(90, 370)
         Me.btnOpenDB.Margin = New System.Windows.Forms.Padding(5)
         Me.btnOpenDB.Name = "btnOpenDB"
         Me.btnOpenDB.Size = New System.Drawing.Size(161, 68)
@@ -51,7 +51,7 @@ Partial Class frmFormulaOne
         '
         Me.lstCountries.FormattingEnabled = True
         Me.lstCountries.ItemHeight = 21
-        Me.lstCountries.Location = New System.Drawing.Point(85, 80)
+        Me.lstCountries.Location = New System.Drawing.Point(25, 83)
         Me.lstCountries.Margin = New System.Windows.Forms.Padding(5)
         Me.lstCountries.Name = "lstCountries"
         Me.lstCountries.Size = New System.Drawing.Size(287, 235)
@@ -59,7 +59,7 @@ Partial Class frmFormulaOne
         '
         'txtID
         '
-        Me.txtID.Location = New System.Drawing.Point(427, 173)
+        Me.txtID.Location = New System.Drawing.Point(351, 177)
         Me.txtID.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtID.Name = "txtID"
         Me.txtID.Size = New System.Drawing.Size(174, 31)
@@ -67,7 +67,7 @@ Partial Class frmFormulaOne
         '
         'txtName
         '
-        Me.txtName.Location = New System.Drawing.Point(689, 173)
+        Me.txtName.Location = New System.Drawing.Point(614, 177)
         Me.txtName.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(174, 31)
@@ -76,7 +76,7 @@ Partial Class frmFormulaOne
         'btnAdd
         '
         Me.btnAdd.Enabled = False
-        Me.btnAdd.Location = New System.Drawing.Point(315, 374)
+        Me.btnAdd.Location = New System.Drawing.Point(320, 377)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(90, 54)
@@ -87,7 +87,7 @@ Partial Class frmFormulaOne
         'btnUpdate
         '
         Me.btnUpdate.Enabled = False
-        Me.btnUpdate.Location = New System.Drawing.Point(511, 374)
+        Me.btnUpdate.Location = New System.Drawing.Point(516, 377)
         Me.btnUpdate.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(90, 54)
@@ -98,7 +98,7 @@ Partial Class frmFormulaOne
         'btnClear
         '
         Me.btnClear.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnClear.Location = New System.Drawing.Point(907, 374)
+        Me.btnClear.Location = New System.Drawing.Point(912, 377)
         Me.btnClear.Margin = New System.Windows.Forms.Padding(5)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(90, 54)
@@ -109,7 +109,7 @@ Partial Class frmFormulaOne
         'btnDelete
         '
         Me.btnDelete.Enabled = False
-        Me.btnDelete.Location = New System.Drawing.Point(710, 374)
+        Me.btnDelete.Location = New System.Drawing.Point(715, 377)
         Me.btnDelete.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(90, 54)
@@ -120,26 +120,26 @@ Partial Class frmFormulaOne
         'lblCountryID
         '
         Me.lblCountryID.AutoSize = True
-        Me.lblCountryID.Location = New System.Drawing.Point(466, 217)
+        Me.lblCountryID.Location = New System.Drawing.Point(390, 221)
         Me.lblCountryID.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblCountryID.Name = "lblCountryID"
         Me.lblCountryID.Size = New System.Drawing.Size(91, 21)
         Me.lblCountryID.TabIndex = 8
         Me.lblCountryID.Text = "CountryID"
         '
-        'Label2
+        'lblName
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(743, 217)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(57, 21)
-        Me.Label2.TabIndex = 9
-        Me.Label2.Text = "Name"
+        Me.lblName.AutoSize = True
+        Me.lblName.Location = New System.Drawing.Point(673, 221)
+        Me.lblName.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.lblName.Name = "lblName"
+        Me.lblName.Size = New System.Drawing.Size(57, 21)
+        Me.lblName.TabIndex = 9
+        Me.lblName.Text = "Name"
         '
         'txtPopulation
         '
-        Me.txtPopulation.Location = New System.Drawing.Point(953, 173)
+        Me.txtPopulation.Location = New System.Drawing.Point(877, 177)
         Me.txtPopulation.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtPopulation.Name = "txtPopulation"
         Me.txtPopulation.Size = New System.Drawing.Size(174, 31)
@@ -148,7 +148,7 @@ Partial Class frmFormulaOne
         'lblPopulation
         '
         Me.lblPopulation.AutoSize = True
-        Me.lblPopulation.Location = New System.Drawing.Point(999, 217)
+        Me.lblPopulation.Location = New System.Drawing.Point(923, 221)
         Me.lblPopulation.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblPopulation.Name = "lblPopulation"
         Me.lblPopulation.Size = New System.Drawing.Size(96, 21)
@@ -162,10 +162,10 @@ Partial Class frmFormulaOne
         Me.BackColor = System.Drawing.Color.MintCream
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.CancelButton = Me.btnClear
-        Me.ClientSize = New System.Drawing.Size(1378, 571)
+        Me.ClientSize = New System.Drawing.Size(1093, 521)
         Me.Controls.Add(Me.lblPopulation)
         Me.Controls.Add(Me.txtPopulation)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lblName)
         Me.Controls.Add(Me.lblCountryID)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnClear)
@@ -197,7 +197,7 @@ Partial Class frmFormulaOne
     Friend WithEvents btnClear As Button
     Friend WithEvents btnDelete As Button
     Friend WithEvents lblCountryID As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lblName As Label
     Friend WithEvents txtPopulation As TextBox
     Friend WithEvents lblPopulation As Label
 End Class
