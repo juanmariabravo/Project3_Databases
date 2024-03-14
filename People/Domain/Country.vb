@@ -2,6 +2,7 @@
 
     Public Property CountryID As String
     Public Property CountryName As String
+    Public Property CountryPopulation As Integer
     Public ReadOnly Property CouDAO As CountryDAO
 
     Public Sub New()
