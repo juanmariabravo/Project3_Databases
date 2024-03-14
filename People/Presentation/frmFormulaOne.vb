@@ -1,20 +1,20 @@
-﻿Public Class frmPersons
-    Private p As Person
+﻿Public Class frmFormulaOne
+    Private c As Country
     Private db As DBBroker
 
     Private Sub BtnOpenDB_Click(sender As Object, e As EventArgs) Handles btnOpenDB.Click
         Try
-            p = New Person
-            p.ReadAllPersons()
+            c = New Country
+            c.ReadAllCountries()
             MessageBox.Show("Connection opened", "DB Connection", MessageBoxButtons.OK, MessageBoxIcon.Information)
             ' button activation
             btnAdd.Enabled = True
             btnUpdate.Enabled = True
             btnDelete.Enabled = True
             ' initialize the listbox
-            lstPersons.Items.Clear()
-            For Each p In p.PerDAO.Persons
-                lstPersons.Items.Add(p.PersonID)
+            lstCountries.Items.Clear()
+            For Each c In c.CouDAO.Countries
+                lstCountries.Items.Add(c.CountryID)
             Next
         Catch ex As Exception
             MessageBox.Show("Connection not opened " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -23,12 +23,12 @@
         End Try
     End Sub
 
-    Private Sub LstPersons_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstPersons.SelectedIndexChanged
+    Private Sub LstCountries_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstCountries.SelectedIndexChanged
         Try
-            p = New Person(lstPersons.SelectedItem.ToString)
-            p.ReadPerson()
-            txtID.Text = p.PersonID
-            txtName.Text = p.PersonName
+            c = New Country(lstCountries.SelectedItem.ToString)
+            c.ReadCountry()
+            txtID.Text = c.CountryID
+            txtName.Text = c.CountryName
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
@@ -37,13 +37,13 @@
 
     Private Sub BtnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Try
-            p = New Person(txtID.Text)
-            p.PersonName = txtName.Text
-            p.InsertPerson()
-            lstPersons.Items.Clear()
-            p.ReadAllPersons()
-            For Each p In p.PerDAO.Persons
-                lstPersons.Items.Add(p.PersonID)
+            c = New Country(txtID.Text)
+            c.CountryName = txtName.Text
+            c.InsertCountry()
+            lstCountries.Items.Clear()
+            c.ReadAllCountries()
+            For Each c In c.CouDAO.Countries
+                lstCountries.Items.Add(c.CountryID)
             Next
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -53,13 +53,13 @@
 
     Private Sub BtnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         Try
-            p = New Person(txtID.Text)
-            p.PersonName = txtName.Text
-            p.UpdatePerson()
-            lstPersons.Items.Clear()
-            p.ReadAllPersons()
-            For Each p In p.PerDAO.Persons
-                lstPersons.Items.Add(p.PersonID)
+            c = New Country(txtID.Text)
+            c.CountryName = txtName.Text
+            c.UpdateCountry()
+            lstCountries.Items.Clear()
+            c.ReadAllCountries()
+            For Each c In c.CouDAO.Countries
+                lstCountries.Items.Add(c.CountryID)
             Next
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -69,12 +69,12 @@
 
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         Try
-            p = New Person(lstPersons.SelectedItem.ToString)
-            p.DeletePerson()
-            lstPersons.Items.Clear()
-            p.ReadAllPersons()
-            For Each p In p.PerDAO.Persons
-                lstPersons.Items.Add(p.PersonID)
+            c = New Country(lstCountries.SelectedItem.ToString)
+            c.DeleteCountry()
+            lstCountries.Items.Clear()
+            c.ReadAllCountries()
+            For Each c In c.CouDAO.Countries
+                lstCountries.Items.Add(c.CountryID)
             Next
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -88,6 +88,10 @@
     End Sub
 
     Private Sub txtName_TextChanged(sender As Object, e As EventArgs) Handles txtName.TextChanged
+
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles lblPopulation.Click
 
     End Sub
 End Class

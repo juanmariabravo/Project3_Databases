@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frmPersons
+Partial Class frmFormulaOne
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,61 +22,64 @@ Partial Class frmPersons
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmFormulaOne))
         Me.btnOpenDB = New System.Windows.Forms.Button()
-        Me.lstPersons = New System.Windows.Forms.ListBox()
+        Me.lstCountries = New System.Windows.Forms.ListBox()
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblCountryID = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtPopulation = New System.Windows.Forms.TextBox()
+        Me.lblPopulation = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnOpenDB
         '
-        Me.btnOpenDB.Location = New System.Drawing.Point(80, 251)
-        Me.btnOpenDB.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnOpenDB.Location = New System.Drawing.Point(85, 367)
+        Me.btnOpenDB.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.btnOpenDB.Name = "btnOpenDB"
-        Me.btnOpenDB.Size = New System.Drawing.Size(100, 28)
+        Me.btnOpenDB.Size = New System.Drawing.Size(161, 68)
         Me.btnOpenDB.TabIndex = 0
-        Me.btnOpenDB.Text = "Connect!"
+        Me.btnOpenDB.Text = "Connect to database!"
         Me.btnOpenDB.UseVisualStyleBackColor = True
         '
-        'lstPersons
+        'lstCountries
         '
-        Me.lstPersons.FormattingEnabled = True
-        Me.lstPersons.ItemHeight = 16
-        Me.lstPersons.Location = New System.Drawing.Point(50, 54)
-        Me.lstPersons.Margin = New System.Windows.Forms.Padding(4)
-        Me.lstPersons.Name = "lstPersons"
-        Me.lstPersons.Size = New System.Drawing.Size(158, 180)
-        Me.lstPersons.TabIndex = 1
+        Me.lstCountries.FormattingEnabled = True
+        Me.lstCountries.ItemHeight = 21
+        Me.lstCountries.Location = New System.Drawing.Point(85, 80)
+        Me.lstCountries.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.lstCountries.Name = "lstCountries"
+        Me.lstCountries.Size = New System.Drawing.Size(287, 235)
+        Me.lstCountries.TabIndex = 1
         '
         'txtID
         '
-        Me.txtID.Location = New System.Drawing.Point(314, 61)
+        Me.txtID.Location = New System.Drawing.Point(427, 173)
         Me.txtID.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtID.Name = "txtID"
-        Me.txtID.Size = New System.Drawing.Size(140, 22)
+        Me.txtID.Size = New System.Drawing.Size(174, 31)
         Me.txtID.TabIndex = 2
         '
         'txtName
         '
-        Me.txtName.Location = New System.Drawing.Point(314, 108)
+        Me.txtName.Location = New System.Drawing.Point(689, 173)
         Me.txtName.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(140, 22)
+        Me.txtName.Size = New System.Drawing.Size(174, 31)
         Me.txtName.TabIndex = 3
         '
         'btnAdd
         '
         Me.btnAdd.Enabled = False
-        Me.btnAdd.Location = New System.Drawing.Point(244, 181)
+        Me.btnAdd.Location = New System.Drawing.Point(315, 374)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(72, 41)
+        Me.btnAdd.Size = New System.Drawing.Size(90, 54)
         Me.btnAdd.TabIndex = 4
         Me.btnAdd.Text = "Insert"
         Me.btnAdd.UseVisualStyleBackColor = True
@@ -84,10 +87,10 @@ Partial Class frmPersons
         'btnUpdate
         '
         Me.btnUpdate.Enabled = False
-        Me.btnUpdate.Location = New System.Drawing.Point(336, 181)
+        Me.btnUpdate.Location = New System.Drawing.Point(511, 374)
         Me.btnUpdate.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(72, 41)
+        Me.btnUpdate.Size = New System.Drawing.Size(90, 54)
         Me.btnUpdate.TabIndex = 5
         Me.btnUpdate.Text = "Update"
         Me.btnUpdate.UseVisualStyleBackColor = True
@@ -95,10 +98,10 @@ Partial Class frmPersons
         'btnClear
         '
         Me.btnClear.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnClear.Location = New System.Drawing.Point(336, 245)
-        Me.btnClear.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnClear.Location = New System.Drawing.Point(907, 374)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(72, 41)
+        Me.btnClear.Size = New System.Drawing.Size(90, 54)
         Me.btnClear.TabIndex = 6
         Me.btnClear.Text = "Clear"
         Me.btnClear.UseVisualStyleBackColor = True
@@ -106,69 +109,95 @@ Partial Class frmPersons
         'btnDelete
         '
         Me.btnDelete.Enabled = False
-        Me.btnDelete.Location = New System.Drawing.Point(244, 245)
+        Me.btnDelete.Location = New System.Drawing.Point(710, 374)
         Me.btnDelete.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(72, 41)
+        Me.btnDelete.Size = New System.Drawing.Size(90, 54)
         Me.btnDelete.TabIndex = 7
         Me.btnDelete.Text = "Delete"
         Me.btnDelete.UseVisualStyleBackColor = True
         '
-        'Label1
+        'lblCountryID
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(240, 70)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(63, 16)
-        Me.Label1.TabIndex = 8
-        Me.Label1.Text = "PersonID"
+        Me.lblCountryID.AutoSize = True
+        Me.lblCountryID.Location = New System.Drawing.Point(466, 217)
+        Me.lblCountryID.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.lblCountryID.Name = "lblCountryID"
+        Me.lblCountryID.Size = New System.Drawing.Size(91, 21)
+        Me.lblCountryID.TabIndex = 8
+        Me.lblCountryID.Text = "CountryID"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(262, 117)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(743, 217)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(44, 16)
+        Me.Label2.Size = New System.Drawing.Size(57, 21)
         Me.Label2.TabIndex = 9
         Me.Label2.Text = "Name"
         '
-        'frmPersons
+        'txtPopulation
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.txtPopulation.Location = New System.Drawing.Point(953, 173)
+        Me.txtPopulation.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.txtPopulation.Name = "txtPopulation"
+        Me.txtPopulation.Size = New System.Drawing.Size(174, 31)
+        Me.txtPopulation.TabIndex = 10
+        '
+        'lblPopulation
+        '
+        Me.lblPopulation.AutoSize = True
+        Me.lblPopulation.Location = New System.Drawing.Point(999, 217)
+        Me.lblPopulation.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.lblPopulation.Name = "lblPopulation"
+        Me.lblPopulation.Size = New System.Drawing.Size(96, 21)
+        Me.lblPopulation.TabIndex = 11
+        Me.lblPopulation.Text = "Population"
+        '
+        'frmFormulaOne
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.MintCream
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.CancelButton = Me.btnClear
-        Me.ClientSize = New System.Drawing.Size(492, 333)
+        Me.ClientSize = New System.Drawing.Size(1378, 571)
+        Me.Controls.Add(Me.lblPopulation)
+        Me.Controls.Add(Me.txtPopulation)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblCountryID)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.txtName)
         Me.Controls.Add(Me.txtID)
-        Me.Controls.Add(Me.lstPersons)
+        Me.Controls.Add(Me.lstCountries)
         Me.Controls.Add(Me.btnOpenDB)
+        Me.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "frmPersons"
+        Me.Name = "frmFormulaOne"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Databases - Project2"
+        Me.Text = "FormulaOne DB Project 3"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents btnOpenDB As Button
-    Friend WithEvents lstPersons As ListBox
+    Friend WithEvents lstCountries As ListBox
     Friend WithEvents txtID As TextBox
     Friend WithEvents txtName As TextBox
     Friend WithEvents btnAdd As Button
     Friend WithEvents btnUpdate As Button
     Friend WithEvents btnClear As Button
     Friend WithEvents btnDelete As Button
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblCountryID As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents txtPopulation As TextBox
+    Friend WithEvents lblPopulation As Label
 End Class
