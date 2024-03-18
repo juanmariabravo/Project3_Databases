@@ -7,11 +7,11 @@
             c = New Country
             c.ReadAllCountries()
             MessageBox.Show("Connection opened", "DB Connection", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            ' button activation
+
             btnAdd.Enabled = True
             btnUpdate.Enabled = True
             btnDelete.Enabled = True
-            ' initialize the listbox
+
             lstCountries.Items.Clear()
             For Each c In c.CouDAO.Countries
                 lstCountries.Items.Add(c.CountryID)

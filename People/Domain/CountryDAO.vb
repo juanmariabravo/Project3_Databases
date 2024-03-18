@@ -1,10 +1,8 @@
 ﻿Public Class CountryDAO
-
     Public ReadOnly Property Countries As Collection
 
-
     Public Sub New()
-        ' create an empty country object whose DAO is going to have a collection containing all the Countries read in the ReadAll method
+
         Me.Countries = New Collection
     End Sub
 

@@ -1,0 +1,31 @@
+3 cosas que hará el usuario (actor):
+	1.-Manage Basic Data
+	2.-Manage Season (create and delete seasons)
+	3.-Reports
+Hay distintos niveles de desarrollo para estas tareas, en 1.- para cada elemento se puede generar la gestión de este, pero el nivel al que vamos a diagramarlo solo necesitaremos la versión más simple.
+Se debería seguir un orden para implementar los CDU.
+1ª tabla a hacer: "Country"
+
+-----------CALENDARIO ESTIMADO
+
+manage basic data
+	- Manage countries	(18/3)
+	- Manage GPs		(8/4)
+	- Manage Drivers	(8/4)
+	- Manage teams		(8/4)
+manage seasons		(8/4) (Some of it)
+manage reports			(17/4 - 22/4)
+defense				(25/4)
+
+
+1) Diagrama ER hay que hacerlo?
+2) Diagrama de clases de presentación-country
+3) Hacer los forms de Presentacion de country, GP, Driver, teams
+4) Diagramas de clases de Dominio-country
+5) Hacer funcionalidad GP, Driver, teams
+6) Diagrama de clases Persistencia
+7) Meterlo todo en el global, con las dependencias adecuadas.
+
+--A partir del 8-4
+1) Funcionalidades de la season
+2) Diagrama de Clases de la season

@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\People",
+    "\\People\\Domain"
   ],
-  "SelectedNode": "\\Country.sln",
+  "SelectedNode": "\\People\\Domain\\CountryDAO.vb",
   "PreviewInSolutionExplorer": false
 }
