@@ -21,6 +21,6 @@
 	• then, update this diagram by adding Drivers, Teams and GPs to this schema
 	→ once I do that, 1st Use Case is completed
 	
-- **2nd Use Case**. Manage Season: AL VOLVER DE VACACIONES, 1era semana
+- **2nd Use Case**. Manage Season: AL VOLVER DE VACACIONES, terminar para el 8/4
 
 - **3rd Use Case**. Manage Reports
