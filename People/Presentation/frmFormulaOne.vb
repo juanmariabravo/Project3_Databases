@@ -90,20 +90,9 @@
         txtName.Text = ""
         txtPopulation.Text = ""
     End Sub
-
-    Private Sub txtName_TextChanged(sender As Object, e As EventArgs) Handles txtName.TextChanged
-
+    Private Sub btnOpenGPs_Click(sender As Object, e As EventArgs) Handles btnOpenGPs.Click
+        Dim frmGPs As New frmGPs()
+        frmGPs.Show()
     End Sub
 
-    Private Sub txtID_TextChanged(sender As Object, e As EventArgs) Handles txtID.TextChanged
-
-    End Sub
-
-    Private Sub lblPopulation_Click(sender As Object, e As EventArgs) Handles lblPopulation.Click
-
-    End Sub
-
-    Private Sub lblCountryID_Click(sender As Object, e As EventArgs) Handles lblCountryID.Click
-
-    End Sub
 End Class

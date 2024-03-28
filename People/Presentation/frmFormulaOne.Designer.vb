@@ -35,6 +35,7 @@ Partial Class frmFormulaOne
         Me.lblName = New System.Windows.Forms.Label()
         Me.txtPopulation = New System.Windows.Forms.TextBox()
         Me.lblPopulation = New System.Windows.Forms.Label()
+        Me.btnOpenGPs = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnOpenDB
@@ -50,11 +51,11 @@ Partial Class frmFormulaOne
         'lstCountries
         '
         Me.lstCountries.FormattingEnabled = True
-        Me.lstCountries.ItemHeight = 21
+        Me.lstCountries.ItemHeight = 17
         Me.lstCountries.Location = New System.Drawing.Point(25, 83)
         Me.lstCountries.Margin = New System.Windows.Forms.Padding(5)
         Me.lstCountries.Name = "lstCountries"
-        Me.lstCountries.Size = New System.Drawing.Size(287, 235)
+        Me.lstCountries.Size = New System.Drawing.Size(287, 225)
         Me.lstCountries.TabIndex = 1
         '
         'txtID
@@ -62,7 +63,7 @@ Partial Class frmFormulaOne
         Me.txtID.Location = New System.Drawing.Point(351, 177)
         Me.txtID.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtID.Name = "txtID"
-        Me.txtID.Size = New System.Drawing.Size(174, 31)
+        Me.txtID.Size = New System.Drawing.Size(174, 27)
         Me.txtID.TabIndex = 2
         '
         'txtName
@@ -70,7 +71,7 @@ Partial Class frmFormulaOne
         Me.txtName.Location = New System.Drawing.Point(614, 177)
         Me.txtName.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(174, 31)
+        Me.txtName.Size = New System.Drawing.Size(174, 27)
         Me.txtName.TabIndex = 3
         '
         'btnAdd
@@ -123,7 +124,7 @@ Partial Class frmFormulaOne
         Me.lblCountryID.Location = New System.Drawing.Point(390, 221)
         Me.lblCountryID.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblCountryID.Name = "lblCountryID"
-        Me.lblCountryID.Size = New System.Drawing.Size(91, 21)
+        Me.lblCountryID.Size = New System.Drawing.Size(75, 19)
         Me.lblCountryID.TabIndex = 8
         Me.lblCountryID.Text = "CountryID"
         '
@@ -133,7 +134,7 @@ Partial Class frmFormulaOne
         Me.lblName.Location = New System.Drawing.Point(673, 221)
         Me.lblName.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(57, 21)
+        Me.lblName.Size = New System.Drawing.Size(49, 19)
         Me.lblName.TabIndex = 9
         Me.lblName.Text = "Name"
         '
@@ -142,7 +143,7 @@ Partial Class frmFormulaOne
         Me.txtPopulation.Location = New System.Drawing.Point(877, 177)
         Me.txtPopulation.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtPopulation.Name = "txtPopulation"
-        Me.txtPopulation.Size = New System.Drawing.Size(174, 31)
+        Me.txtPopulation.Size = New System.Drawing.Size(174, 27)
         Me.txtPopulation.TabIndex = 10
         '
         'lblPopulation
@@ -151,18 +152,28 @@ Partial Class frmFormulaOne
         Me.lblPopulation.Location = New System.Drawing.Point(923, 221)
         Me.lblPopulation.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblPopulation.Name = "lblPopulation"
-        Me.lblPopulation.Size = New System.Drawing.Size(96, 21)
+        Me.lblPopulation.Size = New System.Drawing.Size(81, 19)
         Me.lblPopulation.TabIndex = 11
         Me.lblPopulation.Text = "Population"
         '
+        'btnOpenGPs
+        '
+        Me.btnOpenGPs.Location = New System.Drawing.Point(351, 59)
+        Me.btnOpenGPs.Name = "btnOpenGPs"
+        Me.btnOpenGPs.Size = New System.Drawing.Size(137, 46)
+        Me.btnOpenGPs.TabIndex = 12
+        Me.btnOpenGPs.Text = "GPs"
+        Me.btnOpenGPs.UseVisualStyleBackColor = True
+        '
         'frmFormulaOne
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 21.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.MintCream
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.CancelButton = Me.btnClear
         Me.ClientSize = New System.Drawing.Size(1093, 521)
+        Me.Controls.Add(Me.btnOpenGPs)
         Me.Controls.Add(Me.lblPopulation)
         Me.Controls.Add(Me.txtPopulation)
         Me.Controls.Add(Me.lblName)
@@ -200,4 +211,5 @@ Partial Class frmFormulaOne
     Friend WithEvents lblName As Label
     Friend WithEvents txtPopulation As TextBox
     Friend WithEvents lblPopulation As Label
+    Friend WithEvents btnOpenGPs As Button
 End Class
