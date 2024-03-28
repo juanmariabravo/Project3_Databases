@@ -136,7 +136,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\Country.vb" />
-    <Compile Include="Domain\CountryDAO.vb" />
+    <Compile Include="Persistence\CountryDAO.vb" />
+    <Compile Include="Domain\GP.vb" />
+    <Compile Include="Persistence\GPsDAO.vb" />
     <Compile Include="Presentation\frmFormulaOne.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +163,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Persistence\DBBroker.vb" />
+    <Compile Include="Presentation\frmGPs.Designer.vb">
+      <DependentUpon>frmGPs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\frmGPs.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -171,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\frmFormulaOne.resx">
       <DependentUpon>frmFormulaOne.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\frmGPs.resx">
+      <DependentUpon>frmGPs.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
