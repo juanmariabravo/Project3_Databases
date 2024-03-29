@@ -22,129 +22,132 @@ Partial Class frmGPs
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.lblGPName = New System.Windows.Forms.Label()
-        Me.lblGPID = New System.Windows.Forms.Label()
-        Me.btnDelete = New System.Windows.Forms.Button()
-        Me.btnClear = New System.Windows.Forms.Button()
-        Me.btnUpdate = New System.Windows.Forms.Button()
-        Me.btnAdd = New System.Windows.Forms.Button()
-        Me.txtName = New System.Windows.Forms.TextBox()
-        Me.txtID = New System.Windows.Forms.TextBox()
         Me.lstGPs = New System.Windows.Forms.ListBox()
+        Me.txtID = New System.Windows.Forms.TextBox()
+        Me.txtName = New System.Windows.Forms.TextBox()
+        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.btnUpdate = New System.Windows.Forms.Button()
+        Me.btnClear = New System.Windows.Forms.Button()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.lblGPID = New System.Windows.Forms.Label()
+        Me.lblGPName = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtcountryid = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
-        'lblGPName
+        'lstGPs
         '
-        Me.lblGPName.AutoSize = True
-        Me.lblGPName.Location = New System.Drawing.Point(337, 144)
-        Me.lblGPName.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.lblGPName.Name = "lblGPName"
-        Me.lblGPName.Size = New System.Drawing.Size(50, 13)
-        Me.lblGPName.TabIndex = 21
-        Me.lblGPName.Text = "GPName"
+        Me.lstGPs.FormattingEnabled = True
+        Me.lstGPs.ItemHeight = 16
+        Me.lstGPs.Location = New System.Drawing.Point(19, 57)
+        Me.lstGPs.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.lstGPs.Name = "lstGPs"
+        Me.lstGPs.Size = New System.Drawing.Size(381, 356)
+        Me.lstGPs.TabIndex = 13
         '
-        'lblGPID
+        'txtID
         '
-        Me.lblGPID.AutoSize = True
-        Me.lblGPID.Location = New System.Drawing.Point(337, 46)
-        Me.lblGPID.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.lblGPID.Name = "lblGPID"
-        Me.lblGPID.Size = New System.Drawing.Size(33, 13)
-        Me.lblGPID.TabIndex = 20
-        Me.lblGPID.Text = "GPID"
+        Me.txtID.Location = New System.Drawing.Point(453, 98)
+        Me.txtID.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.txtID.Name = "txtID"
+        Me.txtID.Size = New System.Drawing.Size(231, 22)
+        Me.txtID.TabIndex = 14
         '
-        'btnDelete
+        'txtName
         '
-        Me.btnDelete.Enabled = False
-        Me.btnDelete.Location = New System.Drawing.Point(897, 46)
-        Me.btnDelete.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(90, 54)
-        Me.btnDelete.TabIndex = 19
-        Me.btnDelete.Text = "Delete"
-        Me.btnDelete.UseVisualStyleBackColor = True
-        '
-        'btnClear
-        '
-        Me.btnClear.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnClear.Location = New System.Drawing.Point(897, 177)
-        Me.btnClear.Margin = New System.Windows.Forms.Padding(5)
-        Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(90, 54)
-        Me.btnClear.TabIndex = 18
-        Me.btnClear.Text = "Clear"
-        Me.btnClear.UseVisualStyleBackColor = True
-        '
-        'btnUpdate
-        '
-        Me.btnUpdate.Enabled = False
-        Me.btnUpdate.Location = New System.Drawing.Point(700, 177)
-        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(90, 54)
-        Me.btnUpdate.TabIndex = 17
-        Me.btnUpdate.Text = "Update"
-        Me.btnUpdate.UseVisualStyleBackColor = True
+        Me.txtName.Location = New System.Drawing.Point(453, 218)
+        Me.txtName.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.txtName.Name = "txtName"
+        Me.txtName.Size = New System.Drawing.Size(231, 22)
+        Me.txtName.TabIndex = 15
         '
         'btnAdd
         '
         Me.btnAdd.Enabled = False
-        Me.btnAdd.Location = New System.Drawing.Point(700, 46)
-        Me.btnAdd.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.btnAdd.Location = New System.Drawing.Point(933, 57)
+        Me.btnAdd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(90, 54)
+        Me.btnAdd.Size = New System.Drawing.Size(120, 66)
         Me.btnAdd.TabIndex = 16
         Me.btnAdd.Text = "Insert"
         Me.btnAdd.UseVisualStyleBackColor = True
         '
-        'txtName
+        'btnUpdate
         '
-        Me.txtName.Location = New System.Drawing.Point(340, 177)
-        Me.txtName.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(174, 20)
-        Me.txtName.TabIndex = 15
+        Me.btnUpdate.Enabled = False
+        Me.btnUpdate.Location = New System.Drawing.Point(933, 218)
+        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(120, 66)
+        Me.btnUpdate.TabIndex = 17
+        Me.btnUpdate.Text = "Update"
+        Me.btnUpdate.UseVisualStyleBackColor = True
         '
-        'txtID
+        'btnClear
         '
-        Me.txtID.Location = New System.Drawing.Point(340, 80)
-        Me.txtID.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.txtID.Name = "txtID"
-        Me.txtID.Size = New System.Drawing.Size(174, 20)
-        Me.txtID.TabIndex = 14
+        Me.btnClear.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnClear.Location = New System.Drawing.Point(1196, 218)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(120, 66)
+        Me.btnClear.TabIndex = 18
+        Me.btnClear.Text = "Clear"
+        Me.btnClear.UseVisualStyleBackColor = True
         '
-        'lstGPs
+        'btnDelete
         '
-        Me.lstGPs.FormattingEnabled = True
-        Me.lstGPs.Location = New System.Drawing.Point(14, 46)
-        Me.lstGPs.Margin = New System.Windows.Forms.Padding(5)
-        Me.lstGPs.Name = "lstGPs"
-        Me.lstGPs.Size = New System.Drawing.Size(287, 290)
-        Me.lstGPs.TabIndex = 13
+        Me.btnDelete.Enabled = False
+        Me.btnDelete.Location = New System.Drawing.Point(1196, 57)
+        Me.btnDelete.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(120, 66)
+        Me.btnDelete.TabIndex = 19
+        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.UseVisualStyleBackColor = True
+        '
+        'lblGPID
+        '
+        Me.lblGPID.AutoSize = True
+        Me.lblGPID.Location = New System.Drawing.Point(449, 57)
+        Me.lblGPID.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
+        Me.lblGPID.Name = "lblGPID"
+        Me.lblGPID.Size = New System.Drawing.Size(39, 16)
+        Me.lblGPID.TabIndex = 20
+        Me.lblGPID.Text = "GPID"
+        '
+        'lblGPName
+        '
+        Me.lblGPName.AutoSize = True
+        Me.lblGPName.Location = New System.Drawing.Point(449, 177)
+        Me.lblGPName.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
+        Me.lblGPName.Name = "lblGPName"
+        Me.lblGPName.Size = New System.Drawing.Size(63, 16)
+        Me.lblGPName.TabIndex = 21
+        Me.lblGPName.Text = "GPName"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(337, 272)
+        Me.Label1.Location = New System.Drawing.Point(449, 335)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(43, 13)
+        Me.Label1.Size = New System.Drawing.Size(52, 16)
         Me.Label1.TabIndex = 23
         Me.Label1.Text = "Country"
         '
         'txtcountryid
         '
-        Me.txtcountryid.Location = New System.Drawing.Point(343, 300)
+        Me.txtcountryid.Location = New System.Drawing.Point(457, 369)
+        Me.txtcountryid.Margin = New System.Windows.Forms.Padding(4)
         Me.txtcountryid.Name = "txtcountryid"
-        Me.txtcountryid.Size = New System.Drawing.Size(170, 20)
+        Me.txtcountryid.Size = New System.Drawing.Size(225, 22)
         Me.txtcountryid.TabIndex = 24
         '
         'frmGPs
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1063, 450)
+        Me.ClientSize = New System.Drawing.Size(1417, 554)
         Me.Controls.Add(Me.txtcountryid)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblGPName)
@@ -156,21 +159,23 @@ Partial Class frmGPs
         Me.Controls.Add(Me.txtName)
         Me.Controls.Add(Me.txtID)
         Me.Controls.Add(Me.lstGPs)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frmGPs"
         Me.Text = "GPs"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents lblGPName As Label
-    Friend WithEvents lblGPID As Label
-    Friend WithEvents btnDelete As Button
-    Friend WithEvents btnClear As Button
-    Friend WithEvents btnUpdate As Button
-    Friend WithEvents btnAdd As Button
-    Friend WithEvents txtName As TextBox
-    Friend WithEvents txtID As TextBox
+
     Friend WithEvents lstGPs As ListBox
+    Friend WithEvents txtID As TextBox
+    Friend WithEvents txtName As TextBox
+    Friend WithEvents btnAdd As Button
+    Friend WithEvents btnUpdate As Button
+    Friend WithEvents btnClear As Button
+    Friend WithEvents btnDelete As Button
+    Friend WithEvents lblGPID As Label
+    Friend WithEvents lblGPName As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents txtcountryid As TextBox
 End Class

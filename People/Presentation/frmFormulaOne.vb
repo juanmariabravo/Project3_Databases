@@ -92,7 +92,15 @@
     End Sub
     Private Sub btnOpenGPs_Click(sender As Object, e As EventArgs) Handles btnOpenGPs.Click
         Dim frmGPs As New frmGPs()
+
         frmGPs.Show()
     End Sub
 
+    Private Sub BtnOpenDrivers_Click(sender As Object, e As EventArgs) Handles BtnOpenDrivers.Click
+
+        Dim frmDrivers As New frmDrivers()
+        Me.Enabled = False
+        frmDrivers.Show()
+
+    End Sub
 End Class

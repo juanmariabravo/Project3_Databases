@@ -136,9 +136,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\Country.vb" />
+    <Compile Include="Domain\Driver.vb" />
     <Compile Include="Persistence\CountryDAO.vb" />
     <Compile Include="Domain\GP.vb" />
+    <Compile Include="Persistence\DriverDAO.vb" />
     <Compile Include="Persistence\GPsDAO.vb" />
+    <Compile Include="Presentation\frmDrivers.Designer.vb">
+      <DependentUpon>frmDrivers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\frmDrivers.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentation\frmFormulaOne.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +184,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\frmDrivers.resx">
+      <DependentUpon>frmDrivers.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\frmFormulaOne.resx">
       <DependentUpon>frmFormulaOne.vb</DependentUpon>

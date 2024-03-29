@@ -271,3 +271,5 @@ C:\Users\Javier\Downloads\Project3_Databases-master\People\obj\Release\Country.v
 C:\Users\Javier\Downloads\Project3_Databases-master\People\obj\Release\Country.exe
 C:\Users\Javier\Downloads\Project3_Databases-master\People\obj\Release\Country.xml
 C:\Users\Javier\Downloads\Project3_Databases-master\People\obj\Release\Country.pdb
+D:\Documentos\Project3_Databases\People\obj\Release\Country.frmDrivers.resources
+D:\Documentos\Project3_Databases\People\obj\Release\Country.frmGPs.resources
