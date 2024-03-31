@@ -82,6 +82,10 @@
         txtName.Text = ""
         txtcountryid.Text = ""
     End Sub
-
+    Private Sub btnMainMenu_Click(sender As Object, e As EventArgs) Handles btnMainMenu.Click
+        'Cerrar este formulario
+        Me.Close()
+        frmFormulaOne.Enabled = True
+    End Sub
 End Class
 

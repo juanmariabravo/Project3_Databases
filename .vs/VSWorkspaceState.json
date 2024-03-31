@@ -2,8 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\People",
-    "\\People\\Domain"
+    "\\People\\bin",
+    "\\People\\Domain",
+    "\\People\\My Project",
+    "\\People\\obj",
+    "\\People\\Persistence",
+    "\\People\\Presentation"
   ],
-  "SelectedNode": "\\People\\Domain\\CountryDAO.vb",
+  "SelectedNode": "\\People\\Domain\\Team.vb",
   "PreviewInSolutionExplorer": false
 }

@@ -137,10 +137,17 @@
   <ItemGroup>
     <Compile Include="Domain\Country.vb" />
     <Compile Include="Domain\Driver.vb" />
+    <Compile Include="Persistence\TeamDAO.vb" />
     <Compile Include="Persistence\CountryDAO.vb" />
     <Compile Include="Domain\GP.vb" />
     <Compile Include="Persistence\DriverDAO.vb" />
     <Compile Include="Persistence\GPsDAO.vb" />
+    <Compile Include="Presentation\frmCountries.Designer.vb">
+      <DependentUpon>frmCountries.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\frmCountries.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentation\frmDrivers.Designer.vb">
       <DependentUpon>frmDrivers.vb</DependentUpon>
     </Compile>
@@ -177,6 +184,13 @@
     <Compile Include="Presentation\frmGPs.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentation\frmTeams.Designer.vb">
+      <DependentUpon>frmTeams.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\frmTeams.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Domain\Team.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -184,6 +198,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\frmCountries.resx">
+      <DependentUpon>frmCountries.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\frmDrivers.resx">
       <DependentUpon>frmDrivers.vb</DependentUpon>
@@ -193,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\frmGPs.resx">
       <DependentUpon>frmGPs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\frmTeams.resx">
+      <DependentUpon>frmTeams.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

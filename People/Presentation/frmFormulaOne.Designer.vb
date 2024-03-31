@@ -23,143 +23,17 @@ Partial Class frmFormulaOne
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmFormulaOne))
-        Me.btnOpenDB = New System.Windows.Forms.Button()
-        Me.lstCountries = New System.Windows.Forms.ListBox()
-        Me.txtID = New System.Windows.Forms.TextBox()
-        Me.txtName = New System.Windows.Forms.TextBox()
-        Me.btnAdd = New System.Windows.Forms.Button()
-        Me.btnUpdate = New System.Windows.Forms.Button()
-        Me.btnClear = New System.Windows.Forms.Button()
-        Me.btnDelete = New System.Windows.Forms.Button()
-        Me.lblCountryID = New System.Windows.Forms.Label()
-        Me.lblName = New System.Windows.Forms.Label()
-        Me.txtPopulation = New System.Windows.Forms.TextBox()
-        Me.lblPopulation = New System.Windows.Forms.Label()
         Me.btnOpenGPs = New System.Windows.Forms.Button()
         Me.BtnOpenDrivers = New System.Windows.Forms.Button()
+        Me.btnOpenTeams = New System.Windows.Forms.Button()
+        Me.btnConnectDB = New System.Windows.Forms.Button()
+        Me.lblMsg = New System.Windows.Forms.Label()
         Me.SuspendLayout()
-        '
-        'btnOpenDB
-        '
-        Me.btnOpenDB.Location = New System.Drawing.Point(90, 370)
-        Me.btnOpenDB.Margin = New System.Windows.Forms.Padding(5)
-        Me.btnOpenDB.Name = "btnOpenDB"
-        Me.btnOpenDB.Size = New System.Drawing.Size(161, 68)
-        Me.btnOpenDB.TabIndex = 0
-        Me.btnOpenDB.Text = "Connect to database!"
-        Me.btnOpenDB.UseVisualStyleBackColor = True
-        '
-        'lstCountries
-        '
-        Me.lstCountries.FormattingEnabled = True
-        Me.lstCountries.ItemHeight = 21
-        Me.lstCountries.Location = New System.Drawing.Point(25, 83)
-        Me.lstCountries.Margin = New System.Windows.Forms.Padding(5)
-        Me.lstCountries.Name = "lstCountries"
-        Me.lstCountries.Size = New System.Drawing.Size(287, 214)
-        Me.lstCountries.TabIndex = 1
-        '
-        'txtID
-        '
-        Me.txtID.Location = New System.Drawing.Point(351, 177)
-        Me.txtID.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.txtID.Name = "txtID"
-        Me.txtID.Size = New System.Drawing.Size(174, 31)
-        Me.txtID.TabIndex = 2
-        '
-        'txtName
-        '
-        Me.txtName.Location = New System.Drawing.Point(614, 177)
-        Me.txtName.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(174, 31)
-        Me.txtName.TabIndex = 3
-        '
-        'btnAdd
-        '
-        Me.btnAdd.Enabled = False
-        Me.btnAdd.Location = New System.Drawing.Point(320, 377)
-        Me.btnAdd.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(90, 54)
-        Me.btnAdd.TabIndex = 4
-        Me.btnAdd.Text = "Insert"
-        Me.btnAdd.UseVisualStyleBackColor = True
-        '
-        'btnUpdate
-        '
-        Me.btnUpdate.Enabled = False
-        Me.btnUpdate.Location = New System.Drawing.Point(516, 377)
-        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(90, 54)
-        Me.btnUpdate.TabIndex = 5
-        Me.btnUpdate.Text = "Update"
-        Me.btnUpdate.UseVisualStyleBackColor = True
-        '
-        'btnClear
-        '
-        Me.btnClear.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnClear.Location = New System.Drawing.Point(912, 377)
-        Me.btnClear.Margin = New System.Windows.Forms.Padding(5)
-        Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(90, 54)
-        Me.btnClear.TabIndex = 6
-        Me.btnClear.Text = "Clear"
-        Me.btnClear.UseVisualStyleBackColor = True
-        '
-        'btnDelete
-        '
-        Me.btnDelete.Enabled = False
-        Me.btnDelete.Location = New System.Drawing.Point(715, 377)
-        Me.btnDelete.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(90, 54)
-        Me.btnDelete.TabIndex = 7
-        Me.btnDelete.Text = "Delete"
-        Me.btnDelete.UseVisualStyleBackColor = True
-        '
-        'lblCountryID
-        '
-        Me.lblCountryID.AutoSize = True
-        Me.lblCountryID.Location = New System.Drawing.Point(390, 221)
-        Me.lblCountryID.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.lblCountryID.Name = "lblCountryID"
-        Me.lblCountryID.Size = New System.Drawing.Size(91, 21)
-        Me.lblCountryID.TabIndex = 8
-        Me.lblCountryID.Text = "CountryID"
-        '
-        'lblName
-        '
-        Me.lblName.AutoSize = True
-        Me.lblName.Location = New System.Drawing.Point(673, 221)
-        Me.lblName.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(57, 21)
-        Me.lblName.TabIndex = 9
-        Me.lblName.Text = "Name"
-        '
-        'txtPopulation
-        '
-        Me.txtPopulation.Location = New System.Drawing.Point(877, 177)
-        Me.txtPopulation.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.txtPopulation.Name = "txtPopulation"
-        Me.txtPopulation.Size = New System.Drawing.Size(174, 31)
-        Me.txtPopulation.TabIndex = 10
-        '
-        'lblPopulation
-        '
-        Me.lblPopulation.AutoSize = True
-        Me.lblPopulation.Location = New System.Drawing.Point(923, 221)
-        Me.lblPopulation.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.lblPopulation.Name = "lblPopulation"
-        Me.lblPopulation.Size = New System.Drawing.Size(96, 21)
-        Me.lblPopulation.TabIndex = 11
-        Me.lblPopulation.Text = "Population"
         '
         'btnOpenGPs
         '
-        Me.btnOpenGPs.Location = New System.Drawing.Point(351, 59)
+        Me.btnOpenGPs.Enabled = False
+        Me.btnOpenGPs.Location = New System.Drawing.Point(291, 344)
         Me.btnOpenGPs.Name = "btnOpenGPs"
         Me.btnOpenGPs.Size = New System.Drawing.Size(137, 46)
         Me.btnOpenGPs.TabIndex = 12
@@ -168,12 +42,41 @@ Partial Class frmFormulaOne
         '
         'BtnOpenDrivers
         '
-        Me.BtnOpenDrivers.Location = New System.Drawing.Point(634, 59)
+        Me.BtnOpenDrivers.Enabled = False
+        Me.BtnOpenDrivers.Location = New System.Drawing.Point(664, 344)
         Me.BtnOpenDrivers.Name = "BtnOpenDrivers"
         Me.BtnOpenDrivers.Size = New System.Drawing.Size(137, 46)
         Me.BtnOpenDrivers.TabIndex = 13
         Me.BtnOpenDrivers.Text = "Drivers"
         Me.BtnOpenDrivers.UseVisualStyleBackColor = True
+        '
+        'btnOpenTeams
+        '
+        Me.btnOpenTeams.Enabled = False
+        Me.btnOpenTeams.Location = New System.Drawing.Point(483, 344)
+        Me.btnOpenTeams.Name = "btnOpenTeams"
+        Me.btnOpenTeams.Size = New System.Drawing.Size(137, 46)
+        Me.btnOpenTeams.TabIndex = 14
+        Me.btnOpenTeams.Text = "Teams"
+        Me.btnOpenTeams.UseVisualStyleBackColor = True
+        '
+        'btnConnectDB
+        '
+        Me.btnConnectDB.Location = New System.Drawing.Point(452, 72)
+        Me.btnConnectDB.Name = "btnConnectDB"
+        Me.btnConnectDB.Size = New System.Drawing.Size(188, 101)
+        Me.btnConnectDB.TabIndex = 15
+        Me.btnConnectDB.Text = "Connect to Database!"
+        Me.btnConnectDB.UseVisualStyleBackColor = True
+        '
+        'lblMsg
+        '
+        Me.lblMsg.AutoSize = True
+        Me.lblMsg.Location = New System.Drawing.Point(324, 275)
+        Me.lblMsg.Name = "lblMsg"
+        Me.lblMsg.Size = New System.Drawing.Size(452, 21)
+        Me.lblMsg.TabIndex = 16
+        Me.lblMsg.Text = "Select what type of information do you want to modify:"
         '
         'frmFormulaOne
         '
@@ -181,22 +84,12 @@ Partial Class frmFormulaOne
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.MintCream
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.CancelButton = Me.btnClear
         Me.ClientSize = New System.Drawing.Size(1093, 521)
+        Me.Controls.Add(Me.lblMsg)
+        Me.Controls.Add(Me.btnConnectDB)
+        Me.Controls.Add(Me.btnOpenTeams)
         Me.Controls.Add(Me.BtnOpenDrivers)
         Me.Controls.Add(Me.btnOpenGPs)
-        Me.Controls.Add(Me.lblPopulation)
-        Me.Controls.Add(Me.txtPopulation)
-        Me.Controls.Add(Me.lblName)
-        Me.Controls.Add(Me.lblCountryID)
-        Me.Controls.Add(Me.btnDelete)
-        Me.Controls.Add(Me.btnClear)
-        Me.Controls.Add(Me.btnUpdate)
-        Me.Controls.Add(Me.btnAdd)
-        Me.Controls.Add(Me.txtName)
-        Me.Controls.Add(Me.txtID)
-        Me.Controls.Add(Me.lstCountries)
-        Me.Controls.Add(Me.btnOpenDB)
         Me.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
@@ -209,19 +102,9 @@ Partial Class frmFormulaOne
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents btnOpenDB As Button
-    Friend WithEvents lstCountries As ListBox
-    Friend WithEvents txtID As TextBox
-    Friend WithEvents txtName As TextBox
-    Friend WithEvents btnAdd As Button
-    Friend WithEvents btnUpdate As Button
-    Friend WithEvents btnClear As Button
-    Friend WithEvents btnDelete As Button
-    Friend WithEvents lblCountryID As Label
-    Friend WithEvents lblName As Label
-    Friend WithEvents txtPopulation As TextBox
-    Friend WithEvents lblPopulation As Label
     Friend WithEvents btnOpenGPs As Button
     Friend WithEvents BtnOpenDrivers As Button
+    Friend WithEvents btnOpenTeams As Button
+    Friend WithEvents btnConnectDB As Button
+    Friend WithEvents lblMsg As Label
 End Class

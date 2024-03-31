@@ -31,8 +31,9 @@ Partial Class frmGPs
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.lblGPID = New System.Windows.Forms.Label()
         Me.lblGPName = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblGPCountry = New System.Windows.Forms.Label()
         Me.txtcountryid = New System.Windows.Forms.TextBox()
+        Me.btnMainMenu = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lstGPs
@@ -125,15 +126,15 @@ Partial Class frmGPs
         Me.lblGPName.TabIndex = 21
         Me.lblGPName.Text = "GPName"
         '
-        'Label1
+        'lblGPCountry
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(449, 335)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(52, 16)
-        Me.Label1.TabIndex = 23
-        Me.Label1.Text = "Country"
+        Me.lblGPCountry.AutoSize = True
+        Me.lblGPCountry.Location = New System.Drawing.Point(449, 335)
+        Me.lblGPCountry.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblGPCountry.Name = "lblGPCountry"
+        Me.lblGPCountry.Size = New System.Drawing.Size(52, 16)
+        Me.lblGPCountry.TabIndex = 23
+        Me.lblGPCountry.Text = "Country"
         '
         'txtcountryid
         '
@@ -143,13 +144,25 @@ Partial Class frmGPs
         Me.txtcountryid.Size = New System.Drawing.Size(225, 22)
         Me.txtcountryid.TabIndex = 24
         '
+        'btnMainMenu
+        '
+        Me.btnMainMenu.Enabled = True
+        Me.btnMainMenu.Location = New System.Drawing.Point(1067, 369)
+        Me.btnMainMenu.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.btnMainMenu.Name = "btnMainMenu"
+        Me.btnMainMenu.Size = New System.Drawing.Size(120, 66)
+        Me.btnMainMenu.TabIndex = 25
+        Me.btnMainMenu.Text = "Go to main menu"
+        Me.btnMainMenu.UseVisualStyleBackColor = True
+        '
         'frmGPs
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1417, 554)
+        Me.Controls.Add(Me.btnMainMenu)
         Me.Controls.Add(Me.txtcountryid)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblGPCountry)
         Me.Controls.Add(Me.lblGPName)
         Me.Controls.Add(Me.lblGPID)
         Me.Controls.Add(Me.btnDelete)
@@ -159,7 +172,7 @@ Partial Class frmGPs
         Me.Controls.Add(Me.txtName)
         Me.Controls.Add(Me.txtID)
         Me.Controls.Add(Me.lstGPs)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmGPs"
         Me.Text = "GPs"
         Me.ResumeLayout(False)
@@ -176,6 +189,7 @@ Partial Class frmGPs
     Friend WithEvents btnDelete As Button
     Friend WithEvents lblGPID As Label
     Friend WithEvents lblGPName As Label
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblGPCountry As Label
     Friend WithEvents txtcountryid As TextBox
+    Friend WithEvents btnMainMenu As Button
 End Class
