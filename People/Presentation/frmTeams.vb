@@ -1,6 +1,5 @@
 ﻿Public Class frmTeams
     Private te As Team
-    Private countries As New List(Of Country)()
 
     Private Sub FrmTeams_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -86,6 +85,10 @@
     Private Sub btnMainMenu_Click(sender As Object, e As EventArgs) Handles btnMainMenu.Click
         'Cerrar este formulario
         Me.Close()
+        frmFormulaOne.Enabled = True
+    End Sub
+    Private Sub frmTeams_Closed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        ' Reactivar el formulario original
         frmFormulaOne.Enabled = True
     End Sub
 End Class

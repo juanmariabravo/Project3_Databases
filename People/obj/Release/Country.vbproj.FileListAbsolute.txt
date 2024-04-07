@@ -277,3 +277,5 @@ C:\Users\Juan María\Source\Repos\juanmariabravo\Project3_Databases\People\obj\R
 C:\Users\Juan María\Source\Repos\juanmariabravo\Project3_Databases\People\obj\Release\Country.frmDrivers.resources
 C:\Users\Juan María\Source\Repos\juanmariabravo\Project3_Databases\People\obj\Release\Country.frmGPs.resources
 C:\Users\Juan María\Source\Repos\juanmariabravo\Project3_Databases\People\obj\Release\Country.frmTeams.resources
+D:\Documentos\Project3_Databases\People\obj\Release\Country.frmCountries.resources
+D:\Documentos\Project3_Databases\People\obj\Release\Country.frmTeams.resources

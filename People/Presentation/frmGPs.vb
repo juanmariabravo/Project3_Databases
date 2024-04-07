@@ -1,6 +1,5 @@
 ﻿Public Class frmGPs
     Private gp As GP
-    Private countries As New List(Of Country)()
 
     Private Sub FrmGPs_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -85,6 +84,11 @@
     Private Sub btnMainMenu_Click(sender As Object, e As EventArgs) Handles btnMainMenu.Click
         'Cerrar este formulario
         Me.Close()
+        frmFormulaOne.Enabled = True
+    End Sub
+
+    Private Sub frmGPs_Closed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        ' Reactivar el formulario original
         frmFormulaOne.Enabled = True
     End Sub
 End Class

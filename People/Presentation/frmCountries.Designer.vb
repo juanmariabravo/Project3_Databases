@@ -34,12 +34,13 @@ Partial Class frmCountries
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.lstCountries = New System.Windows.Forms.ListBox()
         Me.btnOpenDB = New System.Windows.Forms.Button()
+        Me.btnMainMenu = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lblPopulation
         '
         Me.lblPopulation.AutoSize = True
-        Me.lblPopulation.Location = New System.Drawing.Point(989, 273)
+        Me.lblPopulation.Location = New System.Drawing.Point(380, 277)
         Me.lblPopulation.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblPopulation.Name = "lblPopulation"
         Me.lblPopulation.Size = New System.Drawing.Size(71, 16)
@@ -48,7 +49,7 @@ Partial Class frmCountries
         '
         'txtPopulation
         '
-        Me.txtPopulation.Location = New System.Drawing.Point(943, 229)
+        Me.txtPopulation.Location = New System.Drawing.Point(383, 304)
         Me.txtPopulation.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtPopulation.Name = "txtPopulation"
         Me.txtPopulation.Size = New System.Drawing.Size(174, 22)
@@ -57,17 +58,17 @@ Partial Class frmCountries
         'lblName
         '
         Me.lblName.AutoSize = True
-        Me.lblName.Location = New System.Drawing.Point(739, 273)
+        Me.lblName.Location = New System.Drawing.Point(380, 188)
         Me.lblName.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(44, 16)
+        Me.lblName.Size = New System.Drawing.Size(89, 16)
         Me.lblName.TabIndex = 23
-        Me.lblName.Text = "Name"
+        Me.lblName.Text = "Country name"
         '
         'lblCountryID
         '
         Me.lblCountryID.AutoSize = True
-        Me.lblCountryID.Location = New System.Drawing.Point(456, 273)
+        Me.lblCountryID.Location = New System.Drawing.Point(380, 105)
         Me.lblCountryID.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblCountryID.Name = "lblCountryID"
         Me.lblCountryID.Size = New System.Drawing.Size(65, 16)
@@ -77,7 +78,7 @@ Partial Class frmCountries
         'btnDelete
         '
         Me.btnDelete.Enabled = False
-        Me.btnDelete.Location = New System.Drawing.Point(781, 429)
+        Me.btnDelete.Location = New System.Drawing.Point(686, 288)
         Me.btnDelete.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(90, 54)
@@ -88,7 +89,7 @@ Partial Class frmCountries
         'btnClear
         '
         Me.btnClear.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnClear.Location = New System.Drawing.Point(978, 429)
+        Me.btnClear.Location = New System.Drawing.Point(874, 277)
         Me.btnClear.Margin = New System.Windows.Forms.Padding(5)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(90, 54)
@@ -99,7 +100,7 @@ Partial Class frmCountries
         'btnUpdate
         '
         Me.btnUpdate.Enabled = False
-        Me.btnUpdate.Location = New System.Drawing.Point(582, 429)
+        Me.btnUpdate.Location = New System.Drawing.Point(874, 169)
         Me.btnUpdate.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(90, 54)
@@ -110,7 +111,7 @@ Partial Class frmCountries
         'btnAdd
         '
         Me.btnAdd.Enabled = False
-        Me.btnAdd.Location = New System.Drawing.Point(386, 429)
+        Me.btnAdd.Location = New System.Drawing.Point(686, 169)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(90, 54)
@@ -120,7 +121,7 @@ Partial Class frmCountries
         '
         'txtName
         '
-        Me.txtName.Location = New System.Drawing.Point(680, 229)
+        Me.txtName.Location = New System.Drawing.Point(383, 216)
         Me.txtName.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(174, 22)
@@ -128,7 +129,7 @@ Partial Class frmCountries
         '
         'txtID
         '
-        Me.txtID.Location = New System.Drawing.Point(417, 229)
+        Me.txtID.Location = New System.Drawing.Point(383, 132)
         Me.txtID.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtID.Name = "txtID"
         Me.txtID.Size = New System.Drawing.Size(174, 22)
@@ -138,7 +139,7 @@ Partial Class frmCountries
         '
         Me.lstCountries.FormattingEnabled = True
         Me.lstCountries.ItemHeight = 16
-        Me.lstCountries.Location = New System.Drawing.Point(91, 135)
+        Me.lstCountries.Location = New System.Drawing.Point(66, 132)
         Me.lstCountries.Margin = New System.Windows.Forms.Padding(5)
         Me.lstCountries.Name = "lstCountries"
         Me.lstCountries.Size = New System.Drawing.Size(287, 212)
@@ -146,7 +147,7 @@ Partial Class frmCountries
         '
         'btnOpenDB
         '
-        Me.btnOpenDB.Location = New System.Drawing.Point(156, 422)
+        Me.btnOpenDB.Location = New System.Drawing.Point(192, 405)
         Me.btnOpenDB.Margin = New System.Windows.Forms.Padding(5)
         Me.btnOpenDB.Name = "btnOpenDB"
         Me.btnOpenDB.Size = New System.Drawing.Size(161, 68)
@@ -154,11 +155,23 @@ Partial Class frmCountries
         Me.btnOpenDB.Text = "Connect to database!"
         Me.btnOpenDB.UseVisualStyleBackColor = True
         '
+        'btnMainMenu
+        '
+        Me.btnMainMenu.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.btnMainMenu.Location = New System.Drawing.Point(767, 376)
+        Me.btnMainMenu.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.btnMainMenu.Name = "btnMainMenu"
+        Me.btnMainMenu.Size = New System.Drawing.Size(120, 66)
+        Me.btnMainMenu.TabIndex = 43
+        Me.btnMainMenu.Text = "Go to main menu"
+        Me.btnMainMenu.UseVisualStyleBackColor = False
+        '
         'frmCountries
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1209, 601)
+        Me.Controls.Add(Me.btnMainMenu)
         Me.Controls.Add(Me.lblPopulation)
         Me.Controls.Add(Me.txtPopulation)
         Me.Controls.Add(Me.lblName)
@@ -190,4 +203,5 @@ Partial Class frmCountries
     Friend WithEvents txtID As TextBox
     Friend WithEvents lstCountries As ListBox
     Friend WithEvents btnOpenDB As Button
+    Friend WithEvents btnMainMenu As Button
 End Class

@@ -13,7 +13,6 @@
         Me.GPID = id
         Me.GPName = name
         Me.Countryid = country
-
         Me.GpDAO = New GPDAO
     End Sub
 

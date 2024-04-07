@@ -40,7 +40,7 @@ Partial Class frmTeams
         '
         'txtcountryid
         '
-        Me.txtcountryid.Location = New System.Drawing.Point(455, 418)
+        Me.txtcountryid.Location = New System.Drawing.Point(468, 358)
         Me.txtcountryid.Margin = New System.Windows.Forms.Padding(4)
         Me.txtcountryid.Name = "txtcountryid"
         Me.txtcountryid.Size = New System.Drawing.Size(225, 22)
@@ -49,7 +49,7 @@ Partial Class frmTeams
         'lblTeamCountry
         '
         Me.lblTeamCountry.AutoSize = True
-        Me.lblTeamCountry.Location = New System.Drawing.Point(447, 384)
+        Me.lblTeamCountry.Location = New System.Drawing.Point(460, 324)
         Me.lblTeamCountry.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTeamCountry.Name = "lblTeamCountry"
         Me.lblTeamCountry.Size = New System.Drawing.Size(52, 16)
@@ -59,7 +59,7 @@ Partial Class frmTeams
         'lblTeamName
         '
         Me.lblTeamName.AutoSize = True
-        Me.lblTeamName.Location = New System.Drawing.Point(446, 280)
+        Me.lblTeamName.Location = New System.Drawing.Point(459, 220)
         Me.lblTeamName.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.lblTeamName.Name = "lblTeamName"
         Me.lblTeamName.Size = New System.Drawing.Size(80, 16)
@@ -69,7 +69,7 @@ Partial Class frmTeams
         'lblTeamID
         '
         Me.lblTeamID.AutoSize = True
-        Me.lblTeamID.Location = New System.Drawing.Point(446, 160)
+        Me.lblTeamID.Location = New System.Drawing.Point(459, 100)
         Me.lblTeamID.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.lblTeamID.Name = "lblTeamID"
         Me.lblTeamID.Size = New System.Drawing.Size(56, 16)
@@ -79,7 +79,7 @@ Partial Class frmTeams
         'btnDelete
         '
         Me.btnDelete.Enabled = False
-        Me.btnDelete.Location = New System.Drawing.Point(1031, 160)
+        Me.btnDelete.Location = New System.Drawing.Point(1044, 100)
         Me.btnDelete.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(120, 66)
@@ -90,7 +90,7 @@ Partial Class frmTeams
         'btnClear
         '
         Me.btnClear.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnClear.Location = New System.Drawing.Point(1031, 321)
+        Me.btnClear.Location = New System.Drawing.Point(1044, 261)
         Me.btnClear.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(120, 66)
@@ -101,7 +101,7 @@ Partial Class frmTeams
         'btnUpdate
         '
         Me.btnUpdate.Enabled = False
-        Me.btnUpdate.Location = New System.Drawing.Point(768, 321)
+        Me.btnUpdate.Location = New System.Drawing.Point(781, 261)
         Me.btnUpdate.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(120, 66)
@@ -112,7 +112,7 @@ Partial Class frmTeams
         'btnAdd
         '
         Me.btnAdd.Enabled = False
-        Me.btnAdd.Location = New System.Drawing.Point(768, 160)
+        Me.btnAdd.Location = New System.Drawing.Point(781, 100)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(120, 66)
@@ -122,7 +122,7 @@ Partial Class frmTeams
         '
         'txtName
         '
-        Me.txtName.Location = New System.Drawing.Point(450, 321)
+        Me.txtName.Location = New System.Drawing.Point(463, 261)
         Me.txtName.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(231, 22)
@@ -130,7 +130,7 @@ Partial Class frmTeams
         '
         'txtID
         '
-        Me.txtID.Location = New System.Drawing.Point(450, 201)
+        Me.txtID.Location = New System.Drawing.Point(463, 141)
         Me.txtID.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.txtID.Name = "txtID"
         Me.txtID.Size = New System.Drawing.Size(231, 22)
@@ -140,7 +140,7 @@ Partial Class frmTeams
         '
         Me.lstTeams.FormattingEnabled = True
         Me.lstTeams.ItemHeight = 16
-        Me.lstTeams.Location = New System.Drawing.Point(16, 160)
+        Me.lstTeams.Location = New System.Drawing.Point(29, 100)
         Me.lstTeams.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.lstTeams.Name = "lstTeams"
         Me.lstTeams.Size = New System.Drawing.Size(381, 356)
@@ -148,7 +148,7 @@ Partial Class frmTeams
         '
         'txtCreationDate
         '
-        Me.txtCreationDate.Location = New System.Drawing.Point(455, 494)
+        Me.txtCreationDate.Location = New System.Drawing.Point(468, 434)
         Me.txtCreationDate.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCreationDate.Name = "txtCreationDate"
         Me.txtCreationDate.Size = New System.Drawing.Size(225, 22)
@@ -157,7 +157,7 @@ Partial Class frmTeams
         'lblCreationDate
         '
         Me.lblCreationDate.AutoSize = True
-        Me.lblCreationDate.Location = New System.Drawing.Point(447, 460)
+        Me.lblCreationDate.Location = New System.Drawing.Point(460, 400)
         Me.lblCreationDate.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblCreationDate.Name = "lblCreationDate"
         Me.lblCreationDate.Size = New System.Drawing.Size(89, 16)
@@ -167,7 +167,7 @@ Partial Class frmTeams
         'btnMainMenu
         '
         Me.btnMainMenu.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.btnMainMenu.Location = New System.Drawing.Point(871, 450)
+        Me.btnMainMenu.Location = New System.Drawing.Point(884, 390)
         Me.btnMainMenu.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.btnMainMenu.Name = "btnMainMenu"
         Me.btnMainMenu.Size = New System.Drawing.Size(120, 66)

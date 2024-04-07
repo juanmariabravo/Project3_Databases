@@ -146,14 +146,14 @@ Partial Class frmGPs
         '
         'btnMainMenu
         '
-        Me.btnMainMenu.Enabled = True
+        Me.btnMainMenu.BackColor = System.Drawing.SystemColors.ControlDark
         Me.btnMainMenu.Location = New System.Drawing.Point(1067, 369)
         Me.btnMainMenu.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.btnMainMenu.Name = "btnMainMenu"
         Me.btnMainMenu.Size = New System.Drawing.Size(120, 66)
         Me.btnMainMenu.TabIndex = 25
         Me.btnMainMenu.Text = "Go to main menu"
-        Me.btnMainMenu.UseVisualStyleBackColor = True
+        Me.btnMainMenu.UseVisualStyleBackColor = False
         '
         'frmGPs
         '
