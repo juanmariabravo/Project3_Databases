@@ -8,7 +8,7 @@
 
             lstGPs.Items.Clear()
             For Each gp In gp.GpDAO.GPs
-                lstGPs.Items.Add(gp.GPID)
+                lstGPs.Items.Add(gp.GPName)
             Next
 
             btnAdd.Enabled = True

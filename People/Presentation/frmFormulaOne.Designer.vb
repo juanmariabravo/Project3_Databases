@@ -28,12 +28,13 @@ Partial Class frmFormulaOne
         Me.btnOpenTeams = New System.Windows.Forms.Button()
         Me.btnConnectDB = New System.Windows.Forms.Button()
         Me.lblMsg = New System.Windows.Forms.Label()
+        Me.btnCountries = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnOpenGPs
         '
         Me.btnOpenGPs.Enabled = False
-        Me.btnOpenGPs.Location = New System.Drawing.Point(291, 344)
+        Me.btnOpenGPs.Location = New System.Drawing.Point(354, 349)
         Me.btnOpenGPs.Name = "btnOpenGPs"
         Me.btnOpenGPs.Size = New System.Drawing.Size(137, 46)
         Me.btnOpenGPs.TabIndex = 12
@@ -43,7 +44,7 @@ Partial Class frmFormulaOne
         'BtnOpenDrivers
         '
         Me.BtnOpenDrivers.Enabled = False
-        Me.BtnOpenDrivers.Location = New System.Drawing.Point(664, 344)
+        Me.BtnOpenDrivers.Location = New System.Drawing.Point(727, 349)
         Me.BtnOpenDrivers.Name = "BtnOpenDrivers"
         Me.BtnOpenDrivers.Size = New System.Drawing.Size(137, 46)
         Me.BtnOpenDrivers.TabIndex = 13
@@ -53,7 +54,7 @@ Partial Class frmFormulaOne
         'btnOpenTeams
         '
         Me.btnOpenTeams.Enabled = False
-        Me.btnOpenTeams.Location = New System.Drawing.Point(483, 344)
+        Me.btnOpenTeams.Location = New System.Drawing.Point(546, 349)
         Me.btnOpenTeams.Name = "btnOpenTeams"
         Me.btnOpenTeams.Size = New System.Drawing.Size(137, 46)
         Me.btnOpenTeams.TabIndex = 14
@@ -78,6 +79,16 @@ Partial Class frmFormulaOne
         Me.lblMsg.TabIndex = 16
         Me.lblMsg.Text = "Select what type of information do you want to modify:"
         '
+        'btnCountries
+        '
+        Me.btnCountries.Enabled = False
+        Me.btnCountries.Location = New System.Drawing.Point(159, 349)
+        Me.btnCountries.Name = "btnCountries"
+        Me.btnCountries.Size = New System.Drawing.Size(137, 46)
+        Me.btnCountries.TabIndex = 17
+        Me.btnCountries.Text = "Country"
+        Me.btnCountries.UseVisualStyleBackColor = True
+        '
         'frmFormulaOne
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 21.0!)
@@ -85,6 +96,7 @@ Partial Class frmFormulaOne
         Me.BackColor = System.Drawing.Color.MintCream
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(1093, 521)
+        Me.Controls.Add(Me.btnCountries)
         Me.Controls.Add(Me.lblMsg)
         Me.Controls.Add(Me.btnConnectDB)
         Me.Controls.Add(Me.btnOpenTeams)
@@ -107,4 +119,5 @@ Partial Class frmFormulaOne
     Friend WithEvents btnOpenTeams As Button
     Friend WithEvents btnConnectDB As Button
     Friend WithEvents lblMsg As Label
+    Friend WithEvents btnCountries As Button
 End Class

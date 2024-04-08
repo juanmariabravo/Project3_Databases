@@ -11,14 +11,14 @@
         frmFormulaOne.Enabled = True
     End Sub
 
-    Private Sub FrmGPs_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub FrmDrivers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Dim driver As New Driver
             driver.ReadAllDrivers()
 
             lstDrivers.Items.Clear()
             For Each driver In driver.DrvDAO.Drivers
-                lstDrivers.Items.Add(driver.DriverID)
+                lstDrivers.Items.Add(driver.DriverName & driver.DriverSurname)
             Next
 
             btnAddDriver.Enabled = True

@@ -1,12 +1,103 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Documentos\\Project3_Databases\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\Country.vbproj|d:\\documentos\\project3_databases\\people\\presentation\\frmcountries.designer.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\Country.vbproj|solutionrelative:people\\presentation\\frmcountries.designer.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\Country.vbproj|d:\\documentos\\project3_databases\\people\\presentation\\frmcountries.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\Country.vbproj|solutionrelative:people\\presentation\\frmcountries.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\Country.vbproj|d:\\documentos\\project3_databases\\people\\presentation\\frmformulaone.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\Country.vbproj|solutionrelative:people\\presentation\\frmformulaone.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\Country.vbproj|d:\\documentos\\project3_databases\\people\\presentation\\frmformulaone.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\Country.vbproj|solutionrelative:people\\presentation\\frmformulaone.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\Country.vbproj|d:\\documentos\\project3_databases\\people\\domain\\country.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\Country.vbproj|solutionrelative:people\\domain\\country.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 190,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmCountries.Designer.vb",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmCountries.Designer.vb",
+              "RelativeDocumentMoniker": "People\\Presentation\\frmCountries.Designer.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmCountries.Designer.vb",
+              "RelativeToolTip": "People\\Presentation\\frmCountries.Designer.vb",
+              "ViewState": "AQIAAGMAAAAAAAAAAAAYwHQAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-08T09:20:47.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmCountries.vb [Dise\u00F1o]",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmCountries.vb",
+              "RelativeDocumentMoniker": "People\\Presentation\\frmCountries.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmCountries.vb [Dise\u00F1o]",
+              "RelativeToolTip": "People\\Presentation\\frmCountries.vb [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-08T09:19:17.331Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmFormulaOne.vb",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmFormulaOne.vb",
+              "RelativeDocumentMoniker": "People\\Presentation\\frmFormulaOne.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmFormulaOne.vb",
+              "RelativeToolTip": "People\\Presentation\\frmFormulaOne.vb",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAlwCoAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-08T09:18:15.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Country.vb",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Domain\\Country.vb",
+              "RelativeDocumentMoniker": "People\\Domain\\Country.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Domain\\Country.vb",
+              "RelativeToolTip": "People\\Domain\\Country.vb",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-08T09:17:19.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmFormulaOne.vb [Dise\u00F1o]",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmFormulaOne.vb",
+              "RelativeDocumentMoniker": "People\\Presentation\\frmFormulaOne.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmFormulaOne.vb [Dise\u00F1o]",
+              "RelativeToolTip": "People\\Presentation\\frmFormulaOne.vb [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-08T08:36:42.378Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

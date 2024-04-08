@@ -123,7 +123,6 @@ Partial Class frmDrivers
         'btnMainMenu
         '
         Me.btnMainMenu.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.btnMainMenu.Enabled = True
         Me.btnMainMenu.Location = New System.Drawing.Point(840, 333)
         Me.btnMainMenu.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.btnMainMenu.Name = "btnMainMenu"

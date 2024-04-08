@@ -129,7 +129,7 @@ Partial Class frmGPs
         'lblGPCountry
         '
         Me.lblGPCountry.AutoSize = True
-        Me.lblGPCountry.Location = New System.Drawing.Point(449, 335)
+        Me.lblGPCountry.Location = New System.Drawing.Point(451, 294)
         Me.lblGPCountry.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblGPCountry.Name = "lblGPCountry"
         Me.lblGPCountry.Size = New System.Drawing.Size(52, 16)
@@ -138,7 +138,7 @@ Partial Class frmGPs
         '
         'txtcountryid
         '
-        Me.txtcountryid.Location = New System.Drawing.Point(457, 369)
+        Me.txtcountryid.Location = New System.Drawing.Point(459, 328)
         Me.txtcountryid.Margin = New System.Windows.Forms.Padding(4)
         Me.txtcountryid.Name = "txtcountryid"
         Me.txtcountryid.Size = New System.Drawing.Size(225, 22)
