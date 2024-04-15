@@ -135,6 +135,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\Contract.vb" />
+    <Compile Include="Domain\ContractDAO.vb" />
     <Compile Include="Domain\Country.vb" />
     <Compile Include="Domain\Driver.vb" />
     <Compile Include="Domain\TeamDAO.vb" />
@@ -184,6 +186,12 @@
     <Compile Include="Presentation\frmGPs.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentation\frmSeasons.Designer.vb">
+      <DependentUpon>frmSeasons.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\frmSeasons.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentation\frmTeams.Designer.vb">
       <DependentUpon>frmTeams.vb</DependentUpon>
     </Compile>
@@ -210,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\frmGPs.resx">
       <DependentUpon>frmGPs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\frmSeasons.resx">
+      <DependentUpon>frmSeasons.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\frmTeams.resx">
       <DependentUpon>frmTeams.vb</DependentUpon>

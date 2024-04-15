@@ -38,7 +38,7 @@
 
 
     Public Function Insert(ByVal te As Team) As Integer
-        Return DBBroker.GetBroker().Change("INSERT INTO Teams (TeamID, TeamName, TeamCountry) VALUES ('" & te.TeamID & "', '" & te.TeamName & "', '" & te.TeamCountry & "');")
+        Return DBBroker.GetBroker().Change("INSERT INTO Teams (TeamID, TeamName, TeamCountry, CreationDate) VALUES ('" & te.TeamID & "', '" & te.TeamName & "', '" & te.TeamCountry & "', STR_TO_DATE('" & te.CreationDate & "','%d/%m/%Y'));")
     End Function
 
     Public Function Update(ByVal te As Team) As Integer

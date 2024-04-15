@@ -40,7 +40,7 @@ Partial Class frmGPs
         '
         Me.lstGPs.FormattingEnabled = True
         Me.lstGPs.ItemHeight = 16
-        Me.lstGPs.Location = New System.Drawing.Point(19, 57)
+        Me.lstGPs.Location = New System.Drawing.Point(37, 98)
         Me.lstGPs.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.lstGPs.Name = "lstGPs"
         Me.lstGPs.Size = New System.Drawing.Size(381, 356)
@@ -48,7 +48,7 @@ Partial Class frmGPs
         '
         'txtID
         '
-        Me.txtID.Location = New System.Drawing.Point(453, 98)
+        Me.txtID.Location = New System.Drawing.Point(460, 171)
         Me.txtID.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.txtID.Name = "txtID"
         Me.txtID.Size = New System.Drawing.Size(231, 22)
@@ -56,7 +56,7 @@ Partial Class frmGPs
         '
         'txtName
         '
-        Me.txtName.Location = New System.Drawing.Point(453, 218)
+        Me.txtName.Location = New System.Drawing.Point(460, 291)
         Me.txtName.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(231, 22)
@@ -65,7 +65,7 @@ Partial Class frmGPs
         'btnAdd
         '
         Me.btnAdd.Enabled = False
-        Me.btnAdd.Location = New System.Drawing.Point(933, 57)
+        Me.btnAdd.Location = New System.Drawing.Point(883, 152)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(120, 66)
@@ -76,7 +76,7 @@ Partial Class frmGPs
         'btnUpdate
         '
         Me.btnUpdate.Enabled = False
-        Me.btnUpdate.Location = New System.Drawing.Point(933, 218)
+        Me.btnUpdate.Location = New System.Drawing.Point(883, 275)
         Me.btnUpdate.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(120, 66)
@@ -87,7 +87,7 @@ Partial Class frmGPs
         'btnClear
         '
         Me.btnClear.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnClear.Location = New System.Drawing.Point(1196, 218)
+        Me.btnClear.Location = New System.Drawing.Point(1095, 272)
         Me.btnClear.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(120, 66)
@@ -98,7 +98,7 @@ Partial Class frmGPs
         'btnDelete
         '
         Me.btnDelete.Enabled = False
-        Me.btnDelete.Location = New System.Drawing.Point(1196, 57)
+        Me.btnDelete.Location = New System.Drawing.Point(1095, 155)
         Me.btnDelete.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(120, 66)
@@ -109,7 +109,7 @@ Partial Class frmGPs
         'lblGPID
         '
         Me.lblGPID.AutoSize = True
-        Me.lblGPID.Location = New System.Drawing.Point(449, 57)
+        Me.lblGPID.Location = New System.Drawing.Point(456, 130)
         Me.lblGPID.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.lblGPID.Name = "lblGPID"
         Me.lblGPID.Size = New System.Drawing.Size(39, 16)
@@ -119,7 +119,7 @@ Partial Class frmGPs
         'lblGPName
         '
         Me.lblGPName.AutoSize = True
-        Me.lblGPName.Location = New System.Drawing.Point(449, 177)
+        Me.lblGPName.Location = New System.Drawing.Point(456, 250)
         Me.lblGPName.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.lblGPName.Name = "lblGPName"
         Me.lblGPName.Size = New System.Drawing.Size(63, 16)
@@ -129,7 +129,7 @@ Partial Class frmGPs
         'lblGPCountry
         '
         Me.lblGPCountry.AutoSize = True
-        Me.lblGPCountry.Location = New System.Drawing.Point(451, 294)
+        Me.lblGPCountry.Location = New System.Drawing.Point(458, 367)
         Me.lblGPCountry.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblGPCountry.Name = "lblGPCountry"
         Me.lblGPCountry.Size = New System.Drawing.Size(52, 16)
@@ -138,7 +138,7 @@ Partial Class frmGPs
         '
         'txtcountryid
         '
-        Me.txtcountryid.Location = New System.Drawing.Point(459, 328)
+        Me.txtcountryid.Location = New System.Drawing.Point(466, 401)
         Me.txtcountryid.Margin = New System.Windows.Forms.Padding(4)
         Me.txtcountryid.Name = "txtcountryid"
         Me.txtcountryid.Size = New System.Drawing.Size(225, 22)
@@ -147,7 +147,7 @@ Partial Class frmGPs
         'btnMainMenu
         '
         Me.btnMainMenu.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.btnMainMenu.Location = New System.Drawing.Point(1067, 369)
+        Me.btnMainMenu.Location = New System.Drawing.Point(991, 367)
         Me.btnMainMenu.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.btnMainMenu.Name = "btnMainMenu"
         Me.btnMainMenu.Size = New System.Drawing.Size(120, 66)
@@ -159,7 +159,7 @@ Partial Class frmGPs
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1417, 554)
+        Me.ClientSize = New System.Drawing.Size(1283, 513)
         Me.Controls.Add(Me.btnMainMenu)
         Me.Controls.Add(Me.txtcountryid)
         Me.Controls.Add(Me.lblGPCountry)

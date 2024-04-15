@@ -11,7 +11,8 @@
             btnOpenGPs.Enabled = True
             BtnOpenDrivers.Enabled = True
             btnOpenTeams.Enabled = True
-            btnCountries.Enabled = True
+            btnOpenCountries.Enabled = True
+            btnOpenSeasons.Enabled = True
         Catch ex As Exception
             MessageBox.Show("Connection not opened " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Me.Close()
@@ -36,12 +37,20 @@
         Dim frmTeams As New frmTeams()
         Me.Enabled = False
         frmTeams.Show()
-
     End Sub
-
-    Private Sub btnCountries_Click(sender As Object, e As EventArgs) Handles btnCountries.Click
+    Private Sub btnOpenCountries_Click(sender As Object, e As EventArgs) Handles btnOpenCountries.Click
         Dim frmCount As New frmCountries()
         Me.Enabled = False
         frmCount.Show()
+    End Sub
+
+    Private Sub btnOpenSeasons_Click(sender As Object, e As EventArgs) Handles btnOpenSeasons.Click
+        Dim frmseas As New frmSeasons()
+        Me.Enabled = False
+        frmseas.Show()
+    End Sub
+
+    Private Sub frmFormulaOne_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

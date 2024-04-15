@@ -179,7 +179,7 @@ Partial Class frmTeams
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1272, 588)
+        Me.ClientSize = New System.Drawing.Size(1218, 515)
         Me.Controls.Add(Me.btnMainMenu)
         Me.Controls.Add(Me.txtCreationDate)
         Me.Controls.Add(Me.lblCreationDate)

@@ -23,11 +23,13 @@
 
     Private Sub LstGPs_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstGPs.SelectedIndexChanged
         Try
-            gp = New GP(Integer.Parse(lstGPs.SelectedItem.ToString), "", gp.Countryid)
-            gp.ReadGP()
-            txtID.Text = gp.GPID.ToString
-            txtName.Text = gp.GPName
-            txtcountryid.Text = gp.Countryid.ToString
+            If lstGPs.SelectedIndex > 0 Then
+                gp = New GP(Integer.Parse(lstGPs.SelectedItem.ToString), "", gp.Countryid)
+                gp.ReadGP()
+                txtID.Text = gp.GPID.ToString
+                txtName.Text = gp.GPName
+                txtcountryid.Text = gp.Countryid.ToString
+            End If
 
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)

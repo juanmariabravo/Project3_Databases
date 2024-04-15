@@ -32,13 +32,14 @@
 
     Private Sub lstDrivers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstDrivers.SelectedIndexChanged
         Try
-            driver = New Driver(Integer.Parse(lstDrivers.SelectedItem.ToString), "", "", 0)
-            driver.ReadDriver()
-            txtBxDriverID.Text = driver.DriverID.ToString()
-            txtBxDriverName.Text = driver.DriverName
-            txtBxDriverSurname.Text = driver.DriverSurname
-            txtBxDriverCountry.Text = driver.DriverCountry.ToString()
-
+            If lstDrivers.SelectedIndex > 0 Then
+                driver = New Driver(Integer.Parse(lstDrivers.SelectedItem.ToString), "", "", 0)
+                driver.ReadDriver()
+                txtBxDriverID.Text = driver.DriverID.ToString()
+                txtBxDriverName.Text = driver.DriverName
+                txtBxDriverSurname.Text = driver.DriverSurname
+                txtBxDriverCountry.Text = driver.DriverCountry.ToString()
+            End If
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
