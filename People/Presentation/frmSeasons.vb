@@ -1,6 +1,6 @@
 ﻿Public Class frmSeasons
     Private contract As Contract
-    Private seasonYear As Integer
+    Private TxtBxseasonYear As Integer
     Private numberTeams As Integer
     Private numTeamsInserted As Integer ' Number of teams inserted 
     Private teamsList As New List(Of String)() ' List to store team names fetched from database
@@ -29,60 +29,23 @@
             selectMinBox.Items.Add(i)
             selectMaxBox.Items.Add(i)
         Next
+
     End Sub
     Private Sub LstSeasonTeams_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstSeasons.SelectedIndexChanged
-        Try
-            If lstSeasons.SelectedIndex > 0 Then
-                contract = New Contract(Integer.Parse(txtNumberOfGPs.Text), seasonYear, Integer.Parse(lblDriver2.Text), Integer.Parse(lblDriver2.Text))
-                contract.ReadContract()
-                txtNumberOfGPs.Text = contract.Team.ToString()
-                seasonYear = contract.Season
-                lblDriver1.Text = contract.Driver1.ToString()
-                lblDriver2.Text = contract.Driver2.ToString()
-            End If
 
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-    End Sub
-
-    Private Sub btnSelect_Click(sender As Object, e As EventArgs) Handles btnGenerateSeasonInfo.Click
-        Try
-            ' Obtener el año ingresado por el usuario
-            seasonYear = Integer.Parse(txtSeasonYear.Text)
-            ' Verificar si el año está dentro del rango permitido
-            If seasonYear < 1974 OrElse seasonYear > 2024 Then
-                Throw New Exception("The selected year must be between 1974 and 2024.")
-            End If
-            If numberTeams < 5 AndAlso numberTeams > 10 Then
-                Throw New Exception("The selected value must be between 5 and 10.")
-            End If
-
-            txtNumberOfGPs.Enabled = True
-            lblDriver1.Enabled = True
-            lblDriver2.Enabled = True
-            btnClear.Enabled = True
-            btnInsert.Enabled = True
-            btnDone.Enabled = True
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-
-            ' Si hay un error, deshabilita los controles adicionales
-            btnClear.Enabled = False
-            btnInsert.Enabled = False
-            btnDone.Enabled = False
-        End Try
     End Sub
 
     Private Sub btnGenerateSeasonInfo_Click(sender As Object, e As EventArgs) Handles btnGenerateSeasonInfo.Click
         Dim minTeams As Integer
         Dim maxTeams As Integer
+        Dim minGPs As Integer
+        Dim maxGPs As Integer
 
         Try
-            ' Obtener el año ingresado por el usuario
-            seasonYear = Integer.Parse(txtSeasonYear.Text)
-            ' si combo box ha sido seleccionado, obtener el número de equipos
-            If selectMinBox.SelectedIndex > 0 AndAlso selectMaxBox.SelectedIndex > 0 Then
+
+            TxtBxseasonYear = Integer.Parse(txtSeasonYear.Text)
+            'Checks whether the user has selected a valid range of teams
+            If selectMinBox.SelectedIndex > 0 AndAlso selectMaxBox.SelectedIndex > 0 AndAlso selectMinBox.SelectedIndex < selectMaxBox.SelectedIndex Then
                 minTeams = selectMinBox.SelectedIndex
                 maxTeams = selectMaxBox.SelectedIndex
             Else
@@ -93,12 +56,21 @@
             ' random number of teams between minTeams and maxTeams
             numberTeams = New Random().Next(minTeams, maxTeams + 1)
 
-            ' Verificar si el año está dentro del rango permitido
-            If seasonYear < 1970 OrElse seasonYear > 2024 Then
-                Throw New Exception("El año seleccionado debe estar entre 1970 y 2024.")
+            'We do the same with the controls of Combobox for the number of GPs
+            If CmbBoxMinGPs.SelectedIndex > 0 AndAlso CmbBoxMaxGPs.SelectedIndex > 0 AndAlso CmbBoxMinGPs.SelectedIndex < CmbBoxMaxGPs.SelectedIndex Then
+                minGPs = CmbBoxMinGPs.SelectedIndex
+                maxGPs = CmbBoxMaxGPs.SelectedIndex
+            Else
+                minGPs = 10
+                maxGPs = 20
             End If
 
-            ' Enable controls for selecting drivers
+            ' Verificar si el año está dentro del rango permitido
+            If TxtBxseasonYear < 1970 OrElse TxtBxseasonYear > 2024 Then
+                Throw New Exception("The year selected must be between 1970 and 2024.")
+            End If
+
+
             lblDriver1.Enabled = True
             lblDriver2.Enabled = True
 
@@ -109,7 +81,8 @@
             FetchGPsFromDatabase()
 
             ' Enable controls for selecting GPs
-            txtNumberOfGPs.Enabled = True
+            CmbBoxMaxGPs.Enabled = True
+            CmbBoxMinGPs.Enabled = True
             btnClear.Enabled = True
             btnInsert.Enabled = True
             btnDone.Enabled = True
@@ -117,7 +90,8 @@
             MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
             ' Si hay un error, deshabilita los controles adicionales
-            txtNumberOfGPs.Enabled = False
+            CmbBoxMaxGPs.Enabled = False
+            CmbBoxMinGPs.Enabled = False
             lblDriver2.Enabled = False
             lblDriver2.Enabled = False
             btnClear.Enabled = False
@@ -128,27 +102,19 @@
 
     Private Sub btnInsert_Click(sender As Object, e As EventArgs) Handles btnInsert.Click
         Try
-            ' Verificar que no se hayan insertado todos los equipos deseados
             If numTeamsInserted < numberTeams Then
-                ' Insertar el contrato (You need to implement this method)
-                ' For demonstration purpose, I'll just show the selected drivers
-                MessageBox.Show($"Equipo {numTeamsInserted + 1}: {lblDriver2.Text} y {lblDriver2.Text}")
+                MessageBox.Show($"Team {numTeamsInserted + 1}: {lblDriver2.Text} and {lblDriver2.Text}")
 
                 ' Incrementar el contador de equipos insertados
                 numTeamsInserted += 1
 
                 ' Mostrar mensaje si se han insertado todos los equipos deseados
                 If numTeamsInserted = numberTeams Then
-                    MessageBox.Show("Todos los equipos han sido insertados.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    ' Deshabilitar las cajas de texto y el botón de inserción
-                    txtNumberOfGPs.Enabled = False
+                    MessageBox.Show("All teams have been created.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     btnInsert.Enabled = False
                 Else
-                    ' Limpiar las cajas de texto para insertar el siguiente equipo
-                    txtNumberOfGPs.Clear()
                     lblDriver2.Text = ""
                     lblDriver2.Text = ""
-                    txtNumberOfGPs.Focus() ' Poner el foco en el campo de equipo para la siguiente inserción
                 End If
             End If
         Catch ex As Exception
@@ -159,6 +125,8 @@
     ' Method to get random teams from the database, the input is the number of teams to generate 
     Private Sub FetchTeamsFromDatabase(ByVal numTeams As Integer)
         TeDAO.ReadAll()
+        'Now the Team variable has stored all Teams in "Teams" collection, which now contain its contracts asociated to it
+
         Dim i As Integer
         Dim team As Team
         Dim teams As Collection
@@ -168,12 +136,12 @@
         ' Clear the list before adding new teams
         teamsList.Clear()
 
-        ' Get all teams from the database
+        'All teams from the database
         teams = TeDAO.Teams
 
-        ' If there are teams in the database
+        'If there are teams in the database
         If teams.Count > 0 Then
-            ' Get random teams from the database
+            'Get random teams from the database
             For i = 0 To numTeams - 1
                 aux = DirectCast(teams(random.Next(teams.Count)), Collection)
                 team = New Team(Integer.Parse(aux(1).ToString), aux(2).ToString, Integer.Parse(aux(3).ToString), Date.Parse(aux(4).ToString))
@@ -181,8 +149,6 @@
                 teamsList.Add(team.TeamName)
             Next
         End If
-
-
     End Sub
 
     ' Method to fetch drivers from the database (You need to implement this method)
@@ -233,7 +199,7 @@
         frmFormulaOne.Enabled = True
     End Sub
 
-    Private Sub txtNumberOfGPs_TextChanged(sender As Object, e As EventArgs) Handles txtNumberOfGPs.TextChanged
+    Private Sub txtNumberOfGPs_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 

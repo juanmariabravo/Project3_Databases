@@ -26,7 +26,6 @@ Partial Class frmSeasons
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnGenerateSeasonInfo = New System.Windows.Forms.Button()
-        Me.txtNumberOfGPs = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnInsert = New System.Windows.Forms.Button()
@@ -43,6 +42,8 @@ Partial Class frmSeasons
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lblDriver2 = New System.Windows.Forms.Label()
         Me.lblDriver1 = New System.Windows.Forms.Label()
+        Me.CmbBoxMaxGPs = New System.Windows.Forms.ComboBox()
+        Me.CmbBoxMinGPs = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'ContextMenuStrip1
@@ -71,18 +72,10 @@ Partial Class frmSeasons
         Me.btnGenerateSeasonInfo.Text = "Generate Season Information"
         Me.btnGenerateSeasonInfo.UseVisualStyleBackColor = True
         '
-        'txtNumberOfGPs
-        '
-        Me.txtNumberOfGPs.Location = New System.Drawing.Point(40, 347)
-        Me.txtNumberOfGPs.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtNumberOfGPs.Name = "txtNumberOfGPs"
-        Me.txtNumberOfGPs.Size = New System.Drawing.Size(196, 22)
-        Me.txtNumberOfGPs.TabIndex = 4
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(40, 309)
+        Me.Label2.Location = New System.Drawing.Point(37, 240)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(432, 16)
@@ -132,7 +125,7 @@ Partial Class frmSeasons
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(40, 147)
+        Me.Label5.Location = New System.Drawing.Point(40, 142)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(481, 16)
@@ -153,7 +146,7 @@ Partial Class frmSeasons
         'selectMinBox
         '
         Me.selectMinBox.FormattingEnabled = True
-        Me.selectMinBox.Location = New System.Drawing.Point(40, 185)
+        Me.selectMinBox.Location = New System.Drawing.Point(40, 177)
         Me.selectMinBox.Name = "selectMinBox"
         Me.selectMinBox.Size = New System.Drawing.Size(121, 24)
         Me.selectMinBox.TabIndex = 27
@@ -162,7 +155,7 @@ Partial Class frmSeasons
         'selectMaxBox
         '
         Me.selectMaxBox.FormattingEnabled = True
-        Me.selectMaxBox.Location = New System.Drawing.Point(40, 231)
+        Me.selectMaxBox.Location = New System.Drawing.Point(205, 177)
         Me.selectMaxBox.Name = "selectMaxBox"
         Me.selectMaxBox.Size = New System.Drawing.Size(121, 24)
         Me.selectMaxBox.TabIndex = 28
@@ -238,11 +231,31 @@ Partial Class frmSeasons
         Me.lblDriver1.TabIndex = 35
         Me.lblDriver1.Text = "________"
         '
+        'CmbBoxMaxGPs
+        '
+        Me.CmbBoxMaxGPs.FormattingEnabled = True
+        Me.CmbBoxMaxGPs.Location = New System.Drawing.Point(205, 276)
+        Me.CmbBoxMaxGPs.Name = "CmbBoxMaxGPs"
+        Me.CmbBoxMaxGPs.Size = New System.Drawing.Size(121, 24)
+        Me.CmbBoxMaxGPs.TabIndex = 38
+        Me.CmbBoxMaxGPs.Text = "Max"
+        '
+        'CmbBoxMinGPs
+        '
+        Me.CmbBoxMinGPs.FormattingEnabled = True
+        Me.CmbBoxMinGPs.Location = New System.Drawing.Point(40, 276)
+        Me.CmbBoxMinGPs.Name = "CmbBoxMinGPs"
+        Me.CmbBoxMinGPs.Size = New System.Drawing.Size(121, 24)
+        Me.CmbBoxMinGPs.TabIndex = 37
+        Me.CmbBoxMinGPs.Text = "Min"
+        '
         'frmSeasons
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1177, 554)
+        Me.Controls.Add(Me.CmbBoxMaxGPs)
+        Me.Controls.Add(Me.CmbBoxMinGPs)
         Me.Controls.Add(Me.lblDriver2)
         Me.Controls.Add(Me.lblDriver1)
         Me.Controls.Add(Me.Label4)
@@ -259,7 +272,6 @@ Partial Class frmSeasons
         Me.Controls.Add(Me.btnInsert)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.txtNumberOfGPs)
         Me.Controls.Add(Me.btnGenerateSeasonInfo)
         Me.Controls.Add(Me.Label1)
         Me.Margin = New System.Windows.Forms.Padding(4)
@@ -272,7 +284,6 @@ Partial Class frmSeasons
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents Label1 As Label
     Friend WithEvents btnGenerateSeasonInfo As Button
-    Friend WithEvents txtNumberOfGPs As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents btnClear As Button
     Friend WithEvents btnInsert As Button
@@ -289,4 +300,6 @@ Partial Class frmSeasons
     Friend WithEvents Label4 As Label
     Friend WithEvents lblDriver2 As Label
     Friend WithEvents lblDriver1 As Label
+    Friend WithEvents CmbBoxMaxGPs As ComboBox
+    Friend WithEvents CmbBoxMinGPs As ComboBox
 End Class
