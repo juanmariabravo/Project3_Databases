@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Country", "People\Country.vbproj", "{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FormulaOne", "People\FormulaOne.vbproj", "{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,171 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Documentos\\Project3_Databases\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\documentos\\project3_databases\\people\\presentation\\frmseasons.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\presentation\\frmseasons.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\Country.vbproj|D:\\Documentos\\Project3_Databases\\people\\presentation\\frmseasons.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\Country.vbproj|solutionrelative:people\\presentation\\frmseasons.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\documentos\\project3_databases\\people\\domain\\seasondao.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\domain\\seasondao.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\Country.vbproj|D:\\Documentos\\Project3_Databases\\people\\domain\\season.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\Country.vbproj|solutionrelative:people\\domain\\season.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\Country.vbproj|D:\\Documentos\\Project3_Databases\\people\\domain\\team.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\Country.vbproj|solutionrelative:people\\domain\\team.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\Country.vbproj|D:\\Documentos\\Project3_Databases\\people\\domain\\contract.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\Country.vbproj|solutionrelative:people\\domain\\contract.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\Country.vbproj|D:\\Documentos\\Project3_Databases\\people\\presentation\\frmseasons.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\Country.vbproj|solutionrelative:people\\presentation\\frmseasons.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\Country.vbproj|D:\\Documentos\\Project3_Databases\\people\\presentation\\frmformulaone.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\Country.vbproj|solutionrelative:people\\presentation\\frmformulaone.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\documentos\\project3_databases\\people\\domain\\teamdao.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\domain\\teamdao.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 321,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmSeasons.vb",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmSeasons.vb",
+              "RelativeDocumentMoniker": "People\\Presentation\\frmSeasons.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmSeasons.vb",
+              "RelativeToolTip": "People\\Presentation\\frmSeasons.vb",
+              "ViewState": "AQIAAIgAAAAAAAAAAADwv48AAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-17T19:02:38.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SeasonDAO.vb",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Domain\\SeasonDAO.vb",
+              "RelativeDocumentMoniker": "People\\Domain\\SeasonDAO.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Domain\\SeasonDAO.vb",
+              "RelativeToolTip": "People\\Domain\\SeasonDAO.vb",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAYwBQAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-17T18:17:39.775Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Season.vb",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Domain\\Season.vb",
+              "RelativeDocumentMoniker": "People\\Domain\\Season.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Domain\\Season.vb",
+              "RelativeToolTip": "People\\Domain\\Season.vb",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAgwBMAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-17T18:17:19.393Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmSeasons.vb",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmSeasons.vb",
+              "RelativeDocumentMoniker": "People\\Presentation\\frmSeasons.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmSeasons.vb",
+              "RelativeToolTip": "People\\Presentation\\frmSeasons.vb",
+              "ViewState": "AQIAAJAAAAAAAAAAAAAtwKMAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-17T16:16:47.048Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmSeasons.vb [Dise\u00F1o]",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmSeasons.vb",
+              "RelativeDocumentMoniker": "People\\Presentation\\frmSeasons.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmSeasons.vb [Dise\u00F1o]",
+              "RelativeToolTip": "People\\Presentation\\frmSeasons.vb [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-17T16:16:23.193Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "frmFormulaOne.vb [Dise\u00F1o]",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmFormulaOne.vb",
+              "RelativeDocumentMoniker": "People\\Presentation\\frmFormulaOne.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmFormulaOne.vb [Dise\u00F1o]",
+              "RelativeToolTip": "People\\Presentation\\frmFormulaOne.vb [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-17T16:16:17.161Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 79,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TeamDAO.vb",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Domain\\TeamDAO.vb",
+              "RelativeDocumentMoniker": "People\\Domain\\TeamDAO.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Domain\\TeamDAO.vb",
+              "RelativeToolTip": "People\\Domain\\TeamDAO.vb",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAQwAoAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-17T16:53:35.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Team.vb",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Domain\\Team.vb",
+              "RelativeDocumentMoniker": "People\\Domain\\Team.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Domain\\Team.vb",
+              "RelativeToolTip": "People\\Domain\\Team.vb",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAwwBIAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-17T16:44:26.302Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Contract.vb",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Domain\\Contract.vb",
+              "RelativeDocumentMoniker": "People\\Domain\\Contract.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Domain\\Contract.vb",
+              "RelativeToolTip": "People\\Domain\\Contract.vb",
+              "ViewState": "AQIAAAYAAAAAAAAAAAA7wAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-17T16:55:12.048Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

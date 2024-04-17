@@ -2,6 +2,7 @@
     Private contract As Contract
     Private TxtBxseasonYear As Integer
     Private numberTeams As Integer
+    Private numberGPs As Integer
     Private numTeamsInserted As Integer ' Number of teams inserted 
     Private teamsList As New List(Of String)() ' List to store team names fetched from database
     Private driversList As New List(Of String)() ' List to store driver names fetched from database
@@ -23,6 +24,8 @@
     Private Sub frmSeasons_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         btnInsert.Enabled = False
         btnDone.Enabled = False
+        lstTeams.Enabled = False
+        lstGPs.Enabled = False
 
         ' Initialize combo box with integers from 5 to 10
         For i As Integer = 5 To 10
@@ -30,9 +33,21 @@
             selectMaxBox.Items.Add(i)
         Next
 
+        ' Initialize combo box with integers from 10 to 20
+        For i As Integer = 10 To 20
+            CmbBoxMinGPs.Items.Add(i)
+            CmbBoxMaxGPs.Items.Add(i)
+        Next
+
     End Sub
     Private Sub LstSeasonTeams_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstSeasons.SelectedIndexChanged
+        Try
+            If lstSeasons.SelectedIndex > 0 Then
 
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub btnGenerateSeasonInfo_Click(sender As Object, e As EventArgs) Handles btnGenerateSeasonInfo.Click
@@ -42,6 +57,7 @@
         Dim maxGPs As Integer
 
         Try
+            'Take all of the info for the season creation --------------------------------
 
             TxtBxseasonYear = Integer.Parse(txtSeasonYear.Text)
             'Checks whether the user has selected a valid range of teams
@@ -53,7 +69,7 @@
                 maxTeams = 10
             End If
 
-            ' random number of teams between minTeams and maxTeams
+            'Take random number of teams between minTeams and maxTeams
             numberTeams = New Random().Next(minTeams, maxTeams + 1)
 
             'We do the same with the controls of Combobox for the number of GPs
@@ -64,6 +80,8 @@
                 minGPs = 10
                 maxGPs = 20
             End If
+            'Take random number of GPs between minGPs and maxGPs
+            numberGPs = New Random().Next(minGPs, maxGPs + 1)
 
             ' Verificar si el año está dentro del rango permitido
             If TxtBxseasonYear < 1970 OrElse TxtBxseasonYear > 2024 Then
@@ -74,8 +92,7 @@
             lblDriver1.Enabled = True
             lblDriver2.Enabled = True
 
-            ' Generate teams, drivers, and GPs lists from the database
-            ' For demonstration purpose, I'll populate them with some dummy data
+            '
             FetchTeamsFromDatabase(numberTeams)
             FetchDriversFromDatabase(numberTeams * 2)
             FetchGPsFromDatabase()
@@ -142,12 +159,12 @@
         'If there are teams in the database
         If teams.Count > 0 Then
             'Get random teams from the database
-            For i = 0 To numTeams - 1
-                aux = DirectCast(teams(random.Next(teams.Count)), Collection)
-                team = New Team(Integer.Parse(aux(1).ToString), aux(2).ToString, Integer.Parse(aux(3).ToString), Date.Parse(aux(4).ToString))
-                team.ReadTeam()
-                teamsList.Add(team.TeamName)
-            Next
+            'For i = 0 To numTeams - 1
+            'aux = DirectCast(teams(random.Next(teams.Count)), Collection)
+            'team = New Team(Integer.Parse(aux(1).ToString), aux(2).ToString, Integer.Parse(aux(3).ToString), Date.Parse(aux(4).ToString))
+            'team.ReadTeam()
+            'teamsList.Add(team.TeamName)
+            'Next
         End If
     End Sub
 
