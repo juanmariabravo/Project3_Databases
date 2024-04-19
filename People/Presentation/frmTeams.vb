@@ -24,7 +24,7 @@
     Private Sub LstTeams_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstTeams.SelectedIndexChanged
         Try
             If lstTeams.SelectedIndex > 0 Then
-                te = New Team(Integer.Parse(lstTeams.SelectedItem.ToString), te.TeamName, te.TeamCountry, te.CreationDate)
+                te = New Team(Integer.Parse(lstTeams.SelectedItem.ToString))
                 te.ReadTeam()
                 txtID.Text = te.TeamID.ToString
                 txtName.Text = te.TeamName
@@ -40,7 +40,11 @@
     Private Sub BtnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Try
             If lstTeams.SelectedIndex > 0 Then
-                te = New Team(Integer.Parse(txtID.Text), txtName.Text, Integer.Parse(txtcountryid.Text), Date.Parse(txtCreationDate.Text))
+                te = New Team(Integer.Parse(txtID.Text))
+                te.TeamName = txtName.Text
+                te.TeamCountry = txtcountryid.Text
+                te.CreationDate = Date.Parse(txtCreationDate.Text)
+
                 te.InsertTeam()
                 lstTeams.Items.Clear()
                 te.ReadAllTeams()
@@ -56,7 +60,11 @@
 
     Private Sub BtnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         Try
-            te = New Team(Integer.Parse(txtID.Text), txtName.Text, Integer.Parse(txtcountryid.Text), Date.Parse(txtCreationDate.Text))
+            te = New Team(Integer.Parse(txtID.Text))
+            te.TeamName = txtName.Text
+            te.TeamCountry = txtcountryid.Text
+            te.CreationDate = Date.Parse(txtCreationDate.Text)
+
             te.UpdateTeam()
             lstTeams.Items.Clear()
             te.ReadAllTeams()
@@ -70,7 +78,7 @@
 
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         Try
-            te = New Team(Integer.Parse(txtID.Text), txtName.Text, Integer.Parse(txtcountryid.Text), Date.Parse(txtCreationDate.Text))
+            te = New Team(Integer.Parse(txtID.Text))
             te.DeleteTeam()
             lstTeams.Items.Clear()
             te.ReadAllTeams()

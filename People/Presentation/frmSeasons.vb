@@ -24,9 +24,10 @@
     Private Sub frmSeasons_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         btnInsert.Enabled = False
         btnDone.Enabled = False
-        lstTeams.Enabled = False
+        lstContracts.Enabled = False
         lstGPs.Enabled = False
-
+        lblDriver1.Enabled = False
+        lblDriver2.Enabled = False
         ' Initialize combo box with integers from 5 to 10
         For i As Integer = 5 To 10
             selectMinBox.Items.Add(i)
@@ -38,6 +39,12 @@
             CmbBoxMinGPs.Items.Add(i)
             CmbBoxMaxGPs.Items.Add(i)
         Next
+        'Hacer que en la combobox no se pueda escribir, solo seleccionar el valor, pero que tenga un valor escrito en la opcion por defecto
+        selectMinBox.DropDownStyle = ComboBoxStyle.DropDownList
+        selectMaxBox.DropDownStyle = ComboBoxStyle.DropDownList
+        CmbBoxMinGPs.DropDownStyle = ComboBoxStyle.DropDownList
+        CmbBoxMaxGPs.DropDownStyle = ComboBoxStyle.DropDownList
+
 
     End Sub
     Private Sub LstSeasonTeams_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstSeasons.SelectedIndexChanged
@@ -188,7 +195,7 @@
             ' Get random drivers from the database
             For i = 0 To numDrivers - 1
                 aux = DirectCast(drivers(random.Next(drivers.Count)), Collection)
-                driver = New Driver(Integer.Parse(aux(1).ToString), aux(2).ToString, aux(3).ToString, Integer.Parse(aux(4).ToString))
+                driver = New Driver(Integer.Parse(aux(1).ToString))
                 driver.ReadDriver()
                 driversList.Add(driver.DriverName)
             Next
@@ -216,9 +223,7 @@
         frmFormulaOne.Enabled = True
     End Sub
 
-    Private Sub txtNumberOfGPs_TextChanged(sender As Object, e As EventArgs)
 
-    End Sub
 
 
 End Class

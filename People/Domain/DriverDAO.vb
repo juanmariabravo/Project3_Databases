@@ -6,11 +6,13 @@
     End Sub
 
     Public Sub ReadAll()
+        Dim d As Driver
         Dim col, aux As Collection
         col = DBBroker.GetBroker().Read("SELECT * FROM Drivers ORDER BY DriverID;")
         For Each aux In col
-            Dim d As New Driver(Integer.Parse(aux(1).ToString()), aux(2).ToString(), aux(3).ToString(), Integer.Parse(aux(4).ToString()))
-            d.ReadDriver()
+            d = New Driver(Integer.Parse(aux(1).ToString()))
+            'Here we read for assigning the data with the Read method
+            d.DrvDAO.Read(d)
             Me.Drivers.Add(d)
         Next
     End Sub
@@ -22,7 +24,7 @@
         For Each aux In col
             d.DriverName = aux(2).ToString
             d.DriverSurname = aux(3).ToString
-            d.DriverCountry = Integer.Parse(aux(4).ToString)
+            d.DriverCountry = aux(4).ToString
         Next
     End Sub
 
@@ -52,7 +54,7 @@
             driver.DriverID = Integer.Parse(row(0).ToString())
             driver.DriverName = row(1).ToString()
             driver.DriverSurname = row(2).ToString()
-            driver.DriverCountry = Integer.Parse(row(3).ToString())
+            driver.DriverCountry = row(3).ToString()
             drivers.Add(driver)
         Next
 

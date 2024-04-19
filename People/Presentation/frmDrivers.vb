@@ -18,7 +18,7 @@
 
             lstDrivers.Items.Clear()
             For Each driver In driver.DrvDAO.Drivers
-                lstDrivers.Items.Add(driver.DriverName & driver.DriverSurname)
+                lstDrivers.Items.Add(driver.DriverName & " " & driver.DriverSurname)
             Next
 
             btnAddDriver.Enabled = True
@@ -33,7 +33,7 @@
     Private Sub lstDrivers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstDrivers.SelectedIndexChanged
         Try
             If lstDrivers.SelectedIndex > 0 Then
-                driver = New Driver(Integer.Parse(lstDrivers.SelectedItem.ToString), "", "", 0)
+                driver = New Driver(Integer.Parse(lstDrivers.SelectedItem.ToString))
                 driver.ReadDriver()
                 txtBxDriverID.Text = driver.DriverID.ToString()
                 txtBxDriverName.Text = driver.DriverName
@@ -48,7 +48,10 @@
 
     Private Sub btnAddDriver_Click(sender As Object, e As EventArgs) Handles btnAddDriver.Click
         Try
-            driver = New Driver(Integer.Parse(txtBxDriverID.Text), txtBxDriverName.Text, txtBxDriverSurname.Text, Integer.Parse(txtBxDriverCountry.Text))
+            driver = New Driver(Integer.Parse(txtBxDriverID.Text))
+            driver.DriverName = txtBxDriverName.Text
+            driver.DriverSurname = txtBxDriverSurname.Text
+            driver.DriverCountry = txtBxDriverCountry.Text
             driver.InsertDriver()
             lstDrivers.Items.Clear()
             driver.ReadAllDrivers()
@@ -62,7 +65,7 @@
 
     Private Sub btnDeleteDriver_Click(sender As Object, e As EventArgs) Handles btnDeleteDriver.Click
         Try
-            driver = New Driver(Integer.Parse(txtBxDriverID.Text), txtBxDriverName.Text, txtBxDriverSurname.Text, Integer.Parse(txtBxDriverCountry.Text))
+            driver = New Driver(Integer.Parse(txtBxDriverID.Text))
             driver.DeleteDriver()
             lstDrivers.Items.Clear()
             driver.ReadAllDrivers()
@@ -76,7 +79,10 @@
 
     Private Sub btnUpdateDriver_Click(sender As Object, e As EventArgs) Handles btnUpdateDriver.Click
         Try
-            driver = New Driver(Integer.Parse(txtBxDriverID.Text), txtBxDriverName.Text, txtBxDriverSurname.Text, Integer.Parse(txtBxDriverCountry.Text))
+            driver = New Driver(Integer.Parse(txtBxDriverID.Text))
+            driver.DriverName = txtBxDriverName.Text
+            driver.DriverSurname = txtBxDriverSurname.Text
+            driver.DriverCountry = txtBxDriverCountry.Text
             driver.UpdateDriver()
             lstDrivers.Items.Clear()
             driver.ReadAllDrivers()

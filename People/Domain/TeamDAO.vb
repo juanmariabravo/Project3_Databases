@@ -7,13 +7,11 @@
 
     Public Sub ReadAll()
         Dim te As Team
-        Dim col, contractsRead, aux As Collection
+        Dim col, aux As Collection
         col = DBBroker.GetBroker().Read("SELECT * FROM Teams ORDER BY TeamID;")
         If col.Count > 0 Then
             For Each aux In col
-                'For each team, we read its contracts, and add them to the team
-                contractsRead = DBBroker.GetBroker().Read("SELECT * FROM Contracts c WHERE c.TeamID = " & aux(1).ToString & ";")
-                te = New Team(Integer.Parse(aux(1).ToString), aux(2).ToString, Integer.Parse(aux(3).ToString), Date.Parse(aux(4).ToString), contractsRead)
+                te = New Team(Integer.Parse(aux(1).ToString))
                 te.ReadTeam()
                 Me.Teams.Add(te)
             Next
@@ -23,17 +21,23 @@
 
     Public Sub Read(ByRef te As Team)
         Dim col As Collection
+        Dim colContracts As Collection
         Dim aux As Collection
         col = DBBroker.GetBroker().Read("SELECT * FROM Teams WHERE TeamID='" & te.TeamID & "';")
-
         If col.Count > 0 Then
             For Each aux In col
+                te.TeamID = Integer.Parse(aux(1).ToString)
                 te.TeamName = aux(2).ToString
-                te.TeamCountry = Integer.Parse(aux(3).ToString)
+                te.TeamCountry = aux(3).ToString
             Next
 
+            colContracts = DBBroker.GetBroker().Read("SELECT * FROM Contracts WHERE team = " & te.TeamID & ";")
+            te.Contracts = colContracts
+
         End If
+
     End Sub
+
 
 
     Public Function Insert(ByVal te As Team) As Integer

@@ -14,7 +14,8 @@
 
         If col.Count > 0 Then
             For Each aux In col
-                gp = New GP(Integer.Parse(aux(1).ToString), aux(2).ToString, Integer.Parse(aux(3).ToString))
+                gp = New GP(Integer.Parse(aux(1).ToString))
+                'This method is used for assigning the values to the GP object
                 gp.ReadGP()
                 Me.GPs.Add(gp)
             Next
@@ -30,7 +31,7 @@
         If col.Count > 0 Then
             For Each aux In col
                 gp.GPName = aux(2).ToString
-                gp.Countryid = Integer.Parse(aux(3).ToString)
+                gp.Countryid = aux(3).ToString
             Next
 
         End If

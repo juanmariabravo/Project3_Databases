@@ -26,17 +26,17 @@ Partial Class frmSeasons
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnGenerateSeasonInfo = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblNumGPs = New System.Windows.Forms.Label()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnInsert = New System.Windows.Forms.Button()
         Me.btnDone = New System.Windows.Forms.Button()
         Me.lstSeasons = New System.Windows.Forms.ListBox()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblNumTeams = New System.Windows.Forms.Label()
         Me.btnMainMenuSeasons = New System.Windows.Forms.Button()
         Me.selectMinBox = New System.Windows.Forms.ComboBox()
         Me.selectMaxBox = New System.Windows.Forms.ComboBox()
         Me.txtSeasonYear = New System.Windows.Forms.TextBox()
-        Me.lstTeams = New System.Windows.Forms.ListBox()
+        Me.lstContracts = New System.Windows.Forms.ListBox()
         Me.lstGPs = New System.Windows.Forms.ListBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -72,15 +72,15 @@ Partial Class frmSeasons
         Me.btnGenerateSeasonInfo.Text = "Generate Season Information"
         Me.btnGenerateSeasonInfo.UseVisualStyleBackColor = True
         '
-        'Label2
+        'lblNumGPs
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(37, 240)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(432, 16)
-        Me.Label2.TabIndex = 7
-        Me.Label2.Text = " Introduce the number of GPs to be contested in the season (OPTIONAL)"
+        Me.lblNumGPs.Location = New System.Drawing.Point(37, 240)
+        Me.lblNumGPs.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblNumGPs.Name = "lblNumGPs"
+        Me.lblNumGPs.Size = New System.Drawing.Size(453, 37)
+        Me.lblNumGPs.TabIndex = 7
+        Me.lblNumGPs.Text = " Introduce the number of GPs to be contested in the season (OPTIONAL). Left Selec" &
+    "ts the minimum number, right chooses the maximum."
         '
         'btnClear
         '
@@ -122,15 +122,15 @@ Partial Class frmSeasons
         Me.lstSeasons.Size = New System.Drawing.Size(248, 452)
         Me.lstSeasons.TabIndex = 13
         '
-        'Label5
+        'lblNumTeams
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(40, 142)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(481, 16)
-        Me.Label5.TabIndex = 15
-        Me.Label5.Text = "Introduce the minimum and maximum number of participating teams (OPTIONAL)"
+        Me.lblNumTeams.Location = New System.Drawing.Point(37, 126)
+        Me.lblNumTeams.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblNumTeams.Name = "lblNumTeams"
+        Me.lblNumTeams.Size = New System.Drawing.Size(490, 32)
+        Me.lblNumTeams.TabIndex = 15
+        Me.lblNumTeams.Text = "Introduce the minimum and maximum number of participating teams (OPTIONAL). Left " &
+    "Selects the minimum number, right chooses the maximum."
         '
         'btnMainMenuSeasons
         '
@@ -169,14 +169,14 @@ Partial Class frmSeasons
         Me.txtSeasonYear.Size = New System.Drawing.Size(138, 22)
         Me.txtSeasonYear.TabIndex = 29
         '
-        'lstTeams
+        'lstContracts
         '
-        Me.lstTeams.FormattingEnabled = True
-        Me.lstTeams.ItemHeight = 16
-        Me.lstTeams.Location = New System.Drawing.Point(814, 44)
-        Me.lstTeams.Name = "lstTeams"
-        Me.lstTeams.Size = New System.Drawing.Size(162, 180)
-        Me.lstTeams.TabIndex = 30
+        Me.lstContracts.FormattingEnabled = True
+        Me.lstContracts.ItemHeight = 16
+        Me.lstContracts.Location = New System.Drawing.Point(814, 44)
+        Me.lstContracts.Name = "lstContracts"
+        Me.lstContracts.Size = New System.Drawing.Size(162, 180)
+        Me.lstContracts.TabIndex = 30
         '
         'lstGPs
         '
@@ -234,7 +234,7 @@ Partial Class frmSeasons
         'CmbBoxMaxGPs
         '
         Me.CmbBoxMaxGPs.FormattingEnabled = True
-        Me.CmbBoxMaxGPs.Location = New System.Drawing.Point(205, 276)
+        Me.CmbBoxMaxGPs.Location = New System.Drawing.Point(205, 289)
         Me.CmbBoxMaxGPs.Name = "CmbBoxMaxGPs"
         Me.CmbBoxMaxGPs.Size = New System.Drawing.Size(121, 24)
         Me.CmbBoxMaxGPs.TabIndex = 38
@@ -243,7 +243,7 @@ Partial Class frmSeasons
         'CmbBoxMinGPs
         '
         Me.CmbBoxMinGPs.FormattingEnabled = True
-        Me.CmbBoxMinGPs.Location = New System.Drawing.Point(40, 276)
+        Me.CmbBoxMinGPs.Location = New System.Drawing.Point(40, 289)
         Me.CmbBoxMinGPs.Name = "CmbBoxMinGPs"
         Me.CmbBoxMinGPs.Size = New System.Drawing.Size(121, 24)
         Me.CmbBoxMinGPs.TabIndex = 37
@@ -261,17 +261,17 @@ Partial Class frmSeasons
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.lstGPs)
-        Me.Controls.Add(Me.lstTeams)
+        Me.Controls.Add(Me.lstContracts)
         Me.Controls.Add(Me.txtSeasonYear)
         Me.Controls.Add(Me.selectMaxBox)
         Me.Controls.Add(Me.selectMinBox)
         Me.Controls.Add(Me.btnMainMenuSeasons)
-        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.lblNumTeams)
         Me.Controls.Add(Me.lstSeasons)
         Me.Controls.Add(Me.btnDone)
         Me.Controls.Add(Me.btnInsert)
         Me.Controls.Add(Me.btnClear)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lblNumGPs)
         Me.Controls.Add(Me.btnGenerateSeasonInfo)
         Me.Controls.Add(Me.Label1)
         Me.Margin = New System.Windows.Forms.Padding(4)
@@ -284,17 +284,17 @@ Partial Class frmSeasons
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents Label1 As Label
     Friend WithEvents btnGenerateSeasonInfo As Button
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lblNumGPs As Label
     Friend WithEvents btnClear As Button
     Friend WithEvents btnInsert As Button
     Friend WithEvents btnDone As Button
     Friend WithEvents lstSeasons As ListBox
-    Friend WithEvents Label5 As Label
+    Friend WithEvents lblNumTeams As Label
     Friend WithEvents btnMainMenuSeasons As Button
     Friend WithEvents selectMinBox As ComboBox
     Friend WithEvents selectMaxBox As ComboBox
     Friend WithEvents txtSeasonYear As TextBox
-    Friend WithEvents lstTeams As ListBox
+    Friend WithEvents lstContracts As ListBox
     Friend WithEvents lstGPs As ListBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label

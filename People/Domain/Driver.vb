@@ -2,7 +2,7 @@
     Public Property DriverID As Integer
     Public Property DriverName As String
     Public Property DriverSurname As String
-    Public Property DriverCountry As Integer
+    Public Property DriverCountry As String
 
     Public ReadOnly Property DrvDAO As DriverDAO
 
@@ -10,12 +10,8 @@
         Me.DrvDAO = New DriverDAO
     End Sub
 
-    Public Sub New(ByVal id As Integer, ByVal name As String, ByVal surname As String, ByVal country As Integer)
+    Public Sub New(ByVal id As Integer)
         Me.DriverID = id
-        Me.DriverName = name
-        Me.DriverSurname = surname
-        Me.DriverCountry = country
-
         Me.DrvDAO = New DriverDAO
     End Sub
 

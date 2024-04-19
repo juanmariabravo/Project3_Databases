@@ -2,7 +2,7 @@
 
     Public Property TeamID As Integer
     Public Property TeamName As String
-    Public Property TeamCountry As Integer
+    Public Property TeamCountry As String
     Public Property CreationDate As Date
 
     Public Property Contracts As Collection
@@ -12,12 +12,8 @@
         Me.TeDAO = New TeamDAO
     End Sub
 
-    Public Sub New(ByVal id As Integer, ByVal name As String, ByVal country As Integer, ByVal creaDate As Date, ContractList As Collection)
+    Public Sub New(ByVal id As Integer)
         Me.TeamID = id
-        Me.TeamName = name
-        Me.TeamCountry = country
-        Me.CreationDate = creaDate
-        Me.Contracts = ContractList
         Me.TeDAO = New TeamDAO
     End Sub
 

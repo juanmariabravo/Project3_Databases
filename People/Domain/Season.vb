@@ -12,8 +12,6 @@ Public Class Season
 
     Public Sub New(Year As Integer, Teams As Collection, GPs As Collection)
         Me.SeasonID = Year
-        Me.ListTeams = Teams
-        Me.ListGPs = GPs
         Me.SeasonDAO = New SeasonDAO
     End Sub
     Public Sub ReadAll()
@@ -22,6 +20,10 @@ Public Class Season
 
     Public Sub ReadSeason()
         Me.SeasonDAO.Read(Me)
+    End Sub
+
+    Public Sub InsertSeason(ByVal minTeams As Integer, ByVal maxTeams As Integer, ByVal minGPs As Integer, ByVal maxGPs As Integer)
+        Me.SeasonDAO.Insert(Me)
     End Sub
 
 

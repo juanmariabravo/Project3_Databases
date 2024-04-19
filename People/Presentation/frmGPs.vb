@@ -24,7 +24,7 @@
     Private Sub LstGPs_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstGPs.SelectedIndexChanged
         Try
             If lstGPs.SelectedIndex > 0 Then
-                gp = New GP(Integer.Parse(lstGPs.SelectedItem.ToString), "", gp.Countryid)
+                gp = New GP(Integer.Parse(lstGPs.SelectedItem.ToString))
                 gp.ReadGP()
                 txtID.Text = gp.GPID.ToString
                 txtName.Text = gp.GPName
@@ -38,7 +38,9 @@
 
     Private Sub BtnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Try
-            gp = New GP(Integer.Parse(txtID.Text), txtName.Text, Integer.Parse(txtcountryid.Text))
+            gp = New GP(Integer.Parse(txtID.Text))
+            gp.GPName = txtName.Text
+            gp.Countryid = txtcountryid.Text
             gp.InsertGP()
             lstGPs.Items.Clear()
             gp.ReadAllGPs()
@@ -52,7 +54,9 @@
 
     Private Sub BtnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         Try
-            gp = New GP(Integer.Parse(txtID.Text), txtName.Text, Integer.Parse(txtcountryid.Text))
+            gp = New GP(Integer.Parse(txtID.Text))
+            gp.GPName = txtName.Text
+            gp.Countryid = txtcountryid.Text
             gp.UpdateGP()
             lstGPs.Items.Clear()
             gp.ReadAllGPs()
@@ -66,7 +70,7 @@
 
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         Try
-            gp = New GP(Integer.Parse(txtID.Text), txtName.Text, Integer.Parse(txtcountryid.Text))
+            gp = New GP(Integer.Parse(txtID.Text))
             gp.DeleteGP()
             lstGPs.Items.Clear()
             gp.ReadAllGPs()

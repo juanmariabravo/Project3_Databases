@@ -1,7 +1,8 @@
 ﻿Public Class GP
     Public Property GPID As Integer
     Public Property GPName As String
-    Public Property Countryid As Integer
+    Public Property Countryid As String
+
 
     Public ReadOnly Property GpDAO As GPDAO
 
@@ -9,10 +10,8 @@
         Me.GpDAO = New GPDAO
     End Sub
 
-    Public Sub New(ByVal id As Integer, ByVal name As String, ByVal country As Integer)
+    Public Sub New(ByVal id As Integer)
         Me.GPID = id
-        Me.GPName = name
-        Me.Countryid = country
         Me.GpDAO = New GPDAO
     End Sub
 
