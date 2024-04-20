@@ -21,7 +21,8 @@
 
     Public Sub Read(ByRef te As Team)
         Dim col As Collection
-        Dim colContracts As Collection
+        Dim colContracts As New Collection
+        Dim objContracts As New List(Of Contract)
         Dim aux As Collection
         col = DBBroker.GetBroker().Read("SELECT * FROM Teams WHERE TeamID='" & te.TeamID & "';")
         If col.Count > 0 Then
@@ -29,10 +30,21 @@
                 te.TeamID = Integer.Parse(aux(1).ToString)
                 te.TeamName = aux(2).ToString
                 te.TeamCountry = aux(3).ToString
+                te.CreationDate = Date.Parse(aux(4).ToString)
             Next
 
             colContracts = DBBroker.GetBroker().Read("SELECT * FROM Contracts WHERE team = " & te.TeamID & ";")
-            te.Contracts = colContracts
+            'Meter en objContacts los contratos
+            For Each aux In colContracts
+                Dim c As New Contract()
+                c.Team = Integer.Parse(aux(1).ToString)
+                c.Season = Integer.Parse(aux(2).ToString)
+                c.Driver1 = Integer.Parse(aux(3).ToString)
+                c.Driver2 = Integer.Parse(aux(4).ToString)
+                objContracts.Add(c)
+            Next
+
+            te.Contracts = objContracts
 
         End If
 

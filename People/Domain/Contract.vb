@@ -6,11 +6,12 @@
 
     Public ReadOnly Property ContractDAO As ContractDAO
 
-    Public Sub New(team As Integer, season As Integer, driver1 As Integer, driver2 As Integer)
+    Public Sub New()
+        Me.ContractDAO = New ContractDAO()
+    End Sub
+    Public Sub New(team As Integer, season As Integer)
         Me.Team = team
         Me.Season = season
-        Me.Driver1 = driver1
-        Me.Driver2 = driver2
         Me.ContractDAO = New ContractDAO()
     End Sub
 

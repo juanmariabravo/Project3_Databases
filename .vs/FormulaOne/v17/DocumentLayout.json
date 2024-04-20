@@ -7,20 +7,28 @@
       "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\domain\\seasondao.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\documentos\\project3_databases\\people\\domain\\teamdao.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|D:\\Documentos\\Project3_Databases\\people\\presentation\\frmgps.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\presentation\\frmgps.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|D:\\Documentos\\Project3_Databases\\people\\domain\\gpsdao.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\domain\\gpsdao.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|D:\\Documentos\\Project3_Databases\\people\\domain\\teamdao.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\domain\\teamdao.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\documentos\\project3_databases\\people\\domain\\season.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\domain\\season.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\documentos\\project3_databases\\people\\presentation\\frmteams.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\presentation\\frmteams.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\documentos\\project3_databases\\people\\domain\\team.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|D:\\Documentos\\Project3_Databases\\people\\domain\\team.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\domain\\team.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\documentos\\project3_databases\\people\\presentation\\frmseasons.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\presentation\\frmseasons.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|D:\\Documentos\\Project3_Databases\\people\\domain\\gp.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\domain\\gp.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,34 +37,9 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 254,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 324,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmSeasons.vb [Dise\u00F1o]",
-              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmSeasons.vb",
-              "RelativeDocumentMoniker": "People\\Presentation\\frmSeasons.vb",
-              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmSeasons.vb [Dise\u00F1o]",
-              "RelativeToolTip": "People\\Presentation\\frmSeasons.vb [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-04-19T20:46:38.775Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Season.vb",
-              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Domain\\Season.vb",
-              "RelativeDocumentMoniker": "People\\Domain\\Season.vb",
-              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Domain\\Season.vb",
-              "RelativeToolTip": "People\\Domain\\Season.vb",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-04-19T20:49:48.982Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -65,42 +48,86 @@
               "RelativeDocumentMoniker": "People\\Domain\\SeasonDAO.vb",
               "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Domain\\SeasonDAO.vb",
               "RelativeToolTip": "People\\Domain\\SeasonDAO.vb",
-              "ViewState": "AQIAADMAAAAAAAAAAAAAAEcAAAArAAAA",
+              "ViewState": "AQIAAEkAAAAAAAAAAAAkwG0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-04-19T20:49:49.672Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 193,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Team.vb",
-              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Domain\\Team.vb",
-              "RelativeDocumentMoniker": "People\\Domain\\Team.vb",
-              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Domain\\Team.vb",
-              "RelativeToolTip": "People\\Domain\\Team.vb",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAxwAMAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-04-19T21:34:31.668Z",
+              "WhenOpened": "2024-04-20T14:11:01.556Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "frmGPs.vb",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmGPs.vb",
+              "RelativeDocumentMoniker": "People\\Presentation\\frmGPs.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmGPs.vb",
+              "RelativeToolTip": "People\\Presentation\\frmGPs.vb",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwBoAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-20T14:04:44.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmTeams.vb",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmTeams.vb",
+              "RelativeDocumentMoniker": "People\\Presentation\\frmTeams.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmTeams.vb",
+              "RelativeToolTip": "People\\Presentation\\frmTeams.vb",
+              "ViewState": "AQIAABgAAAAAAAAAAAAYwCAAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-20T14:04:43.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "TeamDAO.vb",
               "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Domain\\TeamDAO.vb",
               "RelativeDocumentMoniker": "People\\Domain\\TeamDAO.vb",
               "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Domain\\TeamDAO.vb",
               "RelativeToolTip": "People\\Domain\\TeamDAO.vb",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAgwAUAAAALAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAcwCAAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-04-19T21:22:43.633Z",
+              "WhenOpened": "2024-04-20T14:03:20.726Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GPsDAO.vb",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Domain\\GPsDAO.vb",
+              "RelativeDocumentMoniker": "People\\Domain\\GPsDAO.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Domain\\GPsDAO.vb",
+              "RelativeToolTip": "People\\Domain\\GPsDAO.vb",
+              "ViewState": "AQIAAAAAAAAAAAAAAAA+wAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-20T14:03:18.432Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GP.vb",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Domain\\GP.vb",
+              "RelativeDocumentMoniker": "People\\Domain\\GP.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Domain\\GP.vb",
+              "RelativeToolTip": "People\\Domain\\GP.vb",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAAwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-20T14:03:15.912Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Team.vb",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Domain\\Team.vb",
+              "RelativeDocumentMoniker": "People\\Domain\\Team.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Domain\\Team.vb",
+              "RelativeToolTip": "People\\Domain\\Team.vb",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAIwBgAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-20T14:03:14.422Z"
             }
           ]
         }

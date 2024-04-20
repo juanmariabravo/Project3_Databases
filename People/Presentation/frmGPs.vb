@@ -8,7 +8,7 @@
 
             lstGPs.Items.Clear()
             For Each gp In gp.GpDAO.GPs
-                lstGPs.Items.Add(gp.GPName)
+                lstGPs.Items.Add(gp.GPID & " " & gp.GPName)
             Next
 
             btnAdd.Enabled = True
@@ -24,7 +24,8 @@
     Private Sub LstGPs_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstGPs.SelectedIndexChanged
         Try
             If lstGPs.SelectedIndex > 0 Then
-                gp = New GP(Integer.Parse(lstGPs.SelectedItem.ToString))
+                Dim tokens As String() = lstGPs.SelectedItem.ToString.Split(" "c)
+                gp = New GP(Integer.Parse(tokens(0)))
                 gp.ReadGP()
                 txtID.Text = gp.GPID.ToString
                 txtName.Text = gp.GPName

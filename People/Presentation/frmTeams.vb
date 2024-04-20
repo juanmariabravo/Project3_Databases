@@ -8,7 +8,7 @@
 
             lstTeams.Items.Clear()
             For Each te In te.TeDAO.Teams
-                lstTeams.Items.Add(te.TeamID)
+                lstTeams.Items.Add(te.TeamID & " " & te.TeamName)
             Next
 
             btnAdd.Enabled = True
@@ -24,7 +24,8 @@
     Private Sub LstTeams_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstTeams.SelectedIndexChanged
         Try
             If lstTeams.SelectedIndex > 0 Then
-                te = New Team(Integer.Parse(lstTeams.SelectedItem.ToString))
+                Dim tokens As String() = lstTeams.SelectedItem.ToString.Split(" "c)
+                te = New Team(Integer.Parse(tokens(0)))
                 te.ReadTeam()
                 txtID.Text = te.TeamID.ToString
                 txtName.Text = te.TeamName

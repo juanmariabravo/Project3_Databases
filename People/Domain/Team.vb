@@ -5,7 +5,7 @@
     Public Property TeamCountry As String
     Public Property CreationDate As Date
 
-    Public Property Contracts As Collection
+    Public Property Contracts As New List(Of Contract)
     Public ReadOnly Property TeDAO As TeamDAO
 
     Public Sub New()

@@ -10,12 +10,8 @@
         col = DBBroker.GetBroker().Read("SELECT * FROM Contracts ORDER BY Season, Team;")
 
         For Each aux In col
-            contract = New Contract(
-             Integer.Parse(aux(1).ToString),
-             Integer.Parse(aux(2).ToString),
-             Integer.Parse(aux(3).ToString),
-             Integer.Parse(aux(4).ToString)
-         )
+            contract = New Contract(Integer.Parse(aux(1).ToString), Integer.Parse(aux(2).ToString))
+            contract.ReadContract()
             Me.Contracts.Add(contract)
         Next
     End Sub
