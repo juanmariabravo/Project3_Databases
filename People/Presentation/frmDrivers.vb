@@ -18,7 +18,7 @@
 
             lstDrivers.Items.Clear()
             For Each driver In driver.DrvDAO.Drivers
-                lstDrivers.Items.Add(driver.DriverName & " " & driver.DriverSurname)
+                lstDrivers.Items.Add(driver.DriverID & " " & driver.DriverName & " " & driver.DriverSurname)
             Next
 
             btnAddDriver.Enabled = True
@@ -32,8 +32,9 @@
 
     Private Sub lstDrivers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstDrivers.SelectedIndexChanged
         Try
-            If lstDrivers.SelectedIndex > 0 Then
-                driver = New Driver(Integer.Parse(lstDrivers.SelectedItem.ToString))
+            If lstDrivers.SelectedIndex >= 0 Then
+                Dim tokens As String() = lstDrivers.SelectedItem.ToString.Split(" "c)
+                driver = New Driver(Integer.Parse(tokens(0)))
                 driver.ReadDriver()
                 txtBxDriverID.Text = driver.DriverID.ToString()
                 txtBxDriverName.Text = driver.DriverName
@@ -56,7 +57,7 @@
             lstDrivers.Items.Clear()
             driver.ReadAllDrivers()
             For Each driver In driver.DrvDAO.Drivers
-                lstDrivers.Items.Add(driver.DriverID)
+                lstDrivers.Items.Add(driver.DriverID & " " & driver.DriverName & " " & driver.DriverSurname)
             Next
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -70,7 +71,7 @@
             lstDrivers.Items.Clear()
             driver.ReadAllDrivers()
             For Each driver In driver.DrvDAO.Drivers
-                lstDrivers.Items.Add(driver.DriverID)
+                lstDrivers.Items.Add(driver.DriverID & " " & driver.DriverName & " " & driver.DriverSurname)
             Next
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -87,7 +88,7 @@
             lstDrivers.Items.Clear()
             driver.ReadAllDrivers()
             For Each driver In driver.DrvDAO.Drivers
-                lstDrivers.Items.Add(driver.DriverID)
+                lstDrivers.Items.Add(driver.DriverID & " " & driver.DriverName & " " & driver.DriverSurname)
             Next
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -101,5 +102,17 @@
         txtBxDriverCountry.Text = ""
     End Sub
 
+    Private Sub txtBxDriverID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtBxDriverID.KeyPress
+        ' Verifica si el carácter ingresado es un número o si es la tecla de retroceso (Backspace)
+        If Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> ControlChars.Back Then
+            ' Si no es un número y no es la tecla Backspace, cancela el evento KeyPress
+            e.Handled = True
+        End If
+        ' Verifica si la longitud del texto en el TextBox es igual a 4 y el carácter no es una tecla de retroceso
+        If txtBxDriverID.TextLength = 4 AndAlso e.KeyChar <> ControlChars.Back Then
+            ' Si ya hay 4 dígitos y no es una tecla de retroceso, cancela el evento KeyPress
+            e.Handled = True
+        End If
+    End Sub
 
 End Class
