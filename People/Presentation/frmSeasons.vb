@@ -20,7 +20,11 @@
         ' Reactivar el formulario original
         frmFormulaOne.Enabled = True
     End Sub
+    Private Sub btnClassifications_Click(sender As Object, e As EventArgs) Handles btnClassifications.Click
+        Dim races As New frmRaces()
+        races.Show()
 
+    End Sub
     Private Sub frmSeasons_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             'Management of lists of Seasons, Teams and GPs
@@ -270,5 +274,7 @@
             e.Handled = True
         End If
     End Sub
+
+
 End Class
 
