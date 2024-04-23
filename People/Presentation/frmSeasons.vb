@@ -11,13 +11,13 @@
     Public ReadOnly Property DrDAO As DriverDAO
 
     Private Sub btnMainMenuSeasons_Click(sender As Object, e As EventArgs) Handles btnMainMenuSeasons.Click
-        'Cerrar este formulario
+        'Close this form
         Me.Close()
         frmFormulaOne.Enabled = True
     End Sub
 
     Private Sub frmCountries_Closed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        ' Reactivar el formulario original
+        ' Reopen the main menu form
         frmFormulaOne.Enabled = True
     End Sub
 
@@ -49,7 +49,7 @@
                 CmbBoxMinGPs.Items.Add(i)
                 CmbBoxMaxGPs.Items.Add(i)
             Next
-            'Hacer que en la combobox no se pueda escribir, solo seleccionar el valor, pero que tenga un valor escrito en la opcion por defecto
+            ' Avoid user input in the combo boxes, only allow selection of the values and set the default selected value
             selectMinBox.DropDownStyle = ComboBoxStyle.DropDownList
             selectMaxBox.DropDownStyle = ComboBoxStyle.DropDownList
             CmbBoxMinGPs.DropDownStyle = ComboBoxStyle.DropDownList
@@ -73,15 +73,15 @@
                 lstContracts.Items.Clear()
                 lstGPs.Items.Clear()
 
-                'Habilitar la lista de Gps y de contratos para meter ahí todos los nombres de los contratos, asi como los nombres de los gps
+                ' Enable the list of GPs and contracts to insert the names of the contracts and the names of the GPs
                 lstContracts.Enabled = True
                 lstGPs.Enabled = True
-                'Meter los nombres de los equipos que tengan un contrato en la lista de contratos
+                ' Insert the ids + names of the teams that have a contract in the list of contracts
                 For Each auxTeam In season.ListTeams
                     lstContracts.Items.Add(auxTeam.TeamID & " " & auxTeam.TeamName)
                 Next
 
-                'Meter los nombres de los GPs en la lista de GPs
+                ' Insert the names of the GPs in the list of GPs
                 For Each aux In season.ListGPs
                     lstGPs.Items.Add(aux(2).ToString)
                 Next
@@ -216,10 +216,10 @@
             If numTeamsInserted < numberTeams Then
                 MessageBox.Show($"Team {numTeamsInserted + 1}: {lblDriver2.Text} and {lblDriver2.Text}")
 
-                ' Incrementar el contador de equipos insertados
+                ' Increment the counter of inserted teams
                 numTeamsInserted += 1
 
-                ' Mostrar mensaje si se han insertado todos los equipos deseados
+                ' Show message if all desired teams have been inserted
                 If numTeamsInserted = numberTeams Then
                     MessageBox.Show("All teams have been created.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     btnInsert.Enabled = False
@@ -253,22 +253,23 @@
     End Sub
 
     Private Sub btnDone_Click(sender As Object, e As EventArgs) Handles btnDone.Click
-        ' Cerrar el formulario
+        ' Close the form and enable the main menu form
         Me.Close()
         frmFormulaOne.Enabled = True
     End Sub
 
     Private Sub txtSeasonYear_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSeasonYear.KeyPress
-        ' Verifica si el carácter ingresado es un número o si es la tecla de retroceso (Backspace)
+        ' Verify if the character entered is a number or if it is the backspace key
         If Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> ControlChars.Back Then
-            ' Si no es un número y no es la tecla Backspace, cancela el evento KeyPress
+            ' If it is not a number and it is not the backspace key, cancel the KeyPress event
             e.Handled = True
         End If
-        ' Verifica si la longitud del texto en el TextBox es igual a 4 y el carácter no es una tecla de retroceso
+        ' Verify if the length of the text in the TextBox is equal to 4 and the character is not a backspace key
         If txtSeasonYear.TextLength = 4 AndAlso e.KeyChar <> ControlChars.Back Then
-            ' Si ya hay 4 dígitos y no es una tecla de retroceso, cancela el evento KeyPress
+            ' If there are already 4 digits and it is not a backspace key, cancel the KeyPress event
             e.Handled = True
         End If
     End Sub
+
 End Class
 

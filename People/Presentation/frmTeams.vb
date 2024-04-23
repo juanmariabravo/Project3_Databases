@@ -99,24 +99,24 @@
     End Sub
 
     Private Sub btnMainMenu_Click(sender As Object, e As EventArgs) Handles btnMainMenu.Click
-        'Cerrar este formulario
+        ' Close the current form
         Me.Close()
         frmFormulaOne.Enabled = True
     End Sub
     Private Sub frmTeams_Closed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        ' Reactivar el formulario original
+        ' Reopen the main menu form
         frmFormulaOne.Enabled = True
     End Sub
 
     Private Sub txtID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtID.KeyPress
-        ' Verifica si el carácter ingresado es un número o si es la tecla de retroceso (Backspace)
+        ' Check if the entered character is a number or if it is the backspace key (Backspace)
         If Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> ControlChars.Back Then
-            ' Si no es un número y no es la tecla Backspace, cancela el evento KeyPress
+            ' If it is not a number and it is not the Backspace key, cancel the KeyPress event
             e.Handled = True
         End If
-        ' Verifica si la longitud del texto en el TextBox es igual a 4 y el carácter no es una tecla de retroceso
+        ' Check if the length of the text in the TextBox is equal to 4 and the character is not a backspace key
         If txtID.TextLength = 4 AndAlso e.KeyChar <> ControlChars.Back Then
-            ' Si ya hay 4 dígitos y no es una tecla de retroceso, cancela el evento KeyPress
+            ' If there are already 4 digits and it is not a backspace key, cancel the KeyPress event
             e.Handled = True
         End If
     End Sub

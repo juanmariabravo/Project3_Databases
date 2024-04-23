@@ -48,7 +48,7 @@
     End Sub
 
     Public Sub Insert(ByRef se As Season, ByVal numTeams As Integer, ByVal numGPs As Integer)
-        'Obtener una lista de todos los equipos de la base de datos
+        ' Obtaining a list of all the teams in the database
         Dim aux As New Collection
 
         'Variables for asigning teams, contracts and gps
@@ -92,7 +92,6 @@
             End Try
 
             Try
-
                 auxTeam = New Team(Integer.Parse(aux(1).ToString))
                 auxTeam.ReadTeam()
 

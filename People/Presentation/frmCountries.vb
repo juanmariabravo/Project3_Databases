@@ -1,14 +1,13 @@
-﻿Imports System.Windows
-
+﻿
 Public Class frmCountries
     Private Sub btnMainMenu_Click(sender As Object, e As EventArgs) Handles btnMainMenu.Click
-        'Cerrar este formulario
+        ' Close the current form
         Me.Close()
         frmFormulaOne.Enabled = True
     End Sub
 
     Private Sub frmCountries_Closed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        ' Reactivar el formulario original
+        ' Reopen the main menu form
         frmFormulaOne.Enabled = True
     End Sub
 
@@ -78,7 +77,7 @@ Public Class frmCountries
                 txtCountryID.Enabled = True
                 ' ElseIf length of string is not 3
             ElseIf txtCountryID.TextLength <> 3 Then
-                ' MessageBox.Show("The ID must be 3 characters long")
+                MessageBox.Show("The ID must be 3 characters long")
 
             Else
                 Dim country As New Country(txtCountryID.Text)
@@ -139,14 +138,14 @@ Public Class frmCountries
     End Sub
 
     Private Sub txtCountryID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCountryID.KeyPress
-        ' Verifica si el carácter ingresado es un número o si es la tecla de retroceso (Backspace)
+        ' Verify if the character entered is a number or if it is the backspace key (Backspace)
         If Char.IsDigit(e.KeyChar) Then
-            ' Si es un numero, cancela el evento KeyPress (no deja escribir números)
+            ' If it is a number, cancel the KeyPress event (does not allow writing numbers)
             e.Handled = True
         End If
-        ' Verifica si la longitud del texto en el TextBox es igual a 4 y el carácter no es una tecla de retroceso
+        ' Check if the length of the text in the TextBox is equal to 3 and the character is not a backspace key
         If txtCountryID.TextLength = 3 AndAlso e.KeyChar <> ControlChars.Back Then
-            ' Si ya hay 3 dígitos, cancela el evento KeyPress (no deja escribir más), pero si es una tecla de retroceso, deja borrar
+            ' if there are already 3 digits, cancel the KeyPress event (does not allow writing more), but if it is a backspace key, it allows deleting
             e.Handled = True
         End If
     End Sub

@@ -44,6 +44,9 @@ Partial Class frmSeasons
         Me.lblDriver1 = New System.Windows.Forms.Label()
         Me.CmbBoxMaxGPs = New System.Windows.Forms.ComboBox()
         Me.CmbBoxMinGPs = New System.Windows.Forms.ComboBox()
+        Me.seasonsLstBxTitle = New System.Windows.Forms.Label()
+        Me.contractsLstBxTitle = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'ContextMenuStrip1
@@ -94,7 +97,7 @@ Partial Class frmSeasons
         '
         'btnInsert
         '
-        Me.btnInsert.Location = New System.Drawing.Point(838, 478)
+        Me.btnInsert.Location = New System.Drawing.Point(1052, 344)
         Me.btnInsert.Margin = New System.Windows.Forms.Padding(4)
         Me.btnInsert.Name = "btnInsert"
         Me.btnInsert.Size = New System.Drawing.Size(117, 42)
@@ -135,10 +138,10 @@ Partial Class frmSeasons
         'btnMainMenuSeasons
         '
         Me.btnMainMenuSeasons.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.btnMainMenuSeasons.Location = New System.Drawing.Point(1011, 466)
+        Me.btnMainMenuSeasons.Location = New System.Drawing.Point(1052, 420)
         Me.btnMainMenuSeasons.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.btnMainMenuSeasons.Name = "btnMainMenuSeasons"
-        Me.btnMainMenuSeasons.Size = New System.Drawing.Size(120, 66)
+        Me.btnMainMenuSeasons.Size = New System.Drawing.Size(117, 66)
         Me.btnMainMenuSeasons.TabIndex = 26
         Me.btnMainMenuSeasons.Text = "Go to main menu"
         Me.btnMainMenuSeasons.UseVisualStyleBackColor = False
@@ -173,7 +176,7 @@ Partial Class frmSeasons
         '
         Me.lstContracts.FormattingEnabled = True
         Me.lstContracts.ItemHeight = 16
-        Me.lstContracts.Location = New System.Drawing.Point(814, 44)
+        Me.lstContracts.Location = New System.Drawing.Point(814, 67)
         Me.lstContracts.Name = "lstContracts"
         Me.lstContracts.Size = New System.Drawing.Size(162, 180)
         Me.lstContracts.TabIndex = 30
@@ -182,7 +185,7 @@ Partial Class frmSeasons
         '
         Me.lstGPs.FormattingEnabled = True
         Me.lstGPs.ItemHeight = 16
-        Me.lstGPs.Location = New System.Drawing.Point(814, 254)
+        Me.lstGPs.Location = New System.Drawing.Point(814, 290)
         Me.lstGPs.Name = "lstGPs"
         Me.lstGPs.Size = New System.Drawing.Size(162, 180)
         Me.lstGPs.TabIndex = 31
@@ -190,7 +193,7 @@ Partial Class frmSeasons
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(1008, 62)
+        Me.Label3.Location = New System.Drawing.Point(1008, 89)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(53, 16)
@@ -200,7 +203,7 @@ Partial Class frmSeasons
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(1008, 142)
+        Me.Label4.Location = New System.Drawing.Point(1008, 169)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(53, 16)
@@ -212,7 +215,7 @@ Partial Class frmSeasons
         Me.lblDriver2.AutoSize = True
         Me.lblDriver2.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.lblDriver2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDriver2.Location = New System.Drawing.Point(1008, 168)
+        Me.lblDriver2.Location = New System.Drawing.Point(1008, 195)
         Me.lblDriver2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDriver2.Name = "lblDriver2"
         Me.lblDriver2.Size = New System.Drawing.Size(89, 20)
@@ -224,7 +227,7 @@ Partial Class frmSeasons
         Me.lblDriver1.AutoSize = True
         Me.lblDriver1.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.lblDriver1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDriver1.Location = New System.Drawing.Point(1008, 88)
+        Me.lblDriver1.Location = New System.Drawing.Point(1008, 115)
         Me.lblDriver1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDriver1.Name = "lblDriver1"
         Me.lblDriver1.Size = New System.Drawing.Size(89, 20)
@@ -249,11 +252,50 @@ Partial Class frmSeasons
         Me.CmbBoxMinGPs.TabIndex = 37
         Me.CmbBoxMinGPs.Text = "Min"
         '
+        'seasonsLstBxTitle
+        '
+        Me.seasonsLstBxTitle.AutoSize = True
+        Me.seasonsLstBxTitle.Font = New System.Drawing.Font("RadiateSans-Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.seasonsLstBxTitle.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.seasonsLstBxTitle.Location = New System.Drawing.Point(629, 13)
+        Me.seasonsLstBxTitle.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.seasonsLstBxTitle.Name = "seasonsLstBxTitle"
+        Me.seasonsLstBxTitle.Size = New System.Drawing.Size(84, 27)
+        Me.seasonsLstBxTitle.TabIndex = 39
+        Me.seasonsLstBxTitle.Text = "Seasons"
+        '
+        'contractsLstBxTitle
+        '
+        Me.contractsLstBxTitle.AutoSize = True
+        Me.contractsLstBxTitle.Font = New System.Drawing.Font("RadiateSans-Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.contractsLstBxTitle.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.contractsLstBxTitle.Location = New System.Drawing.Point(847, 37)
+        Me.contractsLstBxTitle.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.contractsLstBxTitle.Name = "contractsLstBxTitle"
+        Me.contractsLstBxTitle.Size = New System.Drawing.Size(98, 27)
+        Me.contractsLstBxTitle.TabIndex = 40
+        Me.contractsLstBxTitle.Text = "Contracts"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("RadiateSans-Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.Label2.Location = New System.Drawing.Point(869, 260)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(46, 27)
+        Me.Label2.TabIndex = 41
+        Me.Label2.Text = "GPs"
+        '
         'frmSeasons
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1177, 554)
+        Me.ClientSize = New System.Drawing.Size(1272, 554)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.contractsLstBxTitle)
+        Me.Controls.Add(Me.seasonsLstBxTitle)
         Me.Controls.Add(Me.CmbBoxMaxGPs)
         Me.Controls.Add(Me.CmbBoxMinGPs)
         Me.Controls.Add(Me.lblDriver2)
@@ -302,4 +344,7 @@ Partial Class frmSeasons
     Friend WithEvents lblDriver1 As Label
     Friend WithEvents CmbBoxMaxGPs As ComboBox
     Friend WithEvents CmbBoxMinGPs As ComboBox
+    Friend WithEvents seasonsLstBxTitle As Label
+    Friend WithEvents contractsLstBxTitle As Label
+    Friend WithEvents Label2 As Label
 End Class

@@ -1,4 +1,4 @@
-﻿'Queda por añadir los atributos de los reports y calendarios
+﻿' TODO: Add the attributes of the reports and calendars
 Public Class Season
     Public Property ListTeams As New Collection
     Public Property ListGPs As New Collection
@@ -25,8 +25,5 @@ Public Class Season
     Public Sub InsertSeason(ByVal numTeams As Integer, ByVal numGPs As Integer)
         Me.SeasonDAO.Insert(Me, numTeams, numGPs)
     End Sub
-
-
-
 
 End Class
