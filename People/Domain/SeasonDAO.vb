@@ -26,7 +26,9 @@
         Dim aux As Collection
         Dim auxTeam As Team
         Dim colGPs As Collection
+        Dim colRaces As Collection ' Agrega una colección para almacenar las carreras
 
+        ' Obtener los equipos asociados a la temporada
         idTeams = DBBroker.GetBroker().Read("SELECT Team FROM Contracts WHERE Season = " & se.SeasonID & ";")
         For Each aux In idTeams
             auxTeam = New Team(Integer.Parse(aux(1).ToString))
@@ -38,14 +40,26 @@
             se.ListTeams = colTeams
         End If
 
-
-        'Now get the GPs for the season
+        ' Obtener los GPs asociados a la temporada
         colGPs = DBBroker.GetBroker().Read("SELECT * FROM GPs WHERE GPID IN (SELECT GP FROM Calendar WHERE Season = " & se.SeasonID & ");")
         If colGPs.Count > 0 Then
             se.ListGPs = colGPs
         End If
 
+        ' Obtener las carreras asociadas a la temporada
+        colRaces = DBBroker.GetBroker().Read("SELECT * FROM Races WHERE Season = " & se.SeasonID & ";")
+        If colRaces.Count > 1 Then
+            For Each raceData As Collection In colRaces
+                Dim race As New Race(se.SeasonID)
+                race.GP = Integer.Parse(raceData("GP").ToString())
+                race.Position = Byte.Parse(raceData("Position").ToString())
+                race.Points = Byte.Parse(raceData("Points").ToString())
+                ' Agregar la carrera a la lista de carreras de la temporada
+                se.ListRaces.Add(race)
+            Next
+        End If
     End Sub
+
 
     Public Sub Insert(ByRef se As Season, ByVal numTeams As Integer, ByVal numGPs As Integer)
         ' Obtaining a list of all the teams in the database
@@ -63,15 +77,19 @@
         Dim auxContract As New Contract
 
 
+
+
         'Variables for random operations
         Dim i As Integer
         Dim num As Integer
+        Dim num2 As Integer
         Dim rnd As New Random
+        Dim randomizer As New Random
 
         'Retrieval of information from the database ------------------------
 
         colTeams = DBBroker.GetBroker().Read("SELECT * FROM Teams ORDER BY TeamID;")
-        colDrivers = DBBroker.GetBroker().Read("SELECT * FROM Drivers WHERE DriverID NOT IN (SELECT Driver1 FROM Contracts WHERE Season = " & se.SeasonID & " UNION SELECT Driver2 FROM Contracts WHERE Season = " & se.SeasonID & ");")
+        colDrivers = DBBroker.GetBroker().Read("SELECT * FROM Drivers WHERE DriverID ;")
         colGPs = DBBroker.GetBroker().Read("SELECT * FROM GPs ORDER BY GPID;")
 
 
@@ -80,9 +98,10 @@
 
         For i = 1 To numTeams
             Try
+
+                rnd = New Random(rnd.Next(1, colTeams.Count + 1))
                 'Choosing a random team
                 num = rnd.Next(1, colTeams.Count + 1)
-
                 'Getting the random team's ID
                 aux = CType(colTeams.Item(num), Collection)
                 colTeams.Remove(num)
@@ -100,15 +119,18 @@
                 MessageBox.Show("Error while creating the teams and contracts for first driver: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
 
+            randomizer = New Random(randomizer.Next(1, colDrivers.Count + 1))
             'Choosing the first driver for the contract
-            num = rnd.Next(1, colDrivers.Count + 1)
+            num2 = randomizer.Next(1, colDrivers.Count + 1)
 
-            auxDriver = CType(colDrivers.Item(num), Collection)
+            auxDriver = CType(colDrivers.Item(num2), Collection)
             auxContract.Driver1 = Integer.Parse(auxDriver(1).ToString)
-            colDrivers.Remove(num)
+            colDrivers.Remove(num2)
 
 
             'Choosing the second driver for the contract
+
+            rnd = New Random(rnd.Next(1, colDrivers.Count + 1))
             num = rnd.Next(1, colDrivers.Count + 1)
 
             auxDriver = CType(colDrivers.Item(num), Collection)
@@ -131,13 +153,45 @@
                 aux = CType(colGPs.Item(num), Collection)
                 auxGP = New GP(Integer.Parse(aux(1).ToString))
                 auxGP.ReadGP()
+                'Iterar por la lista de colDrivers
+                'For Each auxDriver In colDrivers
+                ' New Race <- (se.SeasonID, auxGP.GPID, auxDriver(1), Posicion aleatoria, puntos asociados (metodo en race))
+                ' se.ListRaces.Add(Race)
+                'Next
                 se.ListGPs.Add(auxGP)
-                colGPs.Remove(num)
-            Next
+                    colGPs.Remove(num)
+
+                Next
 
         Catch ex As Exception
             MessageBox.Show("Error while choosing the random GPs: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+
+        'choosing positions for the driver in the race------------------------
+        Try
+            Dim driversForPosition As New List(Of Driver)()
+            For Each race As Race In se.ListRaces
+                Dim numAvailableDrivers As Integer = colDrivers.Count
+
+                For position As Byte = 1 To race.Position
+
+                    Dim randomIndex As Integer = rnd.Next(1, (numAvailableDrivers + 1))
+                    Dim selectedDriver As Collection = CType(colDrivers.Item(randomIndex), Collection)
+                    Dim driver As New Driver(Integer.Parse(selectedDriver(1).ToString()))
+                    driver.ReadDriver()
+                    driversForPosition.Add(driver)
+
+                    ' Deleting the driver for the index
+                    colDrivers.Remove(randomIndex)
+
+                    'decrementing available drivers
+                    numAvailableDrivers -= 1
+                Next
+            Next
+        Catch ex As Exception
+            MessageBox.Show("No hay suficientes conductores disponibles para todas las posiciones en la carrera '" & "'.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
 
 
         'Inserting the season into the database ------------------------
@@ -156,6 +210,13 @@
         For i = 1 To se.ListGPs.Count
             GPToAdd = CType(se.ListGPs.Item(i), GP)
             DBBroker.GetBroker().Change("INSERT INTO Calendar (Season, GP, `Order`) VALUES (" & se.SeasonID & ", " & GPToAdd.GPID & ", " & i & ");")
+        Next
+
+        'Inserting the data for races
+        For i = 1 To se.ListRaces.Count
+            Dim raceToAdd As Race = CType(se.ListRaces.Item(i), Race)
+            DBBroker.GetBroker().Change($"INSERT INTO Races (Season, GP, Position, Points) VALUES ({se.SeasonID}, {raceToAdd.GP},{raceToAdd.Driver}, '{raceToAdd.Position}', {raceToAdd.Points});")
+
         Next
     End Sub
 End Class

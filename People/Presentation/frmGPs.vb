@@ -23,7 +23,7 @@
 
     Private Sub LstGPs_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstGPs.SelectedIndexChanged
         Try
-            If lstGPs.SelectedIndex >= 0 Then
+            If lstGPs.SelectedIndex > 0 Then
                 Dim tokens As String() = lstGPs.SelectedItem.ToString.Split(" "c)
                 gp = New GP(Integer.Parse(tokens(0)))
                 gp.ReadGP()
@@ -46,7 +46,7 @@
             lstGPs.Items.Clear()
             gp.ReadAllGPs()
             For Each gp In gp.GpDAO.GPs
-                lstGPs.Items.Add(gp.GPID & " " & gp.GPName)
+                lstGPs.Items.Add(gp.GPID)
             Next
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -62,7 +62,7 @@
             lstGPs.Items.Clear()
             gp.ReadAllGPs()
             For Each gp In gp.GpDAO.GPs
-                lstGPs.Items.Add(gp.GPID & " " & gp.GPName)
+                lstGPs.Items.Add(gp.GPID)
             Next
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -76,7 +76,7 @@
             lstGPs.Items.Clear()
             gp.ReadAllGPs()
             For Each gp In gp.GpDAO.GPs
-                lstGPs.Items.Add(gp.GPID & " " & gp.GPName)
+                lstGPs.Items.Add(gp.GPID)
             Next
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)

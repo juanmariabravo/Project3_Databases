@@ -18,7 +18,7 @@
 
             lstDrivers.Items.Clear()
             For Each driver In driver.DrvDAO.Drivers
-                lstDrivers.Items.Add(driver.DriverID & " " & driver.DriverName & " " & driver.DriverSurname)
+                lstDrivers.Items.Add(driver.DriverName & " " & driver.DriverSurname)
             Next
 
             btnAddDriver.Enabled = True
@@ -32,9 +32,8 @@
 
     Private Sub lstDrivers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstDrivers.SelectedIndexChanged
         Try
-            If lstDrivers.SelectedIndex >= 0 Then
-                Dim tokens As String() = lstDrivers.SelectedItem.ToString.Split(" "c)
-                driver = New Driver(Integer.Parse(tokens(0)))
+            If lstDrivers.SelectedIndex > 0 Then
+                driver = New Driver(Integer.Parse(lstDrivers.SelectedItem.ToString))
                 driver.ReadDriver()
                 txtBxDriverID.Text = driver.DriverID.ToString()
                 txtBxDriverName.Text = driver.DriverName
@@ -57,7 +56,7 @@
             lstDrivers.Items.Clear()
             driver.ReadAllDrivers()
             For Each driver In driver.DrvDAO.Drivers
-                lstDrivers.Items.Add(driver.DriverID & " " & driver.DriverName & " " & driver.DriverSurname)
+                lstDrivers.Items.Add(driver.DriverID)
             Next
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -71,7 +70,7 @@
             lstDrivers.Items.Clear()
             driver.ReadAllDrivers()
             For Each driver In driver.DrvDAO.Drivers
-                lstDrivers.Items.Add(driver.DriverID & " " & driver.DriverName & " " & driver.DriverSurname)
+                lstDrivers.Items.Add(driver.DriverID)
             Next
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -88,7 +87,7 @@
             lstDrivers.Items.Clear()
             driver.ReadAllDrivers()
             For Each driver In driver.DrvDAO.Drivers
-                lstDrivers.Items.Add(driver.DriverID & " " & driver.DriverName & " " & driver.DriverSurname)
+                lstDrivers.Items.Add(driver.DriverID)
             Next
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)

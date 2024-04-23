@@ -20,7 +20,11 @@
         ' Reopen the main menu form
         frmFormulaOne.Enabled = True
     End Sub
+    Private Sub btnClassifications_Click(sender As Object, e As EventArgs) Handles btnClassifications.Click
+        Dim races As New frmRaces()
+        races.Show()
 
+    End Sub
     Private Sub frmSeasons_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             'Management of lists of Seasons, Teams and GPs
@@ -198,8 +202,8 @@
         Catch ex As Exception
             MessageBox.Show("Error while creating Season: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
-        ' Disable the controls if an error occurs
-        CmbBoxMaxGPs.Enabled = False
+            ' Disable the controls if an error occurs
+            CmbBoxMaxGPs.Enabled = False
             CmbBoxMinGPs.Enabled = False
             CmbBoxMaxGPs.Enabled = False
             CmbBoxMinGPs.Enabled = False

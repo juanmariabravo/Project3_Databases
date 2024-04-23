@@ -23,7 +23,7 @@
 
     Private Sub LstTeams_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstTeams.SelectedIndexChanged
         Try
-            If lstTeams.SelectedIndex >= 0 Then
+            If lstTeams.SelectedIndex > 0 Then
                 Dim tokens As String() = lstTeams.SelectedItem.ToString.Split(" "c)
                 te = New Team(Integer.Parse(tokens(0)))
                 te.ReadTeam()
@@ -40,7 +40,7 @@
 
     Private Sub BtnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Try
-            If lstTeams.SelectedIndex >= 0 Then
+            If lstTeams.SelectedIndex > 0 Then
                 te = New Team(Integer.Parse(txtID.Text))
                 te.TeamName = txtName.Text
                 te.TeamCountry = txtcountryid.Text
@@ -52,9 +52,9 @@
             End If
 
             For Each te In te.TeDAO.Teams
-                lstTeams.Items.Add(te.TeamID & " " & te.TeamName)
+                lstTeams.Items.Add(te.TeamID)
             Next
-           Catch ex As Exception
+        Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
@@ -70,7 +70,7 @@
             lstTeams.Items.Clear()
             te.ReadAllTeams()
             For Each te In te.TeDAO.Teams
-                lstTeams.Items.Add(te.TeamID & " " & te.TeamName)
+                lstTeams.Items.Add(te.TeamID)
             Next
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -84,7 +84,7 @@
             lstTeams.Items.Clear()
             te.ReadAllTeams()
             For Each te In te.TeDAO.Teams
-                lstTeams.Items.Add(te.TeamID & " " & te.TeamName)
+                lstTeams.Items.Add(te.TeamID)
             Next
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)

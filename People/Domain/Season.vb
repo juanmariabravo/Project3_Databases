@@ -2,6 +2,8 @@
 Public Class Season
     Public Property ListTeams As New Collection
     Public Property ListGPs As New Collection
+    Public Property ListRaces As New Collection
+
     Public Property SeasonID As Integer
 
     Public ReadOnly Property SeasonDAO As SeasonDAO

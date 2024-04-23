@@ -18,14 +18,14 @@ Public Class frmCountries
 
             lstCountries.Items.Clear()
             For Each country In country.CouDAO.Countries
-                lstCountries.Items.Add(country.CountryID & " " & country.CountryName)
+                lstCountries.Items.Add(country.CountryID)
+
             Next
 
             btnAdd.Enabled = True
             btnUpdate.Enabled = True
             btnDelete.Enabled = True
             btnClear.Enabled = True
-            txtCountryID.Enabled = False '' to assign the automatic id
 
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -34,8 +34,8 @@ Public Class frmCountries
 
     Private Sub lstCountries_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstCountries.SelectedIndexChanged
         Try
-            If lstCountries.SelectedIndex >= 0 Then
-                Dim country As New Country(lstCountries.SelectedItem.ToString.Substring(0, 3))
+            If lstCountries.SelectedIndex > 0 Then
+                Dim country As New Country(lstCountries.SelectedItem.ToString)
                 country.ReadCountry()
                 txtCountryID.Text = country.CountryID.ToString()
                 txtCountryName.Text = country.CountryName
@@ -48,9 +48,6 @@ Public Class frmCountries
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        Dim automatic_id As String
-        Dim isAutomaticIDInList As Boolean = False
-
         Try
             '' if the id is disabled (no attemps to insert manually), the automatic id is assigned
             If txtCountryID.Enabled = False Then
@@ -110,7 +107,7 @@ Public Class frmCountries
             lstCountries.Items.Clear()
             country.ReadAllCountries()
             For Each country In country.CouDAO.Countries
-                lstCountries.Items.Add(country.CountryID & " " & country.CountryName)
+                lstCountries.Items.Add(country.CountryID)
             Next
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -124,7 +121,7 @@ Public Class frmCountries
             lstCountries.Items.Clear()
             country.ReadAllCountries()
             For Each country In country.CouDAO.Countries
-                lstCountries.Items.Add(country.CountryID & " " & country.CountryName)
+                lstCountries.Items.Add(country.CountryID)
             Next
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
