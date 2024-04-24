@@ -33,8 +33,8 @@ Partial Class frmSeasons
         Me.lstSeasons = New System.Windows.Forms.ListBox()
         Me.lblNumTeams = New System.Windows.Forms.Label()
         Me.btnMainMenuSeasons = New System.Windows.Forms.Button()
-        Me.selectMinBox = New System.Windows.Forms.ComboBox()
-        Me.selectMaxBox = New System.Windows.Forms.ComboBox()
+        Me.CmbBoxMinTeams = New System.Windows.Forms.ComboBox()
+        Me.CmbBoxMaxTeams = New System.Windows.Forms.ComboBox()
         Me.txtSeasonYear = New System.Windows.Forms.TextBox()
         Me.lstContracts = New System.Windows.Forms.ListBox()
         Me.lstGPs = New System.Windows.Forms.ListBox()
@@ -59,55 +59,59 @@ Partial Class frmSeasons
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(30, 36)
+        Me.Label1.Location = New System.Drawing.Point(40, 44)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(171, 13)
+        Me.Label1.Size = New System.Drawing.Size(212, 16)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "First, select the year for the season"
         '
         'btnGenerateSeasonInfo
         '
-        Me.btnGenerateSeasonInfo.Location = New System.Drawing.Point(30, 341)
+        Me.btnGenerateSeasonInfo.Location = New System.Drawing.Point(40, 420)
+        Me.btnGenerateSeasonInfo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnGenerateSeasonInfo.Name = "btnGenerateSeasonInfo"
-        Me.btnGenerateSeasonInfo.Size = New System.Drawing.Size(120, 41)
+        Me.btnGenerateSeasonInfo.Size = New System.Drawing.Size(160, 50)
         Me.btnGenerateSeasonInfo.TabIndex = 3
         Me.btnGenerateSeasonInfo.Text = "Generate Season Information"
         Me.btnGenerateSeasonInfo.UseVisualStyleBackColor = True
         '
         'lblNumGPs
         '
-        Me.lblNumGPs.Location = New System.Drawing.Point(28, 195)
+        Me.lblNumGPs.Location = New System.Drawing.Point(37, 240)
+        Me.lblNumGPs.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblNumGPs.Name = "lblNumGPs"
-        Me.lblNumGPs.Size = New System.Drawing.Size(340, 30)
+        Me.lblNumGPs.Size = New System.Drawing.Size(453, 37)
         Me.lblNumGPs.TabIndex = 7
         Me.lblNumGPs.Text = " Introduce the number of GPs to be contested in the season (OPTIONAL). Left Selec" &
     "ts the minimum number, right chooses the maximum."
         '
         'btnClear
         '
-        Me.btnClear.Location = New System.Drawing.Point(178, 341)
+        Me.btnClear.Location = New System.Drawing.Point(237, 420)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(93, 41)
+        Me.btnClear.Size = New System.Drawing.Size(124, 50)
         Me.btnClear.TabIndex = 10
         Me.btnClear.Text = "Clear"
         Me.btnClear.UseVisualStyleBackColor = True
         '
         'btnInsert
         '
-        Me.btnInsert.Location = New System.Drawing.Point(628, 388)
-        Me.btnInsert.Location = New System.Drawing.Point(1052, 344)
-        Me.btnInsert.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnInsert.Location = New System.Drawing.Point(1044, 495)
+        Me.btnInsert.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.btnInsert.Name = "btnInsert"
-        Me.btnInsert.Size = New System.Drawing.Size(88, 34)
+        Me.btnInsert.Size = New System.Drawing.Size(117, 42)
         Me.btnInsert.TabIndex = 11
         Me.btnInsert.Text = "Insert"
         Me.btnInsert.UseVisualStyleBackColor = True
         '
         'btnDone
         '
-        Me.btnDone.Location = New System.Drawing.Point(303, 348)
+        Me.btnDone.Location = New System.Drawing.Point(404, 428)
+        Me.btnDone.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnDone.Name = "btnDone"
-        Me.btnDone.Size = New System.Drawing.Size(88, 34)
+        Me.btnDone.Size = New System.Drawing.Size(117, 42)
         Me.btnDone.TabIndex = 12
         Me.btnDone.Text = "Done"
         Me.btnDone.UseVisualStyleBackColor = True
@@ -115,16 +119,19 @@ Partial Class frmSeasons
         'lstSeasons
         '
         Me.lstSeasons.FormattingEnabled = True
-        Me.lstSeasons.Location = New System.Drawing.Point(410, 36)
+        Me.lstSeasons.ItemHeight = 16
+        Me.lstSeasons.Location = New System.Drawing.Point(547, 44)
+        Me.lstSeasons.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.lstSeasons.Name = "lstSeasons"
-        Me.lstSeasons.Size = New System.Drawing.Size(187, 368)
+        Me.lstSeasons.Size = New System.Drawing.Size(248, 452)
         Me.lstSeasons.TabIndex = 13
         '
         'lblNumTeams
         '
-        Me.lblNumTeams.Location = New System.Drawing.Point(28, 102)
+        Me.lblNumTeams.Location = New System.Drawing.Point(37, 126)
+        Me.lblNumTeams.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblNumTeams.Name = "lblNumTeams"
-        Me.lblNumTeams.Size = New System.Drawing.Size(368, 26)
+        Me.lblNumTeams.Size = New System.Drawing.Size(491, 32)
         Me.lblNumTeams.TabIndex = 15
         Me.lblNumTeams.Text = "Introduce the minimum and maximum number of participating teams (OPTIONAL). Left " &
     "Selects the minimum number, right chooses the maximum."
@@ -132,85 +139,79 @@ Partial Class frmSeasons
         'btnMainMenuSeasons
         '
         Me.btnMainMenuSeasons.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.btnMainMenuSeasons.Location = New System.Drawing.Point(759, 378)
-        Me.btnMainMenuSeasons.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.btnMainMenuSeasons.Location = New System.Drawing.Point(1052, 420)
-        Me.btnMainMenuSeasons.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.btnMainMenuSeasons.Location = New System.Drawing.Point(1182, 476)
+        Me.btnMainMenuSeasons.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
         Me.btnMainMenuSeasons.Name = "btnMainMenuSeasons"
-        Me.btnMainMenuSeasons.Size = New System.Drawing.Size(90, 54)
-        Me.btnMainMenuSeasons.Size = New System.Drawing.Size(117, 66)
+        Me.btnMainMenuSeasons.Size = New System.Drawing.Size(156, 81)
         Me.btnMainMenuSeasons.TabIndex = 26
         Me.btnMainMenuSeasons.Text = "Go to main menu"
         Me.btnMainMenuSeasons.UseVisualStyleBackColor = False
         '
         'selectMinBox
         '
-        Me.selectMinBox.FormattingEnabled = True
-        Me.selectMinBox.Location = New System.Drawing.Point(30, 144)
-        Me.selectMinBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.selectMinBox.Name = "selectMinBox"
-        Me.selectMinBox.Size = New System.Drawing.Size(92, 21)
-        Me.selectMinBox.TabIndex = 27
-        Me.selectMinBox.Text = "Min"
+        Me.CmbBoxMinTeams.FormattingEnabled = True
+        Me.CmbBoxMinTeams.Location = New System.Drawing.Point(40, 177)
+        Me.CmbBoxMinTeams.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.CmbBoxMinTeams.Name = "selectMinBox"
+        Me.CmbBoxMinTeams.Size = New System.Drawing.Size(121, 24)
+        Me.CmbBoxMinTeams.TabIndex = 27
+        Me.CmbBoxMinTeams.Text = "Min"
         '
         'selectMaxBox
         '
-        Me.selectMaxBox.FormattingEnabled = True
-        Me.selectMaxBox.Location = New System.Drawing.Point(154, 144)
-        Me.selectMaxBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.selectMaxBox.Name = "selectMaxBox"
-        Me.selectMaxBox.Size = New System.Drawing.Size(92, 21)
-        Me.selectMaxBox.TabIndex = 28
-        Me.selectMaxBox.Text = "Max"
+        Me.CmbBoxMaxTeams.FormattingEnabled = True
+        Me.CmbBoxMaxTeams.Location = New System.Drawing.Point(205, 177)
+        Me.CmbBoxMaxTeams.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.CmbBoxMaxTeams.Name = "selectMaxBox"
+        Me.CmbBoxMaxTeams.Size = New System.Drawing.Size(121, 24)
+        Me.CmbBoxMaxTeams.TabIndex = 28
+        Me.CmbBoxMaxTeams.Text = "Max"
         '
         'txtSeasonYear
         '
-        Me.txtSeasonYear.Location = New System.Drawing.Point(30, 67)
+        Me.txtSeasonYear.Location = New System.Drawing.Point(40, 82)
+        Me.txtSeasonYear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtSeasonYear.Name = "txtSeasonYear"
-        Me.txtSeasonYear.Size = New System.Drawing.Size(104, 20)
+        Me.txtSeasonYear.Size = New System.Drawing.Size(137, 22)
         Me.txtSeasonYear.TabIndex = 29
         '
         'lstContracts
         '
         Me.lstContracts.FormattingEnabled = True
-        Me.lstContracts.Location = New System.Drawing.Point(610, 36)
-        Me.lstContracts.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.lstContracts.ItemHeight = 16
-        Me.lstContracts.Location = New System.Drawing.Point(814, 67)
+        Me.lstContracts.Location = New System.Drawing.Point(864, 82)
+        Me.lstContracts.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.lstContracts.Name = "lstContracts"
-        Me.lstContracts.Size = New System.Drawing.Size(122, 147)
+        Me.lstContracts.Size = New System.Drawing.Size(161, 180)
         Me.lstContracts.TabIndex = 30
         '
         'lstGPs
         '
         Me.lstGPs.FormattingEnabled = True
-        Me.lstGPs.Location = New System.Drawing.Point(610, 206)
-        Me.lstGPs.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.lstGPs.ItemHeight = 16
-        Me.lstGPs.Location = New System.Drawing.Point(814, 290)
+        Me.lstGPs.Location = New System.Drawing.Point(864, 316)
+        Me.lstGPs.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.lstGPs.Name = "lstGPs"
-        Me.lstGPs.Size = New System.Drawing.Size(122, 147)
+        Me.lstGPs.Size = New System.Drawing.Size(161, 180)
         Me.lstGPs.TabIndex = 31
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(756, 50)
-        Me.Label3.Location = New System.Drawing.Point(1008, 89)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(1087, 94)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(44, 13)
+        Me.Label3.Size = New System.Drawing.Size(53, 16)
         Me.Label3.TabIndex = 32
         Me.Label3.Text = "Driver 1"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(756, 115)
-        Me.Label4.Location = New System.Drawing.Point(1008, 169)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(1087, 192)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(44, 13)
+        Me.Label4.Size = New System.Drawing.Size(53, 16)
         Me.Label4.TabIndex = 34
         Me.Label4.Text = "Driver 2"
         '
@@ -219,11 +220,10 @@ Partial Class frmSeasons
         Me.lblDriver2.AutoSize = True
         Me.lblDriver2.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.lblDriver2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDriver2.Location = New System.Drawing.Point(756, 136)
-        Me.lblDriver2.Location = New System.Drawing.Point(1008, 195)
-        Me.lblDriver2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblDriver2.Location = New System.Drawing.Point(1087, 224)
+        Me.lblDriver2.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblDriver2.Name = "lblDriver2"
-        Me.lblDriver2.Size = New System.Drawing.Size(80, 17)
+        Me.lblDriver2.Size = New System.Drawing.Size(89, 20)
         Me.lblDriver2.TabIndex = 36
         Me.lblDriver2.Text = "________"
         '
@@ -232,39 +232,39 @@ Partial Class frmSeasons
         Me.lblDriver1.AutoSize = True
         Me.lblDriver1.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.lblDriver1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDriver1.Location = New System.Drawing.Point(756, 72)
-        Me.lblDriver1.Location = New System.Drawing.Point(1008, 115)
-        Me.lblDriver1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblDriver1.Location = New System.Drawing.Point(1087, 126)
+        Me.lblDriver1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblDriver1.Name = "lblDriver1"
-        Me.lblDriver1.Size = New System.Drawing.Size(80, 17)
+        Me.lblDriver1.Size = New System.Drawing.Size(89, 20)
         Me.lblDriver1.TabIndex = 35
         Me.lblDriver1.Text = "________"
         '
         'CmbBoxMaxGPs
         '
         Me.CmbBoxMaxGPs.FormattingEnabled = True
-        Me.CmbBoxMaxGPs.Location = New System.Drawing.Point(154, 235)
-        Me.CmbBoxMaxGPs.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CmbBoxMaxGPs.Location = New System.Drawing.Point(205, 289)
+        Me.CmbBoxMaxGPs.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.CmbBoxMaxGPs.Name = "CmbBoxMaxGPs"
-        Me.CmbBoxMaxGPs.Size = New System.Drawing.Size(92, 21)
+        Me.CmbBoxMaxGPs.Size = New System.Drawing.Size(121, 24)
         Me.CmbBoxMaxGPs.TabIndex = 38
         Me.CmbBoxMaxGPs.Text = "Max"
         '
         'CmbBoxMinGPs
         '
         Me.CmbBoxMinGPs.FormattingEnabled = True
-        Me.CmbBoxMinGPs.Location = New System.Drawing.Point(30, 235)
-        Me.CmbBoxMinGPs.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CmbBoxMinGPs.Location = New System.Drawing.Point(40, 289)
+        Me.CmbBoxMinGPs.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.CmbBoxMinGPs.Name = "CmbBoxMinGPs"
-        Me.CmbBoxMinGPs.Size = New System.Drawing.Size(92, 21)
+        Me.CmbBoxMinGPs.Size = New System.Drawing.Size(121, 24)
         Me.CmbBoxMinGPs.TabIndex = 37
         Me.CmbBoxMinGPs.Text = "Min"
         '
         'btnClassifications
         '
-        Me.btnClassifications.Location = New System.Drawing.Point(759, 298)
+        Me.btnClassifications.Location = New System.Drawing.Point(1197, 374)
+        Me.btnClassifications.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnClassifications.Name = "btnClassifications"
-        Me.btnClassifications.Size = New System.Drawing.Size(90, 55)
+        Me.btnClassifications.Size = New System.Drawing.Size(120, 68)
         Me.btnClassifications.TabIndex = 39
         Me.btnClassifications.Text = "Show Classifications"
         Me.btnClassifications.UseVisualStyleBackColor = True
@@ -272,46 +272,45 @@ Partial Class frmSeasons
         'seasonsLstBxTitle
         '
         Me.seasonsLstBxTitle.AutoSize = True
-        Me.seasonsLstBxTitle.Font = New System.Drawing.Font("RadiateSans-Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.seasonsLstBxTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.seasonsLstBxTitle.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.seasonsLstBxTitle.Location = New System.Drawing.Point(629, 13)
-        Me.seasonsLstBxTitle.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.seasonsLstBxTitle.Location = New System.Drawing.Point(623, 9)
+        Me.seasonsLstBxTitle.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.seasonsLstBxTitle.Name = "seasonsLstBxTitle"
-        Me.seasonsLstBxTitle.Size = New System.Drawing.Size(84, 27)
+        Me.seasonsLstBxTitle.Size = New System.Drawing.Size(74, 20)
         Me.seasonsLstBxTitle.TabIndex = 39
         Me.seasonsLstBxTitle.Text = "Seasons"
         '
         'contractsLstBxTitle
         '
         Me.contractsLstBxTitle.AutoSize = True
-        Me.contractsLstBxTitle.Font = New System.Drawing.Font("RadiateSans-Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.contractsLstBxTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.contractsLstBxTitle.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.contractsLstBxTitle.Location = New System.Drawing.Point(847, 37)
-        Me.contractsLstBxTitle.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.contractsLstBxTitle.Location = New System.Drawing.Point(908, 46)
+        Me.contractsLstBxTitle.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.contractsLstBxTitle.Name = "contractsLstBxTitle"
-        Me.contractsLstBxTitle.Size = New System.Drawing.Size(98, 27)
+        Me.contractsLstBxTitle.Size = New System.Drawing.Size(82, 20)
         Me.contractsLstBxTitle.TabIndex = 40
         Me.contractsLstBxTitle.Text = "Contracts"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("RadiateSans-Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.Label2.Location = New System.Drawing.Point(869, 260)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(938, 279)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(46, 27)
+        Me.Label2.Size = New System.Drawing.Size(42, 20)
         Me.Label2.TabIndex = 41
         Me.Label2.Text = "GPs"
         '
         'frmSeasons
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(918, 450)
+        Me.ClientSize = New System.Drawing.Size(1696, 682)
         Me.Controls.Add(Me.btnClassifications)
-        Me.ClientSize = New System.Drawing.Size(1272, 554)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.contractsLstBxTitle)
         Me.Controls.Add(Me.seasonsLstBxTitle)
@@ -324,8 +323,8 @@ Partial Class frmSeasons
         Me.Controls.Add(Me.lstGPs)
         Me.Controls.Add(Me.lstContracts)
         Me.Controls.Add(Me.txtSeasonYear)
-        Me.Controls.Add(Me.selectMaxBox)
-        Me.Controls.Add(Me.selectMinBox)
+        Me.Controls.Add(Me.CmbBoxMaxTeams)
+        Me.Controls.Add(Me.CmbBoxMinTeams)
         Me.Controls.Add(Me.btnMainMenuSeasons)
         Me.Controls.Add(Me.lblNumTeams)
         Me.Controls.Add(Me.lstSeasons)
@@ -335,6 +334,7 @@ Partial Class frmSeasons
         Me.Controls.Add(Me.lblNumGPs)
         Me.Controls.Add(Me.btnGenerateSeasonInfo)
         Me.Controls.Add(Me.Label1)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frmSeasons"
         Me.Text = "frmSeasons"
         Me.ResumeLayout(False)
@@ -351,8 +351,8 @@ Partial Class frmSeasons
     Friend WithEvents lstSeasons As ListBox
     Friend WithEvents lblNumTeams As Label
     Friend WithEvents btnMainMenuSeasons As Button
-    Friend WithEvents selectMinBox As ComboBox
-    Friend WithEvents selectMaxBox As ComboBox
+    Friend WithEvents CmbBoxMinTeams As ComboBox
+    Friend WithEvents CmbBoxMaxTeams As ComboBox
     Friend WithEvents txtSeasonYear As TextBox
     Friend WithEvents lstContracts As ListBox
     Friend WithEvents lstGPs As ListBox

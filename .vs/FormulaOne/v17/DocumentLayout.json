@@ -1,26 +1,42 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Escritorio\\Project3_Databases-master ivan\\",
+  "WorkspaceRootPath": "D:\\Documentos\\Project3_Databases\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\escritorio\\project3_databases-master ivan\\people\\domain\\seasondao.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\documentos\\project3_databases\\people\\presentation\\frmseasons.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\presentation\\frmseasons.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\documentos\\project3_databases\\people\\domain\\contractdao.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\domain\\contractdao.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\documentos\\project3_databases\\people\\domain\\contract.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\domain\\contract.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\documentos\\project3_databases\\people\\domain\\seasondao.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\domain\\seasondao.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\escritorio\\project3_databases-master ivan\\people\\presentation\\frmraces.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\presentation\\frmraces.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\documentos\\project3_databases\\people\\domain\\season.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\domain\\season.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\escritorio\\project3_databases-master ivan\\people\\presentation\\frmraces.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\presentation\\frmraces.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|D:\\Documentos\\Project3_Databases\\people\\domain\\racedao.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\domain\\racedao.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\escritorio\\project3_databases-master ivan\\people\\domain\\race.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\documentos\\project3_databases\\people\\domain\\race.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\domain\\race.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\escritorio\\project3_databases-master ivan\\people\\domain\\season.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\domain\\season.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\documentos\\project3_databases\\people\\domain\\teamdao.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\domain\\teamdao.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|D:\\Documentos\\Project3_Databases\\people\\presentation\\frmraces.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\presentation\\frmraces.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,71 +45,130 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 324,
-          "SelectedChildIndex": 3,
+          "DockedWidth": 395,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmRaces.vb",
-              "DocumentMoniker": "D:\\Escritorio\\Project3_Databases-master ivan\\People\\Presentation\\frmRaces.vb",
-              "RelativeDocumentMoniker": "People\\Presentation\\frmRaces.vb",
-              "ToolTip": "D:\\Escritorio\\Project3_Databases-master ivan\\People\\Presentation\\frmRaces.vb",
-              "RelativeToolTip": "People\\Presentation\\frmRaces.vb",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAIwBYAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "frmSeasons.vb",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmSeasons.vb",
+              "RelativeDocumentMoniker": "People\\Presentation\\frmSeasons.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmSeasons.vb",
+              "RelativeToolTip": "People\\Presentation\\frmSeasons.vb",
+              "ViewState": "AQIAAMMAAAAAAAAAAAAIwNcAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-04-22T20:51:35.567Z",
+              "WhenOpened": "2024-04-24T09:04:55.52Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmRaces.vb [Dise\u00F1o]",
-              "DocumentMoniker": "D:\\Escritorio\\Project3_Databases-master ivan\\People\\Presentation\\frmRaces.vb",
-              "RelativeDocumentMoniker": "People\\Presentation\\frmRaces.vb",
-              "ToolTip": "D:\\Escritorio\\Project3_Databases-master ivan\\People\\Presentation\\frmRaces.vb [Dise\u00F1o]",
-              "RelativeToolTip": "People\\Presentation\\frmRaces.vb [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-04-22T20:51:18.709Z",
-              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Race.vb",
-              "DocumentMoniker": "D:\\Escritorio\\Project3_Databases-master ivan\\People\\Domain\\Race.vb",
-              "RelativeDocumentMoniker": "People\\Domain\\Race.vb",
-              "ToolTip": "D:\\Escritorio\\Project3_Databases-master ivan\\People\\Domain\\Race.vb",
-              "RelativeToolTip": "People\\Domain\\Race.vb",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAmwAgAAAAAAAAA",
+              "Title": "SeasonDAO.vb",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Domain\\SeasonDAO.vb",
+              "RelativeDocumentMoniker": "People\\Domain\\SeasonDAO.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Domain\\SeasonDAO.vb",
+              "RelativeToolTip": "People\\Domain\\SeasonDAO.vb",
+              "ViewState": "AQIAABoAAAAAAAAAAAApwCkAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-04-22T20:47:37.467Z",
+              "WhenOpened": "2024-04-23T16:08:00.605Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SeasonDAO.vb",
-              "DocumentMoniker": "D:\\Escritorio\\Project3_Databases-master ivan\\People\\Domain\\SeasonDAO.vb",
-              "RelativeDocumentMoniker": "People\\Domain\\SeasonDAO.vb",
-              "ToolTip": "D:\\Escritorio\\Project3_Databases-master ivan\\People\\Domain\\SeasonDAO.vb",
-              "RelativeToolTip": "People\\Domain\\SeasonDAO.vb",
-              "ViewState": "AQIAAFUAAAAAAAAAAAAAwGYAAAAnAAAA",
+              "DocumentIndex": 5,
+              "Title": "RaceDAO.vb",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Domain\\RaceDAO.vb",
+              "RelativeDocumentMoniker": "People\\Domain\\RaceDAO.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Domain\\RaceDAO.vb",
+              "RelativeToolTip": "People\\Domain\\RaceDAO.vb",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAlwB0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-04-22T20:47:36.397Z",
+              "WhenOpened": "2024-04-24T07:44:43.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Race.vb",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Domain\\Race.vb",
+              "RelativeDocumentMoniker": "People\\Domain\\Race.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Domain\\Race.vb",
+              "RelativeToolTip": "People\\Domain\\Race.vb",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAawB4AAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-24T15:40:12.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TeamDAO.vb",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Domain\\TeamDAO.vb",
+              "RelativeDocumentMoniker": "People\\Domain\\TeamDAO.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Domain\\TeamDAO.vb",
+              "RelativeToolTip": "People\\Domain\\TeamDAO.vb",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwBAAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-24T19:35:38.992Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Season.vb",
-              "DocumentMoniker": "D:\\Escritorio\\Project3_Databases-master ivan\\People\\Domain\\Season.vb",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Domain\\Season.vb",
               "RelativeDocumentMoniker": "People\\Domain\\Season.vb",
-              "ToolTip": "D:\\Escritorio\\Project3_Databases-master ivan\\People\\Domain\\Season.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Domain\\Season.vb",
               "RelativeToolTip": "People\\Domain\\Season.vb",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAkwA4AAAAAAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAawBcAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-04-22T20:47:35.927Z",
+              "WhenOpened": "2024-04-24T15:49:56.445Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "frmRaces.vb",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmRaces.vb",
+              "RelativeDocumentMoniker": "People\\Presentation\\frmRaces.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmRaces.vb",
+              "RelativeToolTip": "People\\Presentation\\frmRaces.vb",
+              "ViewState": "AQIAAFAAAAAAAAAAAAAswGEAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-24T06:51:44.111Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 289,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ContractDAO.vb",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Domain\\ContractDAO.vb",
+              "RelativeDocumentMoniker": "People\\Domain\\ContractDAO.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Domain\\ContractDAO.vb",
+              "RelativeToolTip": "People\\Domain\\ContractDAO.vb",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAhwBEAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-24T19:16:43.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Contract.vb",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Domain\\Contract.vb",
+              "RelativeDocumentMoniker": "People\\Domain\\Contract.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Domain\\Contract.vb",
+              "RelativeToolTip": "People\\Domain\\Contract.vb",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAswBYAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-24T15:41:02.479Z",
               "EditorCaption": ""
             }
           ]

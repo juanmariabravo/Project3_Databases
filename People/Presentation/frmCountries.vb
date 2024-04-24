@@ -49,6 +49,7 @@ Public Class frmCountries
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Try
+            Dim automatic_id As String = ""
             '' if the id is disabled (no attemps to insert manually), the automatic id is assigned
             If txtCountryID.Enabled = False Then
                 '' the automatic id is the name of the country 3 first letters in uppercase
@@ -60,7 +61,7 @@ Public Class frmCountries
 
             ' check if the automatic id is already in the list, if so, we show a message allowing the user to change the id manually
             ' and we cancel the current insertion
-
+            Dim isAutomaticIDInList As Boolean = False
             For Each item As String In lstCountries.Items
                 If item.Substring(0, Math.Min(3, item.Length)).Equals(txtCountryID.Text.ToUpper()) Then
                     isAutomaticIDInList = True

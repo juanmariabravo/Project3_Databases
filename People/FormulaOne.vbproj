@@ -6,9 +6,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Country.My.MyApplication</StartupObject>
-    <RootNamespace>Country</RootNamespace>
-    <AssemblyName>Country</AssemblyName>
+    <StartupObject>FormulaOne.My.MyApplication</StartupObject>
+    <RootNamespace>FormulaOne</RootNamespace>
+    <AssemblyName>FormulaOne</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
@@ -22,7 +22,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>Country.xml</DocumentationFile>
+    <DocumentationFile>FormulaOne.xml</DocumentationFile>
     <NoWarn>
     </NoWarn>
     <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
@@ -34,7 +34,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>Country.xml</DocumentationFile>
+    <DocumentationFile>FormulaOne.xml</DocumentationFile>
     <NoWarn>
     </NoWarn>
     <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
@@ -135,6 +135,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\RaceDAO.vb" />
     <Compile Include="Domain\Race.vb" />
     <Compile Include="Domain\SeasonDAO.vb" />
     <Compile Include="Domain\Season.vb" />

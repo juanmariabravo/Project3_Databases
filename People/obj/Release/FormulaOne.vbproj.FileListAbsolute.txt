@@ -1,20 +1,6 @@
 D:\Documentos\Project3_Databases\People\obj\Release\FormulaOne.vbproj.AssemblyReference.cache
-D:\Documentos\Project3_Databases\People\obj\Release\Country.Resources.resources
-D:\Documentos\Project3_Databases\People\obj\Release\Country.frmCountries.resources
-D:\Documentos\Project3_Databases\People\obj\Release\Country.frmDrivers.resources
-D:\Documentos\Project3_Databases\People\obj\Release\Country.frmFormulaOne.resources
-D:\Documentos\Project3_Databases\People\obj\Release\Country.frmGPs.resources
-D:\Documentos\Project3_Databases\People\obj\Release\Country.frmSeasons.resources
-D:\Documentos\Project3_Databases\People\obj\Release\Country.frmTeams.resources
 D:\Documentos\Project3_Databases\People\obj\Release\FormulaOne.vbproj.GenerateResource.cache
 D:\Documentos\Project3_Databases\People\obj\Release\FormulaOne.vbproj.CoreCompileInputs.cache
-D:\Documentos\Project3_Databases\People\obj\Release\Country.exe
-D:\Documentos\Project3_Databases\People\obj\Release\Country.xml
-D:\Documentos\Project3_Databases\People\obj\Release\Country.pdb
-D:\Documentos\Project3_Databases\People\bin\Release\Country.exe.config
-D:\Documentos\Project3_Databases\People\bin\Release\Country.exe
-D:\Documentos\Project3_Databases\People\bin\Release\Country.pdb
-D:\Documentos\Project3_Databases\People\bin\Release\Country.xml
 D:\Documentos\Project3_Databases\People\bin\Release\BouncyCastle.Cryptography.dll
 D:\Documentos\Project3_Databases\People\bin\Release\Google.Protobuf.dll
 D:\Documentos\Project3_Databases\People\bin\Release\K4os.Compression.LZ4.dll
@@ -252,3 +238,18 @@ D:\Escritorio\Project3_Databases-master ivan\People\obj\Release\Country.frmTeams
 D:\Escritorio\Project3_Databases-master ivan\People\obj\Release\FormulaOne.vbproj.GenerateResource.cache
 D:\Escritorio\Project3_Databases-master ivan\People\obj\Release\FormulaOne.vbproj.CoreCompileInputs.cache
 D:\Escritorio\Project3_Databases-master ivan\People\obj\Release\FormulaOne.vbproj.Up2Date
+D:\Documentos\Project3_Databases\People\obj\Release\FormulaOne.Resources.resources
+D:\Documentos\Project3_Databases\People\obj\Release\FormulaOne.frmCountries.resources
+D:\Documentos\Project3_Databases\People\obj\Release\FormulaOne.frmDrivers.resources
+D:\Documentos\Project3_Databases\People\obj\Release\FormulaOne.frmFormulaOne.resources
+D:\Documentos\Project3_Databases\People\obj\Release\FormulaOne.frmGPs.resources
+D:\Documentos\Project3_Databases\People\obj\Release\FormulaOne.frmRaces.resources
+D:\Documentos\Project3_Databases\People\obj\Release\FormulaOne.frmSeasons.resources
+D:\Documentos\Project3_Databases\People\obj\Release\FormulaOne.frmTeams.resources
+D:\Documentos\Project3_Databases\People\bin\Release\FormulaOne.exe.config
+D:\Documentos\Project3_Databases\People\bin\Release\FormulaOne.exe
+D:\Documentos\Project3_Databases\People\bin\Release\FormulaOne.pdb
+D:\Documentos\Project3_Databases\People\bin\Release\FormulaOne.xml
+D:\Documentos\Project3_Databases\People\obj\Release\FormulaOne.exe
+D:\Documentos\Project3_Databases\People\obj\Release\FormulaOne.xml
+D:\Documentos\Project3_Databases\People\obj\Release\FormulaOne.pdb

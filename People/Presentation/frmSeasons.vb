@@ -16,7 +16,7 @@
         frmFormulaOne.Enabled = True
     End Sub
 
-    Private Sub frmCountries_Closed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+    Private Sub frmFormulaOne_Closed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         ' Reopen the main menu form
         frmFormulaOne.Enabled = True
     End Sub
@@ -30,6 +30,8 @@
             'Management of lists of Seasons, Teams and GPs
             Dim season As New Season
             season.ReadAllSeasons()
+
+
             lstSeasons.Items.Clear()
             For Each season In season.SeasonDAO.Seasons
                 lstSeasons.Items.Add(season.SeasonID)
@@ -43,9 +45,14 @@
             lblDriver1.Enabled = False
             lblDriver2.Enabled = False
             ' Initialize combo box with integers from 5 to 10
+
+            CmbBoxMinTeams.Items.Add(" ")
+            CmbBoxMaxTeams.Items.Add(" ")
+            CmbBoxMinGPs.Items.Add(" ")
+            CmbBoxMaxGPs.Items.Add(" ")
             For i As Integer = 5 To 10
-                selectMinBox.Items.Add(i)
-                selectMaxBox.Items.Add(i)
+                CmbBoxMinTeams.Items.Add(i)
+                CmbBoxMaxTeams.Items.Add(i)
             Next
 
             ' Initialize combo box with integers from 10 to 20
@@ -54,8 +61,8 @@
                 CmbBoxMaxGPs.Items.Add(i)
             Next
             ' Avoid user input in the combo boxes, only allow selection of the values and set the default selected value
-            selectMinBox.DropDownStyle = ComboBoxStyle.DropDownList
-            selectMaxBox.DropDownStyle = ComboBoxStyle.DropDownList
+            CmbBoxMinTeams.DropDownStyle = ComboBoxStyle.DropDownList
+            CmbBoxMaxTeams.DropDownStyle = ComboBoxStyle.DropDownList
             CmbBoxMinGPs.DropDownStyle = ComboBoxStyle.DropDownList
             CmbBoxMaxGPs.DropDownStyle = ComboBoxStyle.DropDownList
 
@@ -81,7 +88,7 @@
                 lstContracts.Enabled = True
                 lstGPs.Enabled = True
                 ' Insert the ids + names of the teams that have a contract in the list of contracts
-                For Each auxTeam In season.ListTeams
+                For Each auxTeam In season.ListContracts
                     lstContracts.Items.Add(auxTeam.TeamID & " " & auxTeam.TeamName)
                 Next
 
@@ -152,23 +159,35 @@
             End If
 
             'Check for the selection of the number of teams and GPs
-            If selectMinBox.SelectedIndex >= 0 AndAlso selectMaxBox.SelectedIndex >= 0 AndAlso selectMinBox.SelectedIndex < selectMaxBox.SelectedIndex Then
-                minTeams = Integer.Parse(selectMinBox.SelectedItem.ToString)
-                maxTeams = Integer.Parse(selectMaxBox.SelectedItem.ToString)
+            If CmbBoxMinTeams.SelectedItem IsNot " " AndAlso CmbBoxMaxTeams.SelectedItem IsNot " " AndAlso CmbBoxMinTeams.SelectedIndex <= CmbBoxMaxTeams.SelectedIndex Then
+                If CmbBoxMinTeams.SelectedIndex >= 0 AndAlso CmbBoxMaxTeams.SelectedIndex >= 0 Then
+                    minTeams = Integer.Parse(CmbBoxMinTeams.SelectedItem.ToString)
+                    maxTeams = Integer.Parse(CmbBoxMaxTeams.SelectedItem.ToString)
+                Else
+                    minTeams = 5
+                    maxTeams = 10
+                End If
             Else
-                minTeams = 5
-                maxTeams = 10
+                MessageBox.Show("The minimum number of teams must be less than the maximum number of teams.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Exit Sub
             End If
 
 
             'We do the same with the controls of Combobox for the number of GPs
-            If CmbBoxMinGPs.SelectedIndex >= 0 AndAlso CmbBoxMaxGPs.SelectedIndex >= 0 AndAlso CmbBoxMinGPs.SelectedIndex < CmbBoxMaxGPs.SelectedIndex Then
-                minGPs = Integer.Parse(CmbBoxMinGPs.SelectedItem.ToString)
-                maxGPs = Integer.Parse(CmbBoxMaxGPs.SelectedItem.ToString)
+            If CmbBoxMinGPs.SelectedItem IsNot " " AndAlso CmbBoxMaxGPs.SelectedItem IsNot " " AndAlso CmbBoxMinGPs.SelectedIndex <= CmbBoxMaxGPs.SelectedIndex Then
+                If CmbBoxMinGPs.SelectedIndex >= 0 AndAlso CmbBoxMaxGPs.SelectedIndex >= 0 Then
+                    minGPs = Integer.Parse(CmbBoxMinGPs.SelectedItem.ToString)
+                    maxGPs = Integer.Parse(CmbBoxMaxGPs.SelectedItem.ToString)
+                Else
+                    minGPs = 10
+                    maxGPs = 20
+                End If
             Else
-                minGPs = 10
-                maxGPs = 20
+                MessageBox.Show("The minimum number of GPs must be less than the maximum number of GPs.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Exit Sub
             End If
+
+
         Catch ex As Exception
             MessageBox.Show("Error while Fetching Data: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -249,8 +268,8 @@
         lstGPs.Items.Clear()
         lstContracts.Items.Clear()
 
-        selectMinBox.SelectedIndex = -1
-        selectMaxBox.SelectedIndex = -1
+        CmbBoxMinTeams.SelectedIndex = -1
+        CmbBoxMaxTeams.SelectedIndex = -1
         CmbBoxMinGPs.SelectedIndex = -1
         CmbBoxMaxGPs.SelectedIndex = -1
 

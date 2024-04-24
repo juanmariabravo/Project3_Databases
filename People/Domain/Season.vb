@@ -1,6 +1,6 @@
 ﻿' TODO: Add the attributes of the reports and calendars
 Public Class Season
-    Public Property ListTeams As New Collection
+    Public Property ListContracts As New Collection
     Public Property ListGPs As New Collection
     Public Property ListRaces As New Collection
 

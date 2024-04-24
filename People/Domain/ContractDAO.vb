@@ -6,25 +6,29 @@
     End Sub
     Public Sub ReadAll()
         Dim contract As Contract
-        Dim col, aux As Collection
-        col = DBBroker.GetBroker().Read("SELECT * FROM Contracts ORDER BY Season, Team;")
+        Dim colContracts, auxContracts As Collection
+        colContracts = DBBroker.GetBroker().Read("SELECT * FROM Contracts ORDER BY Season, Team;")
 
-        For Each aux In col
-            contract = New Contract(Integer.Parse(aux(1).ToString), Integer.Parse(aux(2).ToString))
+        For Each auxContracts In colContracts
+            contract = New Contract(Integer.Parse(auxContracts(1).ToString), Integer.Parse(auxContracts(2).ToString))
             contract.ReadContract()
             Me.Contracts.Add(contract)
         Next
     End Sub
     Public Sub Read(ByRef contract As Contract)
-        Dim col As Collection
+        Dim colContracts As Collection
         Dim aux As Collection
-        col = DBBroker.GetBroker.Read("SELECT * FROM Contracts WHERE Season='" & contract.Season & "' AND Team='" & contract.Team & "';")
+        colContracts = DBBroker.GetBroker.Read("SELECT * FROM Contracts WHERE Season='" & contract.Season & "' AND Team='" & contract.Team & "';")
+        If colContracts.Count > 1 Then
+            For Each aux In colContracts
+                contract.Driver1 = Integer.Parse(aux(3).ToString)
+                contract.Driver2 = Integer.Parse(aux(4).ToString)
+            Next
+        End If
 
-        For Each aux In col
-            contract.Driver1 = Integer.Parse(aux(3).ToString)
-            contract.Driver2 = Integer.Parse(aux(4).ToString)
-        Next
+
     End Sub
+
 
     Public Function Insert(ByVal contract As Contract) As Integer
         Return DBBroker.GetBroker.Change("INSERT INTO Contracts VALUES ('" & contract.Team & "', '" & contract.Season & "', '" & contract.Driver1 & "', '" & contract.Driver2 & "');")

@@ -1,4 +1,6 @@
-﻿Public Class frmRaces
+﻿Imports Org.BouncyCastle.Bcpg.OpenPgp
+
+Public Class frmRaces
     Private season As Season
 
 
@@ -12,13 +14,7 @@
 
 
         Try
-            'Borrar el texto de todas las labels de drivers
-            lblDriver1.Text = String.Empty
-            lblDriver2.Text = String.Empty
-            lblDriver3.Text = String.Empty
-            lblDriver4.Text = String.Empty
-            lblDriver5.Text = String.Empty
-            lblDriver6.Text = String.Empty
+
 
 
             season = New Season()
@@ -42,7 +38,7 @@
                 season.ReadSeason()
                 lstGPs.Items.Clear()
                 lstGPs.Enabled = True
-                'Meter los nombres de los GPs en la lista de GPs
+
                 For Each aux In season.ListGPs
                     lstGPs.Items.Add(aux(2).ToString)
                 Next
@@ -55,13 +51,23 @@
     Private Sub lstGPs_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstGPs.SelectedIndexChanged
         Try
             If lstGPs.SelectedIndex >= 0 AndAlso lstGPs.SelectedItems.Count = 1 Then
+                Dim auxGP As New Collection
                 Dim gpName As String = lstGPs.SelectedItem.ToString()
-                Dim selectedGP As GP = season.ListGPs.Cast(Of GP)().FirstOrDefault(Function(gp) gp.GPName = gpName)
+                Dim selectedGP As New GP
+                'Buscar el GP seleccionado en la lista de GPs de la temporada
+                For Each auxGP In season.ListGPs
+                    If gpName = auxGP(2).ToString Then
+                        selectedGP.GPID = Integer.Parse(auxGP(1).ToString)
+                        selectedGP.ReadGP()
+                        Exit For
+                    End If
+                    If selectedGP IsNot Nothing Then
+                        ShowRandomDrivers(season)
+                    End If
+                Next
 
-                If selectedGP IsNot Nothing Then
-                    ShowRandomDrivers(season)
-                End If
             End If
+
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -74,7 +80,7 @@
             Dim driverNames As New List(Of String)()
 
             ' Obtener todos los conductores asignados a la temporada seleccionada
-            For Each team As Team In selectedSeason.ListTeams
+            For Each team As Team In selectedSeason.ListContracts
                 For Each contract As Contract In team.Contracts
                     If contract.Season = selectedSeason.SeasonID Then
                         ' Leer el nombre del primer conductor y agregarlo a la lista
@@ -84,20 +90,12 @@
                         ' Leer el nombre del segundo conductor y agregarlo a la lista
                         Dim driver2Name As String = GetDriverName(contract.Driver2)
                         driverNames.Add(driver2Name)
+
                     End If
                 Next
             Next
 
             ' Asignar conductores aleatorios a los labels
-            Dim labels() As Label = {lblDriver1, lblDriver2, lblDriver3, lblDriver4, lblDriver5, lblDriver6}
-            For i As Integer = 0 To Math.Min(driverNames.Count - 1, labels.Length - 1)
-                labels(i).Text = driverNames(i)
-            Next
-
-            ' Limpiar los labels restantes si no hay suficientes conductores para llenar todas las posiciones
-            For i As Integer = Math.Min(driverNames.Count, labels.Length) To labels.Length - 1
-                labels(i).Text = String.Empty
-            Next
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try

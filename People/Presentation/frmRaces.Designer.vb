@@ -32,6 +32,12 @@ Partial Class frmRaces
         Me.lblDriver5 = New System.Windows.Forms.Label()
         Me.lblDriver6 = New System.Windows.Forms.Label()
         Me.lblPositions = New System.Windows.Forms.Label()
+        Me.txtbxDriver1 = New System.Windows.Forms.TextBox()
+        Me.TxtBxDriver2 = New System.Windows.Forms.TextBox()
+        Me.TxtBxDriver3 = New System.Windows.Forms.TextBox()
+        Me.TxtBxDriver4 = New System.Windows.Forms.TextBox()
+        Me.TxtBxDriver5 = New System.Windows.Forms.TextBox()
+        Me.TxtBxDriver6 = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'lstGPs
@@ -68,7 +74,7 @@ Partial Class frmRaces
         'lblDriver1
         '
         Me.lblDriver1.AutoSize = True
-        Me.lblDriver1.Location = New System.Drawing.Point(618, 230)
+        Me.lblDriver1.Location = New System.Drawing.Point(604, 203)
         Me.lblDriver1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDriver1.Name = "lblDriver1"
         Me.lblDriver1.Size = New System.Drawing.Size(53, 16)
@@ -78,7 +84,7 @@ Partial Class frmRaces
         'lblDriver2
         '
         Me.lblDriver2.AutoSize = True
-        Me.lblDriver2.Location = New System.Drawing.Point(731, 230)
+        Me.lblDriver2.Location = New System.Drawing.Point(731, 203)
         Me.lblDriver2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDriver2.Name = "lblDriver2"
         Me.lblDriver2.Size = New System.Drawing.Size(53, 16)
@@ -88,7 +94,7 @@ Partial Class frmRaces
         'lblDriver3
         '
         Me.lblDriver3.AutoSize = True
-        Me.lblDriver3.Location = New System.Drawing.Point(848, 230)
+        Me.lblDriver3.Location = New System.Drawing.Point(848, 203)
         Me.lblDriver3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDriver3.Name = "lblDriver3"
         Me.lblDriver3.Size = New System.Drawing.Size(53, 16)
@@ -98,7 +104,7 @@ Partial Class frmRaces
         'lblDriver4
         '
         Me.lblDriver4.AutoSize = True
-        Me.lblDriver4.Location = New System.Drawing.Point(618, 306)
+        Me.lblDriver4.Location = New System.Drawing.Point(604, 307)
         Me.lblDriver4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDriver4.Name = "lblDriver4"
         Me.lblDriver4.Size = New System.Drawing.Size(53, 16)
@@ -134,11 +140,65 @@ Partial Class frmRaces
         Me.lblPositions.TabIndex = 47
         Me.lblPositions.Text = "TitlePositions"
         '
+        'txtbxDriver1
+        '
+        Me.txtbxDriver1.Location = New System.Drawing.Point(607, 243)
+        Me.txtbxDriver1.Name = "txtbxDriver1"
+        Me.txtbxDriver1.ReadOnly = True
+        Me.txtbxDriver1.Size = New System.Drawing.Size(100, 22)
+        Me.txtbxDriver1.TabIndex = 48
+        '
+        'TxtBxDriver2
+        '
+        Me.TxtBxDriver2.Location = New System.Drawing.Point(734, 243)
+        Me.TxtBxDriver2.Name = "TxtBxDriver2"
+        Me.TxtBxDriver2.ReadOnly = True
+        Me.TxtBxDriver2.Size = New System.Drawing.Size(100, 22)
+        Me.TxtBxDriver2.TabIndex = 49
+        '
+        'TxtBxDriver3
+        '
+        Me.TxtBxDriver3.Location = New System.Drawing.Point(851, 243)
+        Me.TxtBxDriver3.Name = "TxtBxDriver3"
+        Me.TxtBxDriver3.ReadOnly = True
+        Me.TxtBxDriver3.Size = New System.Drawing.Size(100, 22)
+        Me.TxtBxDriver3.TabIndex = 50
+        '
+        'TxtBxDriver4
+        '
+        Me.TxtBxDriver4.Location = New System.Drawing.Point(607, 347)
+        Me.TxtBxDriver4.Name = "TxtBxDriver4"
+        Me.TxtBxDriver4.ReadOnly = True
+        Me.TxtBxDriver4.Size = New System.Drawing.Size(100, 22)
+        Me.TxtBxDriver4.TabIndex = 51
+        '
+        'TxtBxDriver5
+        '
+        Me.TxtBxDriver5.Location = New System.Drawing.Point(734, 347)
+        Me.TxtBxDriver5.Name = "TxtBxDriver5"
+        Me.TxtBxDriver5.ReadOnly = True
+        Me.TxtBxDriver5.Size = New System.Drawing.Size(100, 22)
+        Me.TxtBxDriver5.TabIndex = 52
+        '
+        'TxtBxDriver6
+        '
+        Me.TxtBxDriver6.Location = New System.Drawing.Point(851, 347)
+        Me.TxtBxDriver6.Name = "TxtBxDriver6"
+        Me.TxtBxDriver6.ReadOnly = True
+        Me.TxtBxDriver6.Size = New System.Drawing.Size(100, 22)
+        Me.TxtBxDriver6.TabIndex = 53
+        '
         'frmRaces
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1097, 569)
+        Me.Controls.Add(Me.TxtBxDriver6)
+        Me.Controls.Add(Me.TxtBxDriver5)
+        Me.Controls.Add(Me.TxtBxDriver4)
+        Me.Controls.Add(Me.TxtBxDriver3)
+        Me.Controls.Add(Me.TxtBxDriver2)
+        Me.Controls.Add(Me.txtbxDriver1)
         Me.Controls.Add(Me.lblPositions)
         Me.Controls.Add(Me.lblDriver6)
         Me.Controls.Add(Me.lblDriver5)
@@ -167,4 +227,10 @@ Partial Class frmRaces
     Friend WithEvents lblDriver5 As Label
     Friend WithEvents lblDriver6 As Label
     Friend WithEvents lblPositions As Label
+    Friend WithEvents txtbxDriver1 As TextBox
+    Friend WithEvents TxtBxDriver2 As TextBox
+    Friend WithEvents TxtBxDriver3 As TextBox
+    Friend WithEvents TxtBxDriver4 As TextBox
+    Friend WithEvents TxtBxDriver5 As TextBox
+    Friend WithEvents TxtBxDriver6 As TextBox
 End Class
