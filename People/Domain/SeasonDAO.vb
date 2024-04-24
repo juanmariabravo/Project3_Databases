@@ -13,7 +13,7 @@ Public Class SeasonDAO
         Dim col, aux As Collection
 
         col = DBBroker.GetBroker().Read("SELECT DISTINCT Season FROM Calendar ORDER BY Season;")
-        If col.Count > 1 Then
+        If col.Count > 0 Then
             For Each aux In col
                 se = New Season(Integer.Parse(aux(1).ToString))
                 se.ReadSeason()

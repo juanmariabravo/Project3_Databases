@@ -29,13 +29,13 @@
         Try
             'Management of lists of Seasons, Teams and GPs
             Dim season As New Season
+
             season.ReadAllSeasons()
-
-
             lstSeasons.Items.Clear()
             For Each season In season.SeasonDAO.Seasons
                 lstSeasons.Items.Add(season.SeasonID)
             Next
+
 
             'Management of visual elements
             btnInsert.Enabled = False
