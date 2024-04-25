@@ -23,7 +23,7 @@
 
     Private Sub LstGPs_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstGPs.SelectedIndexChanged
         Try
-            If lstGPs.SelectedIndex > 0 Then
+            If lstGPs.SelectedIndex >= 0 Then
                 Dim tokens As String() = lstGPs.SelectedItem.ToString.Split(" "c)
                 gp = New GP(Integer.Parse(tokens(0)))
                 gp.ReadGP()

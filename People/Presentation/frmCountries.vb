@@ -34,7 +34,7 @@ Public Class frmCountries
 
     Private Sub lstCountries_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstCountries.SelectedIndexChanged
         Try
-            If lstCountries.SelectedIndex > 0 Then
+            If lstCountries.SelectedIndex >= 0 Then
                 Dim country As New Country(lstCountries.SelectedItem.ToString)
                 country.ReadCountry()
                 txtCountryID.Text = country.CountryID.ToString()

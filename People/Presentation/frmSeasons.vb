@@ -104,7 +104,7 @@
 
     Private Sub lstContracts_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstContracts.SelectedIndexChanged
         Try
-            If lstContracts.Items.Count > 0 Then
+            If lstContracts.Items.Count >= 0 Then
                 Dim contract As New Contract()
                 Dim auxDriver As New Driver()
 

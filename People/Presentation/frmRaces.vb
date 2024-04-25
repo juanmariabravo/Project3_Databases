@@ -11,12 +11,7 @@ Public Class frmRaces
 
     End Sub
     Private Sub frmRaces_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
         Try
-
-
-
             season = New Season()
             season.ReadAllSeasons()
             lstSeasons.Items.Clear()

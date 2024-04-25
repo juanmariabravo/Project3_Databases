@@ -23,7 +23,7 @@
 
     Private Sub LstTeams_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstTeams.SelectedIndexChanged
         Try
-            If lstTeams.SelectedIndex > 0 Then
+            If lstTeams.SelectedIndex >= 0 Then
                 Dim tokens As String() = lstTeams.SelectedItem.ToString.Split(" "c)
                 te = New Team(Integer.Parse(tokens(0)))
                 te.ReadTeam()
