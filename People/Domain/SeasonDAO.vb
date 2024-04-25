@@ -255,8 +255,20 @@ Public Class SeasonDAO
         Next
     End Sub
 
-    Public Sub Delete(ByRef se As Season)
-
-    End Sub
-
+    'To delete the season selected ----------------------------------------
+    Public Function Delete(ByVal se As Season) As Integer
+        Dim auxRaceToDelete As Race
+        Dim auxContractToDelete As Contract
+        For i = 1 To se.ListRaces.Count
+            'Take each race and delete it
+            auxRaceToDelete = CType(se.ListRaces(i), Race)
+            auxRaceToDelete.DeleteRace()
+        Next
+        For i = 1 To se.ListContracts.Count
+            'Take each contract and delete it
+            auxContractToDelete = CType(se.ListContracts(i), Contract)
+            auxContractToDelete.DeleteContract()
+        Next
+        Return DBBroker.GetBroker().Change("DELETE FROM Calendar WHERE SeasonID = " & se.SeasonID & ";")
+    End Function
 End Class
