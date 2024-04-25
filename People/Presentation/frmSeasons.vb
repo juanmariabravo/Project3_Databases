@@ -38,7 +38,7 @@
 
 
             'Management of visual elements
-            btnInsert.Enabled = False
+            btnDelete.Enabled = False
             btnDone.Enabled = False
             lstContracts.Enabled = False
             lstGPs.Enabled = False
@@ -73,7 +73,7 @@
     End Sub
     Private Sub LstSeason_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstSeasons.SelectedIndexChanged
         Try
-
+            'btnDelete.Enabled = True
             If lstSeasons.SelectedIndex >= 0 AndAlso lstSeasons.SelectedItems.Count = 1 Then
                 Dim season As New Season()
                 Dim aux As Collection
@@ -229,31 +229,25 @@
             lblDriver2.Enabled = False
             lblDriver2.Enabled = False
             btnClear.Enabled = False
-            btnInsert.Enabled = False
+            btnDelete.Enabled = False
             btnDone.Enabled = False
         End Try
     End Sub
 
-    Private Sub btnInsert_Click(sender As Object, e As EventArgs) Handles btnInsert.Click
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         Try
-            If numTeamsInserted < numberTeams Then
-                MessageBox.Show($"Team {numTeamsInserted + 1}: {lblDriver2.Text} and {lblDriver2.Text}")
-
-                ' Increment the counter of inserted teams
-                numTeamsInserted += 1
-
-                ' Show message if all desired teams have been inserted
-                If numTeamsInserted = numberTeams Then
-                    MessageBox.Show("All teams have been created.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    btnInsert.Enabled = False
-                Else
-                    lblDriver2.Text = ""
-                    lblDriver2.Text = ""
-                End If
-            End If
+            ' Delete the season selected in the list of seasons
+            Dim season As New Season(Integer.Parse(lstSeasons.SelectedItem.ToString))
+            season.DeleteSeason()
+            lstSeasons.Items.Clear()
+            season.ReadAllSeasons()
+            For Each season In season.SeasonDAO.Seasons
+                lstSeasons.Items.Add(season.SeasonID)
+            Next
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+
     End Sub
 
 

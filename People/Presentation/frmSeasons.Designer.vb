@@ -28,7 +28,6 @@ Partial Class frmSeasons
         Me.btnGenerateSeasonInfo = New System.Windows.Forms.Button()
         Me.lblNumGPs = New System.Windows.Forms.Label()
         Me.btnClear = New System.Windows.Forms.Button()
-        Me.btnInsert = New System.Windows.Forms.Button()
         Me.btnDone = New System.Windows.Forms.Button()
         Me.lstSeasons = New System.Windows.Forms.ListBox()
         Me.lblNumTeams = New System.Windows.Forms.Label()
@@ -48,6 +47,7 @@ Partial Class frmSeasons
         Me.seasonsLstBxTitle = New System.Windows.Forms.Label()
         Me.contractsLstBxTitle = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnDelete = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'ContextMenuStrip1
@@ -69,7 +69,7 @@ Partial Class frmSeasons
         'btnGenerateSeasonInfo
         '
         Me.btnGenerateSeasonInfo.Location = New System.Drawing.Point(40, 420)
-        Me.btnGenerateSeasonInfo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnGenerateSeasonInfo.Margin = New System.Windows.Forms.Padding(4)
         Me.btnGenerateSeasonInfo.Name = "btnGenerateSeasonInfo"
         Me.btnGenerateSeasonInfo.Size = New System.Drawing.Size(160, 50)
         Me.btnGenerateSeasonInfo.TabIndex = 3
@@ -89,27 +89,17 @@ Partial Class frmSeasons
         'btnClear
         '
         Me.btnClear.Location = New System.Drawing.Point(237, 420)
-        Me.btnClear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(4)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(124, 50)
         Me.btnClear.TabIndex = 10
         Me.btnClear.Text = "Clear"
         Me.btnClear.UseVisualStyleBackColor = True
         '
-        'btnInsert
-        '
-        Me.btnInsert.Location = New System.Drawing.Point(1044, 495)
-        Me.btnInsert.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
-        Me.btnInsert.Name = "btnInsert"
-        Me.btnInsert.Size = New System.Drawing.Size(117, 42)
-        Me.btnInsert.TabIndex = 11
-        Me.btnInsert.Text = "Insert"
-        Me.btnInsert.UseVisualStyleBackColor = True
-        '
         'btnDone
         '
         Me.btnDone.Location = New System.Drawing.Point(404, 428)
-        Me.btnDone.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnDone.Margin = New System.Windows.Forms.Padding(4)
         Me.btnDone.Name = "btnDone"
         Me.btnDone.Size = New System.Drawing.Size(117, 42)
         Me.btnDone.TabIndex = 12
@@ -121,7 +111,7 @@ Partial Class frmSeasons
         Me.lstSeasons.FormattingEnabled = True
         Me.lstSeasons.ItemHeight = 16
         Me.lstSeasons.Location = New System.Drawing.Point(547, 44)
-        Me.lstSeasons.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lstSeasons.Margin = New System.Windows.Forms.Padding(4)
         Me.lstSeasons.Name = "lstSeasons"
         Me.lstSeasons.Size = New System.Drawing.Size(248, 452)
         Me.lstSeasons.TabIndex = 13
@@ -147,22 +137,22 @@ Partial Class frmSeasons
         Me.btnMainMenuSeasons.Text = "Go to main menu"
         Me.btnMainMenuSeasons.UseVisualStyleBackColor = False
         '
-        'selectMinBox
+        'CmbBoxMinTeams
         '
         Me.CmbBoxMinTeams.FormattingEnabled = True
         Me.CmbBoxMinTeams.Location = New System.Drawing.Point(40, 177)
         Me.CmbBoxMinTeams.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.CmbBoxMinTeams.Name = "selectMinBox"
+        Me.CmbBoxMinTeams.Name = "CmbBoxMinTeams"
         Me.CmbBoxMinTeams.Size = New System.Drawing.Size(121, 24)
         Me.CmbBoxMinTeams.TabIndex = 27
         Me.CmbBoxMinTeams.Text = "Min"
         '
-        'selectMaxBox
+        'CmbBoxMaxTeams
         '
         Me.CmbBoxMaxTeams.FormattingEnabled = True
         Me.CmbBoxMaxTeams.Location = New System.Drawing.Point(205, 177)
         Me.CmbBoxMaxTeams.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.CmbBoxMaxTeams.Name = "selectMaxBox"
+        Me.CmbBoxMaxTeams.Name = "CmbBoxMaxTeams"
         Me.CmbBoxMaxTeams.Size = New System.Drawing.Size(121, 24)
         Me.CmbBoxMaxTeams.TabIndex = 28
         Me.CmbBoxMaxTeams.Text = "Max"
@@ -170,7 +160,7 @@ Partial Class frmSeasons
         'txtSeasonYear
         '
         Me.txtSeasonYear.Location = New System.Drawing.Point(40, 82)
-        Me.txtSeasonYear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtSeasonYear.Margin = New System.Windows.Forms.Padding(4)
         Me.txtSeasonYear.Name = "txtSeasonYear"
         Me.txtSeasonYear.Size = New System.Drawing.Size(137, 22)
         Me.txtSeasonYear.TabIndex = 29
@@ -261,12 +251,12 @@ Partial Class frmSeasons
         '
         'btnClassifications
         '
-        Me.btnClassifications.Location = New System.Drawing.Point(1197, 374)
-        Me.btnClassifications.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnClassifications.Location = New System.Drawing.Point(1182, 374)
+        Me.btnClassifications.Margin = New System.Windows.Forms.Padding(4)
         Me.btnClassifications.Name = "btnClassifications"
-        Me.btnClassifications.Size = New System.Drawing.Size(120, 68)
+        Me.btnClassifications.Size = New System.Drawing.Size(154, 83)
         Me.btnClassifications.TabIndex = 39
-        Me.btnClassifications.Text = "Show Classifications"
+        Me.btnClassifications.Text = "Open Races And Show Classifications"
         Me.btnClassifications.UseVisualStyleBackColor = True
         '
         'seasonsLstBxTitle
@@ -305,6 +295,16 @@ Partial Class frmSeasons
         Me.Label2.TabIndex = 41
         Me.Label2.Text = "GPs"
         '
+        'btnDelete
+        '
+        Me.btnDelete.Location = New System.Drawing.Point(612, 515)
+        Me.btnDelete.Margin = New System.Windows.Forms.Padding(5)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(117, 42)
+        Me.btnDelete.TabIndex = 11
+        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.UseVisualStyleBackColor = True
+        '
         'frmSeasons
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -329,12 +329,12 @@ Partial Class frmSeasons
         Me.Controls.Add(Me.lblNumTeams)
         Me.Controls.Add(Me.lstSeasons)
         Me.Controls.Add(Me.btnDone)
-        Me.Controls.Add(Me.btnInsert)
+        Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.lblNumGPs)
         Me.Controls.Add(Me.btnGenerateSeasonInfo)
         Me.Controls.Add(Me.Label1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmSeasons"
         Me.Text = "frmSeasons"
         Me.ResumeLayout(False)
@@ -346,7 +346,6 @@ Partial Class frmSeasons
     Friend WithEvents btnGenerateSeasonInfo As Button
     Friend WithEvents lblNumGPs As Label
     Friend WithEvents btnClear As Button
-    Friend WithEvents btnInsert As Button
     Friend WithEvents btnDone As Button
     Friend WithEvents lstSeasons As ListBox
     Friend WithEvents lblNumTeams As Label
@@ -366,4 +365,5 @@ Partial Class frmSeasons
     Friend WithEvents seasonsLstBxTitle As Label
     Friend WithEvents contractsLstBxTitle As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents btnDelete As Button
 End Class

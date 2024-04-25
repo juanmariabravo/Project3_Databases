@@ -28,4 +28,8 @@ Public Class Season
         Me.SeasonDAO.Insert(Me, numTeams, numGPs)
     End Sub
 
+    Public Sub DeleteSeason()
+        Me.SeasonDAO.Delete(Me)
+    End Sub
+
 End Class
