@@ -1,4 +1,6 @@
-﻿Public Class frmSeasons
+﻿Imports System.Linq.Expressions
+
+Public Class frmSeasons
     Private contract As Contract
     Private TxtBxseasonYear As Integer
     Private numberTeams As Integer
@@ -92,11 +94,11 @@
             ' Insert the ids + names of the teams that have a contract in the list of contracts
             For Each auxTeamID In season.ListContractsTeamID
 
-                    auxTeam = New Team(auxTeamID)
-                    auxTeam.ReadTeam()
+                auxTeam = New Team(auxTeamID)
+                auxTeam.ReadTeam()
 
-                    lstContracts.Items.Add(auxTeam.TeamID & " " & auxTeam.TeamName)
-                Next
+                lstContracts.Items.Add(auxTeam.TeamID & " " & auxTeam.TeamName)
+            Next
 
             ' Insert the names of the GPs in the list of GPs
             For Each auxGPsID In season.ListGPsID
@@ -216,9 +218,9 @@
         Dim season As New Season(seasonYear)
         season.ReadSeason()
 
-
-        'Insert the season in the database
-        season.InsertSeason(numberTeams, numberGPs)
+        Try
+            'Insert the season in the database
+            season.InsertSeason(numberTeams, numberGPs)
 
             'Recharge the seasons list
             season.ReadAllSeasons()
@@ -226,7 +228,9 @@
             For Each season In season.SeasonDAO.Seasons
                 lstSeasons.Items.Add(season.SeasonID)
             Next
-
+        Catch ex As Exception
+            MessageBox.Show("Error" & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
 
     End Sub
 
