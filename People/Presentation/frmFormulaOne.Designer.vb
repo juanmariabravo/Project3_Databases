@@ -30,12 +30,17 @@ Partial Class frmFormulaOne
         Me.lblMsg = New System.Windows.Forms.Label()
         Me.btnOpenCountries = New System.Windows.Forms.Button()
         Me.btnOpenSeasons = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnOpenRaces = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnOpenGPs
         '
         Me.btnOpenGPs.Enabled = False
-        Me.btnOpenGPs.Location = New System.Drawing.Point(274, 349)
+        Me.btnOpenGPs.Location = New System.Drawing.Point(248, 195)
         Me.btnOpenGPs.Name = "btnOpenGPs"
         Me.btnOpenGPs.Size = New System.Drawing.Size(137, 46)
         Me.btnOpenGPs.TabIndex = 12
@@ -45,7 +50,7 @@ Partial Class frmFormulaOne
         'BtnOpenDrivers
         '
         Me.BtnOpenDrivers.Enabled = False
-        Me.BtnOpenDrivers.Location = New System.Drawing.Point(694, 349)
+        Me.BtnOpenDrivers.Location = New System.Drawing.Point(248, 293)
         Me.BtnOpenDrivers.Name = "BtnOpenDrivers"
         Me.BtnOpenDrivers.Size = New System.Drawing.Size(137, 46)
         Me.BtnOpenDrivers.TabIndex = 13
@@ -55,7 +60,7 @@ Partial Class frmFormulaOne
         'btnOpenTeams
         '
         Me.btnOpenTeams.Enabled = False
-        Me.btnOpenTeams.Location = New System.Drawing.Point(485, 349)
+        Me.btnOpenTeams.Location = New System.Drawing.Point(47, 293)
         Me.btnOpenTeams.Name = "btnOpenTeams"
         Me.btnOpenTeams.Size = New System.Drawing.Size(137, 46)
         Me.btnOpenTeams.TabIndex = 14
@@ -64,9 +69,9 @@ Partial Class frmFormulaOne
         '
         'btnConnectDB
         '
-        Me.btnConnectDB.Location = New System.Drawing.Point(452, 72)
+        Me.btnConnectDB.Location = New System.Drawing.Point(57, 46)
         Me.btnConnectDB.Name = "btnConnectDB"
-        Me.btnConnectDB.Size = New System.Drawing.Size(188, 101)
+        Me.btnConnectDB.Size = New System.Drawing.Size(211, 47)
         Me.btnConnectDB.TabIndex = 15
         Me.btnConnectDB.Text = "Connect to Database!"
         Me.btnConnectDB.UseVisualStyleBackColor = True
@@ -74,31 +79,82 @@ Partial Class frmFormulaOne
         'lblMsg
         '
         Me.lblMsg.AutoSize = True
-        Me.lblMsg.Location = New System.Drawing.Point(324, 275)
+        Me.lblMsg.Font = New System.Drawing.Font("Gadugi", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMsg.Location = New System.Drawing.Point(52, 145)
         Me.lblMsg.Name = "lblMsg"
-        Me.lblMsg.Size = New System.Drawing.Size(452, 21)
+        Me.lblMsg.Size = New System.Drawing.Size(319, 27)
         Me.lblMsg.TabIndex = 16
-        Me.lblMsg.Text = "Select what type of information do you want to modify:"
+        Me.lblMsg.Text = "Management of Information"
         '
         'btnOpenCountries
         '
         Me.btnOpenCountries.Enabled = False
-        Me.btnOpenCountries.Location = New System.Drawing.Point(57, 349)
+        Me.btnOpenCountries.Location = New System.Drawing.Point(47, 195)
         Me.btnOpenCountries.Name = "btnOpenCountries"
         Me.btnOpenCountries.Size = New System.Drawing.Size(137, 46)
         Me.btnOpenCountries.TabIndex = 17
-        Me.btnOpenCountries.Text = "Country"
+        Me.btnOpenCountries.Text = "Countries"
         Me.btnOpenCountries.UseVisualStyleBackColor = True
         '
         'btnOpenSeasons
         '
         Me.btnOpenSeasons.Enabled = False
-        Me.btnOpenSeasons.Location = New System.Drawing.Point(885, 349)
+        Me.btnOpenSeasons.Location = New System.Drawing.Point(551, 238)
         Me.btnOpenSeasons.Name = "btnOpenSeasons"
         Me.btnOpenSeasons.Size = New System.Drawing.Size(137, 46)
         Me.btnOpenSeasons.TabIndex = 18
         Me.btnOpenSeasons.Text = "Seasons"
         Me.btnOpenSeasons.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Gadugi", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(443, 145)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(520, 27)
+        Me.Label1.TabIndex = 19
+        Me.Label1.Text = "Generation of Seasons And Simulation of Races"
+        '
+        'btnOpenRaces
+        '
+        Me.btnOpenRaces.Enabled = False
+        Me.btnOpenRaces.Location = New System.Drawing.Point(744, 238)
+        Me.btnOpenRaces.Name = "btnOpenRaces"
+        Me.btnOpenRaces.Size = New System.Drawing.Size(137, 46)
+        Me.btnOpenRaces.TabIndex = 20
+        Me.btnOpenRaces.Text = "Races"
+        Me.btnOpenRaces.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Gadugi", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(1078, 145)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(239, 27)
+        Me.Label2.TabIndex = 21
+        Me.Label2.Text = "Reports ans Histories"
+        '
+        'Button1
+        '
+        Me.Button1.Enabled = False
+        Me.Button1.Location = New System.Drawing.Point(1073, 195)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(261, 46)
+        Me.Button1.TabIndex = 22
+        Me.Button1.Text = "Classifications and Champions"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Enabled = False
+        Me.Button2.Location = New System.Drawing.Point(1073, 293)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(261, 46)
+        Me.Button2.TabIndex = 23
+        Me.Button2.Text = "Drivers and Teams History"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'frmFormulaOne
         '
@@ -106,7 +162,12 @@ Partial Class frmFormulaOne
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.MintCream
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ClientSize = New System.Drawing.Size(1093, 465)
+        Me.ClientSize = New System.Drawing.Size(1435, 562)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.btnOpenRaces)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnOpenSeasons)
         Me.Controls.Add(Me.btnOpenCountries)
         Me.Controls.Add(Me.lblMsg)
@@ -133,4 +194,9 @@ Partial Class frmFormulaOne
     Friend WithEvents lblMsg As Label
     Friend WithEvents btnOpenCountries As Button
     Friend WithEvents btnOpenSeasons As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents btnOpenRaces As Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class
