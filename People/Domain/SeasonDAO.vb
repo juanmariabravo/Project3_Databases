@@ -1,4 +1,6 @@
-﻿Imports Org.BouncyCastle.Utilities
+﻿Imports System.Windows.Media
+Imports Microsoft.VisualBasic.Devices
+Imports Org.BouncyCastle.Utilities
 
 Public Class SeasonDAO
 
@@ -64,148 +66,116 @@ Public Class SeasonDAO
 
     End Sub
 
-    'To insert the season with random data ----------------------------------------
     Public Sub Insert(ByRef se As Season, ByVal numTeams As Integer, ByVal numGPs As Integer)
-        ' Obtaining a list of all the teams in the database
-        Dim auxTeamID As New Integer
-        Dim auxDriverID As Integer
-        Dim auxGPID As Integer
 
-        'Collections to store the id of teams, contracts and gps ------------------------
-        Dim colTeams As New Collection
-        Dim colGPs As New Collection
-        Dim colDrivers As New Collection
-
-
-        'Variables for creating the races and its results------------------------
-        Dim auxRace As Race
+        'Variables for creating the races and its results------------------------------------------------------------------------------------------------------------------------------------
         Dim auxContract As New Contract
 
-        Dim numGPsOnSeason As Integer
+        'Collections to store the id of teams, contracts and gps ------------------------------------------------------------------------------------------------------------------------------------
+        Dim colTeams As Collection
+        Dim colGPs As Collection
+        Dim colDrivers As Collection
 
-        'Variables for random operations ------------------------
-        Dim i As Integer
-        Dim num As Integer
-        Dim rnd As New Random
+        'ArrayList para almacenar las filas
+        Dim auxTeamID As New ArrayList
+        Dim auxDriverID As New ArrayList
+        Dim auxGPID As New ArrayList
+        Dim auxDriversIDListToRace As New ArrayList
+        Dim copyDriversIDListToRace As New ArrayList
 
-        'Variables for creating the races and its results ------------------------
-        Dim DriverIDToAdd As Integer
+        'Variables for creating the races and its results ------------------------------------------------------------------------------------------------------------------------------------
+        Dim auxRace As Race
         Dim pointsForDriver As Integer
-        Dim AuxListDrivers As New Collection
-
-        Dim ColDriversToRace As New Collection
-        Dim ColGPsToRace As New Collection
         Dim numPositionsPerRace As Integer = 20
 
-
-        'Retrieval of information from the database ------------------------
+        'Retrieval of information from the database ------------------------------------------------------------------------------------------------------------------------------------
         colTeams = DBBroker.GetBroker().Read("SELECT TeamID FROM Teams ORDER BY TeamID;")
         colDrivers = DBBroker.GetBroker().Read("SELECT DriverID FROM Drivers ORDER BY DriverID;")
         colGPs = DBBroker.GetBroker().Read("SELECT GPID FROM GPs ORDER BY GPID;")
 
-        MessageBox.Show("The number of elements in the lists are: " & colTeams.Count & " teams, " & colDrivers.Count & " drivers and " & colGPs.Count & " GPs.")
-
-        'Choosing the random teams --------------------------------
-        'Checking if there are enough teams in the database
         If numTeams > colTeams.Count Then
             MessageBox.Show("There are not enough teams in the Database to perform the creation of the season.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
 
+        ' Copy the data from the collections into arraylists ------------------------------------------------------------------------------------------------------------------------------------
+
+        For Each auxTeamToCopy As Collection In colTeams
+            Dim auxIndexArray As Integer = auxTeamID.Add(Integer.Parse(auxTeamToCopy(1).ToString()))
+        Next
+
+        For Each auxDriverToCopy As Collection In colDrivers
+            Dim auxIndexArray As Integer = auxDriverID.Add(Integer.Parse(auxDriverToCopy(1).ToString()))
+        Next
+
+        For Each auxGPToCopy As Collection In colGPs
+            Dim auxIndexArray As Integer = auxGPID.Add(Integer.Parse(auxGPToCopy(1).ToString()))
+        Next
+
+
+
+        'Choosing the random teams ------------------------------------------------------------------------------------------------------------------------------------     
         For i = 1 To numTeams
+            'CHECKEAR QUE HAY SUFICIENTES EQUIPOS EN LA BASE DE DATOS (AUNQUE NO TIENE POR QUÉ HACER FALTA ESTO)
 
-            rnd = New Random(rnd.Next(1, colTeams.Count + 1))
-                num = rnd.Next(1, colTeams.Count + 1)
+            Dim rand As New Random
+            Dim randomIndexTeamSelected As Integer = rand.Next(0, auxTeamID.Count)
 
-                auxTeamID = Integer.Parse(colTeams.Item(num).ToString)
-                colTeams.Remove(num)
+            Dim teamID As Integer = CInt(auxTeamID(randomIndexTeamSelected).ToString)
 
-
-
-
-            auxContract = New Contract(auxTeamID, se.SeasonID)
-
-
+            auxContract = New Contract(teamID, se.SeasonID)
 
             'Choosing the first driver for the contract
-            rnd = New Random(rnd.Next(1, colDrivers.Count))
-            num = rnd.Next(1, colDrivers.Count)
-
-            auxDriverID = Integer.Parse(colTeams.Item(num).ToString)
-            auxContract.Driver1 = auxDriverID
-            colDrivers.Remove(num)
-
-
+            Dim randomIndexDriverSelected As Integer = rand.Next(0, auxDriverID.Count)
+            Dim driverID As Integer = CInt(auxDriverID(randomIndexDriverSelected).ToString)
+            auxContract.Driver1 = driverID
+            auxDriverID.Remove(driverID)
 
             'Choosing the second driver for the contract
-            rnd = New Random(rnd.Next(1, colDrivers.Count + 1))
-            num = rnd.Next(1, colDrivers.Count + 1)
-
-            auxDriverID = Integer.Parse(colTeams.Item(num).ToString)
-            auxContract.Driver2 = auxDriverID
-            colDrivers.Remove(num)
+            randomIndexDriverSelected = rand.Next(0, auxDriverID.Count)
+            driverID = CInt(auxDriverID(randomIndexDriverSelected).ToString)
+            auxContract.Driver2 = driverID
+            auxDriverID.Remove(driverID)
 
             auxContract.InsertContract()
 
-            ColDriversToRace.Add(auxContract.Driver1)
-            ColDriversToRace.Add(auxContract.Driver2)
+            auxDriversIDListToRace.Add(auxContract.Driver1)
+            auxDriversIDListToRace.Add(auxContract.Driver2)
 
+            auxTeamID.Remove(teamID)
 
         Next
 
-
-
-        'Choosing the random GPs --------------------------------
-        'Checking if there are enough GPs in the database
-
-        If numGPs > colGPs.Count Then
-            MessageBox.Show("There are not enough GPs in the Database to perform the creation of the season.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Exit Sub
+        'Checks if the number of drivers are below the sufficient number of drivers
+        'for a formulaone race, if so, it will adjust the quantity
+        If numPositionsPerRace > auxDriversIDListToRace.Count Then
+            numPositionsPerRace = auxDriversIDListToRace.Count
         End If
 
+        For Each copiedDriverID As Integer In auxDriversIDListToRace
+            copyDriversIDListToRace.Add(copiedDriverID)
+        Next
+
+        'Choosing the random GPs ------------------------------------------------------------------------------------------------------------------------------------
         For i = 1 To numGPs
 
-            num = rnd.Next(1, colGPs.Count + 1)
-            auxGPID = Integer.Parse(colGPs.Item(num).ToString())
+            Dim rand As New Random
+            'Get the random index of the gp selected
+            Dim randomIndexGPsSelected As Integer = rand.Next(0, auxGPID.Count)
+            'Get its ID value
+            Dim gpID As Integer = CInt(auxGPID(randomIndexGPsSelected).ToString)
 
-            colGPs.Remove(num)
+            DBBroker.GetBroker().Change("INSERT INTO Calendar (Season, GP, `Order`) VALUES (" & se.SeasonID.ToString & ", " & gpID.ToString & ", " & i & ");")
 
-            se.ListGPsID.Add(auxGPID)
-        Next
+            'Choosing the random races ------------------------------------------------------------------------------------------------------------------------------------
+            For j = 1 To numPositionsPerRace
+                'Get the random index for the driver that will participate
+                Dim randomIndexDriverSelected As Integer = rand.Next(0, copyDriversIDListToRace.Count)
 
-        'Choosing the random races ----------------------------------------------------------------
-
-        'Copying the GPs IDs to an auxiliar collection
-        For i = 1 To se.ListGPsID.Count
-            auxGPID = Integer.Parse(se.ListGPsID.Item(i).ToString)
-            ColGPsToRace.Add(auxGPID)
-        Next
-
-        'Getting the size of the auxiliar collection
-        numGPsOnSeason = ColGPsToRace.Count
-
-
-        'Check that there are enough drivers to place all the positions, if not, adjust the number of positions to the number of drivers
-        If numPositionsPerRace > ColDriversToRace.Count Then
-            numPositionsPerRace = ColDriversToRace.Count
-        End If
-
-        For k = 1 To ColDriversToRace.Count
-            AuxListDrivers.Add(ColDriversToRace.Item(k))
-        Next
-
-        For j = 1 To numGPsOnSeason
-
-            auxGPID = Integer.Parse(ColGPsToRace.Item(j).ToString)
-
-            For i = 1 To numPositionsPerRace
-
-                num = rnd.Next(1, AuxListDrivers.Count + 1)
-
-                DriverIDToAdd = Integer.Parse(AuxListDrivers.Item(num).ToString)
-
-                If i <= 6 Then
-                    Select Case i
+                'Gets the ID of the driver that will participate
+                Dim auxDriverIDtoRace As Integer = CInt(copyDriversIDListToRace(randomIndexDriverSelected).ToString)
+                If j <= 6 Then
+                    Select Case j
                         Case 1
                             pointsForDriver = 10
                         Case 2
@@ -222,28 +192,28 @@ Public Class SeasonDAO
                 Else
                     pointsForDriver = 0
                 End If
-                auxRace = New Race(se.SeasonID, auxGPID, DriverIDToAdd)
-                auxRace.Position = i
+                auxRace = New Race(se.SeasonID, gpID, auxDriverIDtoRace)
                 auxRace.Points = pointsForDriver
+                auxRace.Position = j
 
                 auxRace.InsertRace()
 
-                AuxListDrivers.Remove(num)
+                copyDriversIDListToRace.Remove(auxDriverIDtoRace)
             Next
 
-            For k = 1 To ColDriversToRace.Count
-                AuxListDrivers.Add(ColDriversToRace.Item(k))
+            'We copy the list of drivers to race for every race that we need to do
+            For Each copiedDriverID As Integer In auxDriversIDListToRace
+                copyDriversIDListToRace.Add(copiedDriverID)
             Next
+
+            'We remove this gp so that it can't be get selected again
+            auxGPID.Remove(gpID)
+
+
+
         Next
 
 
-
-        'Inserting the data from the GPs of the season in the calendar ------------------------
-        For i = 1 To se.ListGPsID.Count
-            auxGPID = Integer.Parse(se.ListGPsID.Item(i).ToString)
-            'Insert the gp of the season in the calendar
-            DBBroker.GetBroker().Change("INSERT INTO Calendar (Season, GP, `Order`) VALUES (" & se.SeasonID & ", " & auxGPID & ", " & i & ");")
-        Next
 
     End Sub
 

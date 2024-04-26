@@ -59,27 +59,28 @@ Public Class frmRaces
             season.SeasonID = Integer.Parse(lstSeasons.SelectedItem.ToString)
             season.ReadSeason()
             gpID = Integer.Parse(lstGPs.SelectedItem.ToString.Split(" "c)(0))
-            MessageBox.Show(gpID.ToString)
 
             For Each auxSeasonID_GPID_Driver In season.ListRaces
-                'MessageBox.Show("Found an asshole of season: " & auxSeasonID_GPID_Driver(1).ToString & "------on gp: " & auxSeasonID_GPID_Driver(2).ToString & "and with id: " & auxSeasonID_GPID_Driver(3).ToString)
+
                 If Integer.Parse(auxSeasonID_GPID_Driver(1).ToString) = season.SeasonID Or Integer.Parse(auxSeasonID_GPID_Driver(2).ToString) = gpID Then
                     raceSelected = New Race(season.SeasonID, gpID, Integer.Parse(auxSeasonID_GPID_Driver(3).ToString))
                     raceSelected.ReadRace()
-                    'MessageBox.Show("Found an asshole of position: " & raceSelected.Position.ToString)
+                    Dim auxDriverForNames As New Driver(Integer.Parse(raceSelected.Driver.ToString))
+                    auxDriverForNames.ReadDriver()
+
                     Select Case raceSelected.Position
                         Case 1
-                            txtbxDriver1.Text = raceSelected.Driver.ToString
+                            txtbxDriver1.Text = auxDriverForNames.DriverName & " " & auxDriverForNames.DriverSurname
                         Case 2
-                            TxtBxDriver2.Text = raceSelected.Driver.ToString
+                            TxtBxDriver2.Text = auxDriverForNames.DriverName & " " & auxDriverForNames.DriverSurname
                         Case 3
-                            TxtBxDriver3.Text = raceSelected.Driver.ToString
+                            TxtBxDriver3.Text = auxDriverForNames.DriverName & " " & auxDriverForNames.DriverSurname
                         Case 4
-                            TxtBxDriver4.Text = raceSelected.Driver.ToString
+                            TxtBxDriver4.Text = auxDriverForNames.DriverName & " " & auxDriverForNames.DriverSurname
                         Case 5
-                            TxtBxDriver5.Text = raceSelected.Driver.ToString
+                            TxtBxDriver5.Text = auxDriverForNames.DriverName & " " & auxDriverForNames.DriverSurname
                         Case 6
-                            TxtBxDriver6.Text = raceSelected.Driver.ToString
+                            TxtBxDriver6.Text = auxDriverForNames.DriverName & " " & auxDriverForNames.DriverSurname
                     End Select
                 End If
             Next
