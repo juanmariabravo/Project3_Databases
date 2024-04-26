@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "D:\\Documentos\\Project3_Databases\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\documentos\\project3_databases\\people\\presentation\\frmhistory.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\presentation\\frmhistory.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\documentos\\project3_databases\\people\\presentation\\frmhistory.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\presentation\\frmhistory.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\documentos\\project3_databases\\people\\domain\\reports.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\domain\\reports.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\documentos\\project3_databases\\people\\presentation\\frmwinners.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\presentation\\frmwinners.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\documentos\\project3_databases\\people\\presentation\\frmhistory.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\presentation\\frmhistory.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,57 +21,50 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 618,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 286,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "frmHistory.vb",
-              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmHistory.vb",
-              "RelativeDocumentMoniker": "People\\Presentation\\frmHistory.vb",
-              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmHistory.vb",
-              "RelativeToolTip": "People\\Presentation\\frmHistory.vb",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAiwBIAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-04-26T17:28:55.813Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmHistory.vb [Dise\u00F1o]",
-              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmHistory.vb",
-              "RelativeDocumentMoniker": "People\\Presentation\\frmHistory.vb",
-              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmHistory.vb [Dise\u00F1o]",
-              "RelativeToolTip": "People\\Presentation\\frmHistory.vb [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-04-26T17:26:58.173Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "frmWinners.vb [Dise\u00F1o]",
               "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmWinners.vb",
               "RelativeDocumentMoniker": "People\\Presentation\\frmWinners.vb",
               "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmWinners.vb [Dise\u00F1o]",
               "RelativeToolTip": "People\\Presentation\\frmWinners.vb [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-04-26T17:18:24.354Z",
+              "WhenOpened": "2024-04-26T19:06:06.363Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "frmHistory.vb [Dise\u00F1o]",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmHistory.vb",
+              "RelativeDocumentMoniker": "People\\Presentation\\frmHistory.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmHistory.vb [Dise\u00F1o]",
+              "RelativeToolTip": "People\\Presentation\\frmHistory.vb [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-26T18:50:10.787Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 951,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Reports.vb",
               "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Domain\\Reports.vb",
               "RelativeDocumentMoniker": "People\\Domain\\Reports.vb",
               "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Domain\\Reports.vb",
               "RelativeToolTip": "People\\Domain\\Reports.vb",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAJAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-04-26T17:13:53.263Z",
+              "WhenOpened": "2024-04-26T19:09:01.249Z",
               "EditorCaption": ""
             }
           ]
