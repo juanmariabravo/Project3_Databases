@@ -112,7 +112,7 @@ Partial Class frmFormulaOne
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Gadugi", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(443, 145)
+        Me.Label1.Location = New System.Drawing.Point(489, 145)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(520, 27)
         Me.Label1.TabIndex = 19
@@ -132,7 +132,7 @@ Partial Class frmFormulaOne
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Gadugi", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(1078, 145)
+        Me.Label2.Location = New System.Drawing.Point(1095, 145)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(239, 27)
         Me.Label2.TabIndex = 21
