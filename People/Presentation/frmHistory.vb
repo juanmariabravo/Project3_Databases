@@ -17,7 +17,7 @@
         d = New Driver
         d.ReadAllDrivers()
         For Each d In d.DrvDAO.Drivers
-            comboBoxDrivers.Items.Add(d.DriverID) ' + d.DriverName)
+            comboBoxDrivers.Items.Add(d.DriverID & " " & d.DriverName & " " & d.DriverSurname)
         Next
 
         ' Initialize the ComboBox with the teams
@@ -25,7 +25,7 @@
         t = New Team
         t.ReadAllTeams()
         For Each t In t.TeDAO.Teams
-            comboBoxTeams.Items.Add(t.TeamID) ' + t.TeamName)
+            comboBoxTeams.Items.Add(t.TeamID & " " & t.TeamName)
         Next
 
 
@@ -41,4 +41,6 @@
     Private Sub frmHistory_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         frmFormulaOne.Enabled = True
     End Sub
+
+
 End Class

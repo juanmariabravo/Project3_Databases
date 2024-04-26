@@ -306,3 +306,5 @@ C:\Users\Juan María\Downloads\Project3_Databases\People\obj\Release\FormulaOne.
 C:\Users\Juan María\Downloads\Project3_Databases\People\obj\Release\FormulaOne.pdb
 C:\Users\Juan María\Downloads\Project3_Databases\People\obj\Release\FormulaOne.frmHistory.resources
 C:\Users\Juan María\Downloads\Project3_Databases\People\obj\Release\FormulaOne.frmWinners.resources
+D:\Documentos\Project3_Databases\People\obj\Release\FormulaOne.frmHistory.resources
+D:\Documentos\Project3_Databases\People\obj\Release\FormulaOne.frmWinners.resources

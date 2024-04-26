@@ -135,6 +135,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\Reports.vb" />
     <Compile Include="Domain\RaceDAO.vb" />
     <Compile Include="Domain\Race.vb" />
     <Compile Include="Domain\SeasonDAO.vb" />

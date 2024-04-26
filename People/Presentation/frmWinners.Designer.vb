@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmWinners
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmWinners
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.comboBoxSeasons = New System.Windows.Forms.ComboBox()
         Me.lblSelectSeason = New System.Windows.Forms.Label()
@@ -57,9 +57,9 @@ Partial Class frmWinners
         Me.driversClassification.Enabled = False
         Me.driversClassification.FormattingEnabled = True
         Me.driversClassification.ItemHeight = 16
-        Me.driversClassification.Location = New System.Drawing.Point(70, 154)
+        Me.driversClassification.Location = New System.Drawing.Point(25, 154)
         Me.driversClassification.Name = "driversClassification"
-        Me.driversClassification.Size = New System.Drawing.Size(216, 388)
+        Me.driversClassification.Size = New System.Drawing.Size(261, 388)
         Me.driversClassification.TabIndex = 3
         '
         'teamsClassification
@@ -67,7 +67,7 @@ Partial Class frmWinners
         Me.teamsClassification.Enabled = False
         Me.teamsClassification.FormattingEnabled = True
         Me.teamsClassification.ItemHeight = 16
-        Me.teamsClassification.Location = New System.Drawing.Point(350, 154)
+        Me.teamsClassification.Location = New System.Drawing.Point(360, 154)
         Me.teamsClassification.Name = "teamsClassification"
         Me.teamsClassification.Size = New System.Drawing.Size(216, 388)
         Me.teamsClassification.TabIndex = 4
@@ -103,7 +103,7 @@ Partial Class frmWinners
         '
         Me.lblTeamsClass.AutoSize = True
         Me.lblTeamsClass.Font = New System.Drawing.Font("Consolas", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTeamsClass.Location = New System.Drawing.Point(302, 128)
+        Me.lblTeamsClass.Location = New System.Drawing.Point(356, 128)
         Me.lblTeamsClass.Name = "lblTeamsClass"
         Me.lblTeamsClass.Size = New System.Drawing.Size(230, 23)
         Me.lblTeamsClass.TabIndex = 8
@@ -126,7 +126,7 @@ Partial Class frmWinners
         Me.worldChampions.ItemHeight = 16
         Me.worldChampions.Location = New System.Drawing.Point(626, 154)
         Me.worldChampions.Name = "worldChampions"
-        Me.worldChampions.Size = New System.Drawing.Size(545, 388)
+        Me.worldChampions.Size = New System.Drawing.Size(553, 388)
         Me.worldChampions.TabIndex = 9
         '
         'btnMainMenuSeasons
