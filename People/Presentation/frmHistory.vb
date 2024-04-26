@@ -32,8 +32,13 @@
     End Sub
 
     Private Sub btnMainMenuSeasons_Click(sender As Object, e As EventArgs) Handles btnMainMenuSeasons.Click
+        frmFormulaOne.Enabled = True
         'Close this form
         Me.Close()
+    End Sub
+
+    ' Enable main form if this form is closed
+    Private Sub frmHistory_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         frmFormulaOne.Enabled = True
     End Sub
 End Class

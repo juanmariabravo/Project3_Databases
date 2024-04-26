@@ -195,7 +195,7 @@ Partial Class frmTeams
         Me.Controls.Add(Me.txtID)
         Me.Controls.Add(Me.lstTeams)
         Me.Name = "frmTeams"
-        Me.Text = "frmTeams"
+        Me.Text = "Teams"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

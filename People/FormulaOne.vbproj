@@ -190,6 +190,12 @@
     <Compile Include="Presentation\frmGPs.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentation\frmHistory.Designer.vb">
+      <DependentUpon>frmHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\frmHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentation\frmRaces.Designer.vb">
       <DependentUpon>frmRaces.vb</DependentUpon>
     </Compile>
@@ -209,6 +215,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Domain\Team.vb" />
+    <Compile Include="Presentation\frmWinners.Designer.vb">
+      <DependentUpon>frmWinners.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\frmWinners.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -229,6 +241,9 @@
     <EmbeddedResource Include="Presentation\frmGPs.resx">
       <DependentUpon>frmGPs.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\frmHistory.resx">
+      <DependentUpon>frmHistory.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\frmRaces.resx">
       <DependentUpon>frmRaces.vb</DependentUpon>
     </EmbeddedResource>
@@ -237,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\frmTeams.resx">
       <DependentUpon>frmTeams.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\frmWinners.resx">
+      <DependentUpon>frmWinners.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -336,7 +336,7 @@ Partial Class frmSeasons
         Me.Controls.Add(Me.Label1)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmSeasons"
-        Me.Text = "frmSeasons"
+        Me.Text = "Seasons"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

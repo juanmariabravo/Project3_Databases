@@ -99,15 +99,15 @@
     End Sub
 
     Private Sub btnMainMenu_Click(sender As Object, e As EventArgs) Handles btnMainMenu.Click
+        frmFormulaOne.Enabled = True
         ' Close the current form
         Me.Close()
-        frmFormulaOne.Enabled = True
-    End Sub
-    Private Sub frmTeams_Closed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        ' Reopen the main menu form
-        frmFormulaOne.Enabled = True
     End Sub
 
+    ' Enable main form if this form is closed
+    Private Sub frmTeams_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        frmFormulaOne.Enabled = True
+    End Sub
     Private Sub txtID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtID.KeyPress
         ' Check if the entered character is a number or if it is the backspace key (Backspace)
         If Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> ControlChars.Back Then

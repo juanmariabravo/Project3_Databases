@@ -304,3 +304,5 @@ C:\Users\Juan María\Downloads\Project3_Databases\People\obj\Release\FormulaOne.
 C:\Users\Juan María\Downloads\Project3_Databases\People\obj\Release\FormulaOne.exe
 C:\Users\Juan María\Downloads\Project3_Databases\People\obj\Release\FormulaOne.xml
 C:\Users\Juan María\Downloads\Project3_Databases\People\obj\Release\FormulaOne.pdb
+C:\Users\Juan María\Downloads\Project3_Databases\People\obj\Release\FormulaOne.frmHistory.resources
+C:\Users\Juan María\Downloads\Project3_Databases\People\obj\Release\FormulaOne.frmWinners.resources

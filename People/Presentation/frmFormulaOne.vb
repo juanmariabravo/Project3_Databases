@@ -58,21 +58,21 @@
 
     End Sub
 
-    'Private Sub btnOpenClassifications_Click(sender As Object, e As EventArgs) Handles btnOpenClassifications.Click
-    'Dim frmClass As New frmWinners()
-    'Me.Enabled = False
-    '    frmClass.Show()
-    'End Sub
+    Private Sub btnOpenClassifications_Click(sender As Object, e As EventArgs) Handles btnOpenClassifications.Click
+        Dim frmClass As New frmWinners()
+        Me.Enabled = False
+        frmClass.Show()
+    End Sub
 
-    'Private Sub btnOpenHistory_Click(sender As Object, e As EventArgs) Handles btnOpenHistory.Click
-    'Dim frmHis As New frmHistory()
-    'Me.Enabled = False
-    '   frmHis.Show()
-    'End Sub
+    Private Sub btnOpenHistory_Click(sender As Object, e As EventArgs) Handles btnOpenHistory.Click
+        Dim frmHis As New frmHistory()
+        Me.Enabled = False
+        frmHis.Show()
+    End Sub
 
-    'Private Sub btnOpenRaces_Click(sender As Object, e As EventArgs) Handles btnOpenRaces.Click
-    'Dim frmRaces As New frmRaces()
-    'Me.Enabled = False
-    '    frmRaces.Show()
-    'End Sub
+    Private Sub btnOpenRaces_Click(sender As Object, e As EventArgs) Handles btnOpenRaces.Click
+        Dim frmRaces As New frmRaces()
+        Me.Enabled = False
+        frmRaces.Show()
+    End Sub
 End Class

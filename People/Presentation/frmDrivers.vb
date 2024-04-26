@@ -2,15 +2,10 @@
     Private driver As Driver
 
     Private Sub btnMainMenu_Click(sender As Object, e As EventArgs) Handles btnMainMenu.Click
+        frmFormulaOne.Enabled = True
         ' Close the current form
         Me.Close()
-        frmFormulaOne.Enabled = True
     End Sub
-    Private Sub frmDrivers_Closed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        ' Reopen the main menu form
-        frmFormulaOne.Enabled = True
-    End Sub
-
     Private Sub FrmDrivers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Dim driver As New Driver
@@ -113,6 +108,11 @@
             ' If there are already 4 digits and it is not a backspace key, cancel the KeyPress event
             e.Handled = True
         End If
+    End Sub
+
+    ' Enable main form if this form is closed
+    Private Sub FrmDrivers_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        frmFormulaOne.Enabled = True
     End Sub
 
 End Class

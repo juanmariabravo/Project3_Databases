@@ -157,7 +157,7 @@ Partial Class frmWinners
         Me.Controls.Add(Me.lblSelectSeason)
         Me.Controls.Add(Me.comboBoxSeasons)
         Me.Name = "frmWinners"
-        Me.Text = "frmWinners"
+        Me.Text = "Classifications and World Champions"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

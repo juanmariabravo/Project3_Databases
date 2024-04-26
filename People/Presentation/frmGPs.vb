@@ -89,14 +89,9 @@
         txtcountryid.Text = ""
     End Sub
     Private Sub btnMainMenu_Click(sender As Object, e As EventArgs) Handles btnMainMenu.Click
+        frmFormulaOne.Enabled = True
         ' Close the current form
         Me.Close()
-        frmFormulaOne.Enabled = True
-    End Sub
-
-    Private Sub frmGPs_Closed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        ' Reopen the main menu form
-        frmFormulaOne.Enabled = True
     End Sub
 
     Private Sub txtID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtID.KeyPress
@@ -110,6 +105,11 @@
             ' If there are already 4 digits and it is not a backspace key, cancel the KeyPress event
             e.Handled = True
         End If
+    End Sub
+
+    ' Enable main form if this form is closed
+    Private Sub FrmGPs_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        frmFormulaOne.Enabled = True
     End Sub
 End Class
 

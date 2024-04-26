@@ -182,7 +182,7 @@ Partial Class frmFormulaOne
         Me.MinimizeBox = False
         Me.Name = "frmFormulaOne"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FormulaOne DB Project 3"
+        Me.Text = "Formula One Main Menu"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

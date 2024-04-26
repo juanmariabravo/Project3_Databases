@@ -195,7 +195,7 @@ Partial Class frmDrivers
         Me.Controls.Add(Me.txtBxDriverID)
         Me.Controls.Add(Me.lstDrivers)
         Me.Name = "frmDrivers"
-        Me.Text = "Form1"
+        Me.Text = "Drivers"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

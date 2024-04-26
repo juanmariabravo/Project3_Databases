@@ -1,14 +1,9 @@
 ﻿
 Public Class frmCountries
     Private Sub btnMainMenu_Click(sender As Object, e As EventArgs) Handles btnMainMenu.Click
+        frmFormulaOne.Enabled = True
         ' Close the current form
         Me.Close()
-        frmFormulaOne.Enabled = True
-    End Sub
-
-    Private Sub frmCountries_Closed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        ' Reopen the main menu form
-        frmFormulaOne.Enabled = True
     End Sub
 
     Private Sub frmCountries_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -146,5 +141,10 @@ Public Class frmCountries
             ' if there are already 3 digits, cancel the KeyPress event (does not allow writing more), but if it is a backspace key, it allows deleting
             e.Handled = True
         End If
+    End Sub
+
+    ' Enable main form if this form is closed
+    Private Sub frmCountries_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        frmFormulaOne.Enabled = True
     End Sub
 End Class

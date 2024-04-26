@@ -303,7 +303,7 @@ Partial Class frmHistory
         Me.Controls.Add(Me.lblSelectSeason)
         Me.Controls.Add(Me.comboBoxStartSeason)
         Me.Name = "frmHistory"
-        Me.Text = "frmHistory"
+        Me.Text = "History of Drivers and Teams"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

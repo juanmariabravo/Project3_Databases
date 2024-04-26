@@ -13,9 +13,9 @@ Public Class frmSeasons
     Public ReadOnly Property DrDAO As DriverDAO
 
     Private Sub btnMainMenuSeasons_Click(sender As Object, e As EventArgs) Handles btnMainMenuSeasons.Click
+        frmFormulaOne.Enabled = True
         'Close this form
         Me.Close()
-        frmFormulaOne.Enabled = True
     End Sub
 
     Private Sub frmFormulaOne_Closed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
@@ -235,19 +235,16 @@ Public Class frmSeasons
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-
         ' Delete the season selected in the list of seasons
         Dim season As New Season(Integer.Parse(lstSeasons.SelectedItem.ToString))
-            season.ReadSeason()
-            season.DeleteSeason()
-            lstSeasons.Items.Clear()
-            season.ReadAllSeasons()
-            For Each season In season.SeasonDAO.Seasons
-                lstSeasons.Items.Add(season.SeasonID)
-            Next
-            btnDelete.Enabled = False
-
-
+        season.ReadSeason()
+        season.DeleteSeason()
+        lstSeasons.Items.Clear()
+        season.ReadAllSeasons()
+        For Each season In season.SeasonDAO.Seasons
+            lstSeasons.Items.Add(season.SeasonID)
+        Next
+        btnDelete.Enabled = False
     End Sub
 
 
@@ -269,12 +266,6 @@ Public Class frmSeasons
 
     End Sub
 
-    Private Sub btnDone_Click(sender As Object, e As EventArgs) Handles btnDone.Click
-        ' Close the form and enable the main menu form
-        Me.Close()
-        frmFormulaOne.Enabled = True
-    End Sub
-
     Private Sub txtSeasonYear_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSeasonYear.KeyPress
         ' Verify if the character entered is a number or if it is the backspace key
         If Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> ControlChars.Back Then
@@ -288,5 +279,9 @@ Public Class frmSeasons
         End If
     End Sub
 
+    ' Enable main form if this form is closed
+    Private Sub frmSeasons_Closed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        frmFormulaOne.Enabled = True
+    End Sub
 End Class
 

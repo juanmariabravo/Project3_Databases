@@ -211,7 +211,7 @@ Partial Class frmRaces
         Me.Controls.Add(Me.lstGPs)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmRaces"
-        Me.Text = "frmRaces"
+        Me.Text = "Races"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
