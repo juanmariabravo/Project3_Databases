@@ -7,11 +7,19 @@
       "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\domain\\reports.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\documentos\\project3_databases\\people\\presentation\\frmwinners.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\presentation\\frmwinners.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\documentos\\project3_databases\\people\\presentation\\frmwinners.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\presentation\\frmwinners.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\documentos\\project3_databases\\people\\presentation\\frmhistory.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|d:\\documentos\\project3_databases\\people\\presentation\\frmhistory.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\presentation\\frmhistory.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|D:\\Documentos\\Project3_Databases\\people\\presentation\\frmhistory.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{4E486CE3-DC80-4B4F-916B-99EE4FC8C961}|People\\FormulaOne.vbproj|solutionrelative:people\\presentation\\frmhistory.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     }
   ],
@@ -21,12 +29,38 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 286,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 611,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "frmWinners.vb",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmWinners.vb",
+              "RelativeDocumentMoniker": "People\\Presentation\\frmWinners.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmWinners.vb",
+              "RelativeToolTip": "People\\Presentation\\frmWinners.vb",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-26T23:30:06.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmHistory.vb",
+              "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmHistory.vb",
+              "RelativeDocumentMoniker": "People\\Presentation\\frmHistory.vb",
+              "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmHistory.vb",
+              "RelativeToolTip": "People\\Presentation\\frmHistory.vb",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-26T22:58:21.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "frmWinners.vb [Dise\u00F1o]",
               "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmWinners.vb",
               "RelativeDocumentMoniker": "People\\Presentation\\frmWinners.vb",
@@ -38,7 +72,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "frmHistory.vb [Dise\u00F1o]",
               "DocumentMoniker": "D:\\Documentos\\Project3_Databases\\People\\Presentation\\frmHistory.vb",
               "RelativeDocumentMoniker": "People\\Presentation\\frmHistory.vb",
@@ -47,13 +81,7 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2024-04-26T18:50:10.787Z",
               "EditorCaption": " [Dise\u00F1o]"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 951,
-          "SelectedChildIndex": 0,
-          "Children": [
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -62,7 +90,7 @@
               "RelativeDocumentMoniker": "People\\Domain\\Reports.vb",
               "ToolTip": "D:\\Documentos\\Project3_Databases\\People\\Domain\\Reports.vb",
               "RelativeToolTip": "People\\Domain\\Reports.vb",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAA6AAAA",
+              "ViewState": "AQIAADsAAAAAAAAAAAAswFMAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2024-04-26T19:09:01.249Z",
               "EditorCaption": ""

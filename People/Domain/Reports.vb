@@ -3,10 +3,35 @@
     Public Sub New()
     End Sub
 
+    Public Sub LoadViews()
+        DBBroker.GetBroker.Change("CREATE OR REPLACE VIEW DriverWonRaces(driv, seas, won_races) AS
+                                    SELECT Driver, Season, Count(*) 
+                                    FROM races
+                                    WHERE Position = 1
+                                    GROUP BY Driver, Season;
+                                    CREATE OR REPLACE VIEW sea_dri_points (seasonYear, driverId, points) AS
+                                    SELECT Season, Driver, sum(Points)
+                                    FROM races
+                                    GROUP BY Season, Driver;
+
+                                    CREATE OR REPLACE VIEW season_max_points(sea, maxp) AS
+                                    SELECT seasonYear, max(points)
+                                    FROM sea_dri_points
+                                    GROUP BY seasonYear;
+
+                                    CREATE OR REPLACE VIEW sea_winner_pts_cou (season,winner_driver,pts,country) AS
+                                    SELECT seasonYear, s.driverId, maxp, DriverCountry
+                                    FROM sea_dri_points s, season_max_points, drivers d
+                                    WHERE points = maxp AND s.driverId = d.DriverID AND sea = seasonYear;
+")
+    End Sub
     Public Function GetClassificationDrivers(ByVal seasonYear As Integer) As Collection
-        Return DBBroker.GetBroker.Read("SELECT * FROM ClassificationDrivers 
-                                        WHERE SeasonYear = '" & seasonYear & "' 
-                                        ORDER BY Points DESC;")
+        Return DBBroker.GetBroker.Read("SELECT Driver, sum(Points), won_races
+                                        FROM races, DriverWonRaces
+                                        WHERE seas = Season AND Driver = driv 
+                                        AND Season = '" & seasonYear & "' 
+                                        GROUP BY Driver
+                                        ORDER BY sum(Points) DESC, won_races DESC;")
     End Function
 
     Public Function GetClassificationTeams(ByVal seasonYear As Integer) As Collection
@@ -19,18 +44,44 @@
                                         ORDER BY sum(r.Points) DESC;")
     End Function
 
-    Public Function GetRacesHistoryOfDriver(ByVal driverID As Integer, ByVal startSeason As Integer, ByVal endSeason As Integer) As Collection
+    Public Function HistoryDriversGetItsRaces(ByVal driverID As Integer, ByVal startSeason As Integer, ByVal endSeason As Integer) As Collection
         Return DBBroker.GetBroker.Read("SELECT Season, GP, Position, Points
                                         FROM races
                                         WHERE Driver = " & driverID & "
-                                        AND Season >= " & startSeason & " AND Season <= " & endSeason & ";")
+                                        AND Season >= " & startSeason & " 
+                                        AND Season <= " & endSeason & ";")
+    End Function
+    Public Function HistoryDriversGetItsResults(ByVal driverID As Integer, ByVal seasonID As Integer, ByVal GPID As Integer) As Collection
+        Return DBBroker.GetBroker.Read("SELECT Position, Points
+                                        FROM races
+                                        WHERE Driver = " & driverID & "
+                                        AND Season = " & seasonID & "
+                                        AND GP = " & GPID & ";")
     End Function
 
-    Public Function GetDriverRacesResults(ByVal TeamID As Integer, ByVal startSeason As Integer, ByVal endSeason As Integer) As Collection
+    Public Function HistoryTeamsGetItsDriverRacesResults(ByVal TeamID As Integer, ByVal startSeason As Integer, ByVal endSeason As Integer) As Collection
         Return DBBroker.GetBroker.Read("SELECT DISTINCT r.Driver
                                         FROM races r, contracts c
                                         WHERE r.Season = c.Season
-                                        AND (c.Driver1 = r.Driver OR c.Driver2 = r.Driver)
+                                        AND r.Season >= " & startSeason & " 
+                                        AND r.Season <= " & endSeason & "
                                         AND c.Team = " & TeamID & ";")
+    End Function
+    Public Function HistoryTeamsGetItsRaces(ByVal TeamID As Integer, ByVal startSeason As Integer, ByVal endSeason As Integer) As Collection
+        Return DBBroker.GetBroker.Read("SELECT r.Season, r.GP, r.Position, r.Points
+                                        FROM races r, contracts c
+                                        WHERE Driver = " & TeamID & "
+                                    	AND r.Season >= " & startSeason & " AND r.Season <= " & endSeason & "
+                                    	AND r.Season = c.Season;")
+    End Function
+
+    Public Function WorldChampionshipGetAllSeasonsWinners(ByVal driverID As Integer) As Collection
+        Return DBBroker.GetBroker.Read("SELECT s.winner_driver, s.season, c.team, s.pts, d.won_races
+                                        FROM sea_winner_pts_cou s, contracts c, DriverWonRaces d
+                                        WHERE c.Season = s.season 
+                                        AND (s.winner_driver = c.Driver1 OR s.winner_driver = c.Driver2) 
+                                        AND s.winner_driver = d.driv 
+                                        AND s.season = d.season
+                                        AND s.country = " & driverID & ";")
     End Function
 End Class
