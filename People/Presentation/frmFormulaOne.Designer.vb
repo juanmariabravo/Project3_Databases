@@ -33,8 +33,8 @@ Partial Class frmFormulaOne
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnOpenRaces = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnOpenClassifications = New System.Windows.Forms.Button()
+        Me.btnOpenHistory = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnOpenGPs
@@ -136,25 +136,25 @@ Partial Class frmFormulaOne
         Me.Label2.TabIndex = 21
         Me.Label2.Text = "Reports ans Histories"
         '
-        'Button1
+        'btnOpenClassifications
         '
-        Me.Button1.Enabled = False
-        Me.Button1.Location = New System.Drawing.Point(1073, 195)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(261, 46)
-        Me.Button1.TabIndex = 22
-        Me.Button1.Text = "Classifications and Champions"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnOpenClassifications.Enabled = False
+        Me.btnOpenClassifications.Location = New System.Drawing.Point(1073, 195)
+        Me.btnOpenClassifications.Name = "btnOpenClassifications"
+        Me.btnOpenClassifications.Size = New System.Drawing.Size(261, 46)
+        Me.btnOpenClassifications.TabIndex = 22
+        Me.btnOpenClassifications.Text = "Classifications and Champions"
+        Me.btnOpenClassifications.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnOpenHistory
         '
-        Me.Button2.Enabled = False
-        Me.Button2.Location = New System.Drawing.Point(1073, 293)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(261, 46)
-        Me.Button2.TabIndex = 23
-        Me.Button2.Text = "Drivers and Teams History"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnOpenHistory.Enabled = False
+        Me.btnOpenHistory.Location = New System.Drawing.Point(1073, 293)
+        Me.btnOpenHistory.Name = "btnOpenHistory"
+        Me.btnOpenHistory.Size = New System.Drawing.Size(261, 46)
+        Me.btnOpenHistory.TabIndex = 23
+        Me.btnOpenHistory.Text = "Drivers and Teams History"
+        Me.btnOpenHistory.UseVisualStyleBackColor = True
         '
         'frmFormulaOne
         '
@@ -163,8 +163,8 @@ Partial Class frmFormulaOne
         Me.BackColor = System.Drawing.Color.MintCream
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(1435, 562)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnOpenHistory)
+        Me.Controls.Add(Me.btnOpenClassifications)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnOpenRaces)
         Me.Controls.Add(Me.Label1)
@@ -197,6 +197,6 @@ Partial Class frmFormulaOne
     Friend WithEvents Label1 As Label
     Friend WithEvents btnOpenRaces As Button
     Friend WithEvents Label2 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnOpenClassifications As Button
+    Friend WithEvents btnOpenHistory As Button
 End Class

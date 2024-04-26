@@ -1,13 +1,26 @@
 ﻿Public Class frmWinners
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles lblSelectSeason.Click
-
-    End Sub
-
     Private Sub frmWinners_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Intialize the ComboBox with the seasons
+        Dim s As Season
+        s = New Season
+        s.ReadAllSeasons()
+        For Each s In s.SeasonDAO.Seasons
+            comboBoxSeasons.Items.Add(s.SeasonID)
+        Next
+
+        ' Initialize the ComboBox with the countries
+        Dim c As Country
+        c = New Country
+        c.ReadAllCountries()
+        For Each c In c.CouDAO.Countries
+            comboBoxCountries.Items.Add(c.CountryID + " - " + c.CountryName)
+        Next
 
     End Sub
 
-    Private Sub Label1_Click_1(sender As Object, e As EventArgs) Handles lblWorldChampions.Click
-
+    Private Sub btnMainMenuSeasons_Click(sender As Object, e As EventArgs) Handles btnMainMenuSeasons.Click
+        'Close this form
+        Me.Close()
+        frmFormulaOne.Enabled = True
     End Sub
 End Class

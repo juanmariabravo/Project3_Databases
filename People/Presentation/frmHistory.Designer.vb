@@ -248,7 +248,7 @@ Partial Class frmHistory
         Me.lblPosition.Name = "lblPosition"
         Me.lblPosition.Size = New System.Drawing.Size(35, 25)
         Me.lblPosition.TabIndex = 24
-        Me.lblPosition.Text = "#1"
+        Me.lblPosition.Text = "#0"
         '
         'lblPoints
         '
@@ -258,9 +258,9 @@ Partial Class frmHistory
         Me.lblPoints.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPoints.Location = New System.Drawing.Point(135, 439)
         Me.lblPoints.Name = "lblPoints"
-        Me.lblPoints.Size = New System.Drawing.Size(36, 25)
+        Me.lblPoints.Size = New System.Drawing.Size(24, 25)
         Me.lblPoints.TabIndex = 25
-        Me.lblPoints.Text = "10"
+        Me.lblPoints.Text = "0"
         '
         'btnMainMenuSeasons
         '

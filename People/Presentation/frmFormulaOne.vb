@@ -13,6 +13,10 @@
             btnOpenTeams.Enabled = True
             btnOpenCountries.Enabled = True
             btnOpenSeasons.Enabled = True
+            btnConnectDB.Enabled = False
+            btnOpenRaces.Enabled = True
+            btnOpenClassifications.Enabled = True
+            btnOpenHistory.Enabled = True
         Catch ex As Exception
             MessageBox.Show("Connection not opened " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Me.Close()
@@ -54,7 +58,21 @@
 
     End Sub
 
-    Private Sub lblMsg_Click(sender As Object, e As EventArgs) Handles lblMsg.Click
+    Private Sub btnOpenClassifications_Click(sender As Object, e As EventArgs) Handles btnOpenClassifications.Click
+        Dim frmClass As New frmWinners()
+        Me.Enabled = False
+        frmClass.Show()
+    End Sub
 
+    Private Sub btnOpenHistory_Click(sender As Object, e As EventArgs) Handles btnOpenHistory.Click
+        Dim frmHis As New frmHistory()
+        Me.Enabled = False
+        frmHis.Show()
+    End Sub
+
+    Private Sub btnOpenRaces_Click(sender As Object, e As EventArgs) Handles btnOpenRaces.Click
+        Dim frmRaces As New frmRaces()
+        Me.Enabled = False
+        frmRaces.Show()
     End Sub
 End Class
