@@ -106,7 +106,7 @@ Partial Class frmHistory
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(480, 62)
+        Me.Label3.Location = New System.Drawing.Point(501, 61)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(92, 16)
         Me.Label3.TabIndex = 14
@@ -115,7 +115,7 @@ Partial Class frmHistory
         'comboBoxTeams
         '
         Me.comboBoxTeams.FormattingEnabled = True
-        Me.comboBoxTeams.Location = New System.Drawing.Point(469, 91)
+        Me.comboBoxTeams.Location = New System.Drawing.Point(490, 90)
         Me.comboBoxTeams.Name = "comboBoxTeams"
         Me.comboBoxTeams.Size = New System.Drawing.Size(121, 24)
         Me.comboBoxTeams.TabIndex = 13
@@ -123,7 +123,7 @@ Partial Class frmHistory
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(466, 275)
+        Me.Label4.Location = New System.Drawing.Point(487, 274)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(143, 16)
         Me.Label4.TabIndex = 12
@@ -132,7 +132,7 @@ Partial Class frmHistory
         'comboBoxEndSeason2
         '
         Me.comboBoxEndSeason2.FormattingEnabled = True
-        Me.comboBoxEndSeason2.Location = New System.Drawing.Point(469, 305)
+        Me.comboBoxEndSeason2.Location = New System.Drawing.Point(490, 304)
         Me.comboBoxEndSeason2.Name = "comboBoxEndSeason2"
         Me.comboBoxEndSeason2.Size = New System.Drawing.Size(121, 24)
         Me.comboBoxEndSeason2.TabIndex = 11
@@ -140,7 +140,7 @@ Partial Class frmHistory
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(466, 189)
+        Me.Label5.Location = New System.Drawing.Point(487, 188)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(145, 16)
         Me.Label5.TabIndex = 10
@@ -149,7 +149,7 @@ Partial Class frmHistory
         'comboBoxStartSeason2
         '
         Me.comboBoxStartSeason2.FormattingEnabled = True
-        Me.comboBoxStartSeason2.Location = New System.Drawing.Point(469, 220)
+        Me.comboBoxStartSeason2.Location = New System.Drawing.Point(490, 219)
         Me.comboBoxStartSeason2.Name = "comboBoxStartSeason2"
         Me.comboBoxStartSeason2.Size = New System.Drawing.Size(121, 24)
         Me.comboBoxStartSeason2.TabIndex = 9

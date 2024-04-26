@@ -42,6 +42,10 @@ Partial Class frmWinners
         Me.lstWCteam = New System.Windows.Forms.ListBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.lstWCseason = New System.Windows.Forms.ListBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblWorldDriverChampions = New System.Windows.Forms.Label()
+        Me.lblWorldTeamChampion = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'comboBoxSeasons
@@ -141,7 +145,7 @@ Partial Class frmWinners
         'btnMainMenuSeasons
         '
         Me.btnMainMenuSeasons.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.btnMainMenuSeasons.Location = New System.Drawing.Point(499, 583)
+        Me.btnMainMenuSeasons.Location = New System.Drawing.Point(617, 594)
         Me.btnMainMenuSeasons.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
         Me.btnMainMenuSeasons.Name = "btnMainMenuSeasons"
         Me.btnMainMenuSeasons.Size = New System.Drawing.Size(156, 81)
@@ -194,9 +198,9 @@ Partial Class frmWinners
         Me.lstWCgp.Enabled = False
         Me.lstWCgp.FormattingEnabled = True
         Me.lstWCgp.ItemHeight = 16
-        Me.lstWCgp.Location = New System.Drawing.Point(1060, 176)
+        Me.lstWCgp.Location = New System.Drawing.Point(1087, 176)
         Me.lstWCgp.Name = "lstWCgp"
-        Me.lstWCgp.Size = New System.Drawing.Size(120, 468)
+        Me.lstWCgp.Size = New System.Drawing.Size(93, 468)
         Me.lstWCgp.TabIndex = 37
         '
         'lstWCpoints
@@ -206,7 +210,7 @@ Partial Class frmWinners
         Me.lstWCpoints.ItemHeight = 16
         Me.lstWCpoints.Location = New System.Drawing.Point(1011, 176)
         Me.lstWCpoints.Name = "lstWCpoints"
-        Me.lstWCpoints.Size = New System.Drawing.Size(43, 468)
+        Me.lstWCpoints.Size = New System.Drawing.Size(59, 468)
         Me.lstWCpoints.TabIndex = 36
         '
         'lstWCteam
@@ -225,9 +229,9 @@ Partial Class frmWinners
         Me.Label9.Font = New System.Drawing.Font("Courier New", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(657, 155)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(469, 20)
+        Me.Label9.Size = New System.Drawing.Size(529, 20)
         Me.Label9.TabIndex = 34
-        Me.Label9.Text = "Winner       Season      Team     Points    GP"
+        Me.Label9.Text = "Winner       Season      Team      Points  Races Won"
         '
         'lstWCseason
         '
@@ -239,11 +243,53 @@ Partial Class frmWinners
         Me.lstWCseason.Size = New System.Drawing.Size(65, 468)
         Me.lstWCseason.TabIndex = 33
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(333, 594)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(184, 17)
+        Me.Label2.TabIndex = 38
+        Me.Label2.Text = "World's Team Champion"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(35, 594)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(190, 17)
+        Me.Label3.TabIndex = 39
+        Me.Label3.Text = "World's Driver Champion"
+        '
+        'lblWorldDriverChampions
+        '
+        Me.lblWorldDriverChampions.AutoSize = True
+        Me.lblWorldDriverChampions.Font = New System.Drawing.Font("Consolas", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWorldDriverChampions.Location = New System.Drawing.Point(34, 621)
+        Me.lblWorldDriverChampions.Name = "lblWorldDriverChampions"
+        Me.lblWorldDriverChampions.Size = New System.Drawing.Size(0, 23)
+        Me.lblWorldDriverChampions.TabIndex = 40
+        '
+        'lblWorldTeamChampion
+        '
+        Me.lblWorldTeamChampion.AutoSize = True
+        Me.lblWorldTeamChampion.Font = New System.Drawing.Font("Consolas", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWorldTeamChampion.Location = New System.Drawing.Point(338, 621)
+        Me.lblWorldTeamChampion.Name = "lblWorldTeamChampion"
+        Me.lblWorldTeamChampion.Size = New System.Drawing.Size(0, 23)
+        Me.lblWorldTeamChampion.TabIndex = 41
+        '
         'frmWinners
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1221, 685)
+        Me.Controls.Add(Me.lblWorldTeamChampion)
+        Me.Controls.Add(Me.lblWorldDriverChampions)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lstWCgp)
         Me.Controls.Add(Me.lstWCpoints)
         Me.Controls.Add(Me.lstWCteam)
@@ -291,4 +337,8 @@ Partial Class frmWinners
     Friend WithEvents lstWCteam As ListBox
     Friend WithEvents Label9 As Label
     Friend WithEvents lstWCseason As ListBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents lblWorldDriverChampions As Label
+    Friend WithEvents lblWorldTeamChampion As Label
 End Class
