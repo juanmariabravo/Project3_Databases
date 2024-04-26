@@ -1,6 +1,6 @@
 ﻿Public Class Race
     Public Property Season As Integer
-    Public Property GP As Integer
+    Public Property GPID As Integer
     Public Property Driver As Integer
     Public Property Position As Integer
     Public Property Points As Integer
@@ -12,7 +12,7 @@
 
     Public Sub New(SeasonID As Integer, GPID As Integer, DriverID As Integer)
         Me.Season = SeasonID
-        Me.GP = GPID
+        Me.GPID = GPID
         Me.Driver = DriverID
         Me.RaceDAO = New RaceDAO
     End Sub

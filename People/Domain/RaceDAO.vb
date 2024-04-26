@@ -28,23 +28,23 @@
         Dim colRaces As Collection
         Dim auxRace As Collection
 
-        colRaces = DBBroker.GetBroker().Read("SELECT * FROM races WHERE Season='" & race.Season & "';")
+        colRaces = DBBroker.GetBroker().Read("SELECT Position, Points FROM races WHERE Season='" & race.Season & "' AND GP = '" & race.GPID & "' AND Driver = '" & race.Driver & "';")
 
-        If colRaces.Count > 1 Then
+        If colRaces.Count > 0 Then
             For Each auxRace In colRaces
-                race.Position = Integer.Parse(auxRace(4).ToString())
-                race.Points = Integer.Parse(auxRace(5).ToString())
+                race.Position = Integer.Parse(auxRace(1).ToString())
+                race.Points = Integer.Parse(auxRace(2).ToString())
             Next
 
         End If
     End Sub
 
     Public Function Insert(ByVal race As Race) As Integer
-        Return DBBroker.GetBroker.Change("INSERT INTO Races VALUES('" & race.Season & "', '" & race.GP & "', '" & race.Driver & "', '" & race.Position & "', '" & race.Points & "');")
+        Return DBBroker.GetBroker.Change("INSERT INTO Races VALUES('" & race.Season & "', '" & race.GPID & "', '" & race.Driver & "', '" & race.Position & "', '" & race.Points & "');")
     End Function
 
     'Create the function to delete the race
     Public Function Delete(ByVal race As Race) As Integer
-        Return DBBroker.GetBroker.Change("DELETE FROM Races WHERE Season='" & race.Season & "' AND GP='" & race.GP & "' AND Driver='" & race.Driver & "';")
+        Return DBBroker.GetBroker.Change("DELETE FROM Races WHERE Season='" & race.Season & "' AND GP='" & race.GPID & "' AND Driver='" & race.Driver & "';")
     End Function
 End Class

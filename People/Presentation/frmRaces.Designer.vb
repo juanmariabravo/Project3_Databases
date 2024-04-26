@@ -144,7 +144,6 @@ Partial Class frmRaces
         '
         Me.txtbxDriver1.Location = New System.Drawing.Point(607, 243)
         Me.txtbxDriver1.Name = "txtbxDriver1"
-        Me.txtbxDriver1.ReadOnly = True
         Me.txtbxDriver1.Size = New System.Drawing.Size(100, 22)
         Me.txtbxDriver1.TabIndex = 48
         '

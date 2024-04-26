@@ -28,14 +28,18 @@ Public Class frmRaces
 
             If lstSeasons.SelectedIndex >= 0 AndAlso lstSeasons.SelectedItems.Count = 1 Then
                 Dim season As New Season()
-                Dim aux As Collection
+                Dim auxGPID As Integer
+                Dim auxGP As GP
                 season.SeasonID = Integer.Parse(lstSeasons.SelectedItem.ToString)
                 season.ReadSeason()
                 lstGPs.Items.Clear()
                 lstGPs.Enabled = True
 
-                For Each aux In season.ListGPs
-                    lstGPs.Items.Add(aux(2).ToString)
+                For Each auxGPID In season.ListGPsID
+                    auxGP = New GP(auxGPID)
+                    auxGP.ReadGP()
+
+                    lstGPs.Items.Add(auxGP.GPID & " " & auxGP.GPName)
                 Next
             End If
         Catch ex As Exception
@@ -44,66 +48,57 @@ Public Class frmRaces
     End Sub
 
     Private Sub lstGPs_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstGPs.SelectedIndexChanged
-        Try
-            If lstGPs.SelectedIndex >= 0 AndAlso lstGPs.SelectedItems.Count = 1 Then
-                Dim auxGP As New Collection
-                Dim gpName As String = lstGPs.SelectedItem.ToString()
-                Dim selectedGP As New GP
-                'Buscar el GP seleccionado en la lista de GPs de la temporada
-                For Each auxGP In season.ListGPs
-                    If gpName = auxGP(2).ToString Then
-                        selectedGP.GPID = Integer.Parse(auxGP(1).ToString)
-                        selectedGP.ReadGP()
-                        Exit For
-                    End If
-                    If selectedGP IsNot Nothing Then
-                        ShowRandomDrivers(season)
-                    End If
-                Next
 
-            End If
+        If lstGPs.SelectedIndex >= 0 AndAlso lstGPs.SelectedItems.Count = 1 Then
+            Dim auxGP As New Collection
+            Dim gpID As Integer
+            Dim raceSelected As Race
+            Dim season As New Season()
+            Dim auxSeasonID_GPID_Driver As Collection
 
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-    End Sub
+            season.SeasonID = Integer.Parse(lstSeasons.SelectedItem.ToString)
+            season.ReadSeason()
+            gpID = Integer.Parse(lstGPs.SelectedItem.ToString.Split(" "c)(0))
+            MessageBox.Show(gpID.ToString)
 
-
-    Private Sub ShowRandomDrivers(ByVal selectedSeason As Season)
-        Try
-            ' Crear una lista para almacenar los nombres de los conductores
-            Dim driverNames As New List(Of String)()
-
-            ' Obtener todos los conductores asignados a la temporada seleccionada
-            For Each team As Team In selectedSeason.ListContracts
-                For Each contract As Contract In team.Contracts
-                    If contract.Season = selectedSeason.SeasonID Then
-                        ' Leer el nombre del primer conductor y agregarlo a la lista
-                        Dim driver1Name As String = GetDriverName(contract.Driver1)
-                        driverNames.Add(driver1Name)
-
-                        ' Leer el nombre del segundo conductor y agregarlo a la lista
-                        Dim driver2Name As String = GetDriverName(contract.Driver2)
-                        driverNames.Add(driver2Name)
-
-                    End If
-                Next
+            For Each auxSeasonID_GPID_Driver In season.ListRaces
+                'MessageBox.Show("Found an asshole of season: " & auxSeasonID_GPID_Driver(1).ToString & "------on gp: " & auxSeasonID_GPID_Driver(2).ToString & "and with id: " & auxSeasonID_GPID_Driver(3).ToString)
+                If Integer.Parse(auxSeasonID_GPID_Driver(1).ToString) = season.SeasonID Or Integer.Parse(auxSeasonID_GPID_Driver(2).ToString) = gpID Then
+                    raceSelected = New Race(season.SeasonID, gpID, Integer.Parse(auxSeasonID_GPID_Driver(3).ToString))
+                    raceSelected.ReadRace()
+                    'MessageBox.Show("Found an asshole of position: " & raceSelected.Position.ToString)
+                    Select Case raceSelected.Position
+                        Case 1
+                            txtbxDriver1.Text = raceSelected.Driver.ToString
+                        Case 2
+                            TxtBxDriver2.Text = raceSelected.Driver.ToString
+                        Case 3
+                            TxtBxDriver3.Text = raceSelected.Driver.ToString
+                        Case 4
+                            TxtBxDriver4.Text = raceSelected.Driver.ToString
+                        Case 5
+                            TxtBxDriver5.Text = raceSelected.Driver.ToString
+                        Case 6
+                            TxtBxDriver6.Text = raceSelected.Driver.ToString
+                    End Select
+                End If
             Next
 
-            ' Asignar conductores aleatorios a los labels
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+
+
+
+
+
+        End If
+
     End Sub
 
 
 
-    Private Function GetDriverName(ByVal driverID As Integer) As String
-        Dim driver As New Driver()
-        driver.DriverID = driverID
-        driver.ReadDriver()
-        Return $"{driver.DriverName} {driver.DriverSurname}"
-    End Function
+
+
+
+
 
 
 End Class

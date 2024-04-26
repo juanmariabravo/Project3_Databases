@@ -69,51 +69,60 @@
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
     End Sub
     Private Sub LstSeason_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstSeasons.SelectedIndexChanged
-        Try
-            'btnDelete.Enabled = True
-            If lstSeasons.SelectedIndex >= 0 AndAlso lstSeasons.SelectedItems.Count = 1 Then
-                Dim season As New Season()
-                Dim aux As Collection
-                Dim auxTeam As New Team()
-                season.SeasonID = Integer.Parse(lstSeasons.SelectedItem.ToString)
-                season.ReadSeason()
 
-                lstContracts.Items.Clear()
-                lstGPs.Items.Clear()
+        If lstSeasons.SelectedIndex >= 0 AndAlso lstSeasons.SelectedItems.Count = 1 Then
+            Dim season As New Season()
+            Dim auxGPsID As Integer
+            Dim auxTeam As Team
+            Dim auxTeamID As Integer
+            Dim auxGP As GP
+            season.SeasonID = Integer.Parse(lstSeasons.SelectedItem.ToString)
+            season.ReadSeason()
 
-                ' Enable the list of GPs and contracts to insert the names of the contracts and the names of the GPs
-                lstContracts.Enabled = True
-                lstGPs.Enabled = True
-                ' Insert the ids + names of the teams that have a contract in the list of contracts
-                For Each auxTeam In season.ListContracts
+            lstContracts.Items.Clear()
+            lstGPs.Items.Clear()
+
+            ' Enable the list of GPs and contracts to insert the names of the contracts and the names of the GPs
+            lstContracts.Enabled = True
+            lstGPs.Enabled = True
+            btnDelete.Enabled = True
+
+            ' Insert the ids + names of the teams that have a contract in the list of contracts
+            For Each auxTeamID In season.ListContractsTeamID
+
+                    auxTeam = New Team(auxTeamID)
+                    auxTeam.ReadTeam()
+
                     lstContracts.Items.Add(auxTeam.TeamID & " " & auxTeam.TeamName)
                 Next
 
-                ' Insert the names of the GPs in the list of GPs
-                For Each aux In season.ListGPs
-                    lstGPs.Items.Add(aux(2).ToString)
-                Next
-            End If
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+            ' Insert the names of the GPs in the list of GPs
+            For Each auxGPsID In season.ListGPsID
+                auxGP = New GP(auxGPsID)
+                auxGP.ReadGP()
+
+                lstGPs.Items.Add(auxGP.GPID & " " & auxGP.GPName)
+            Next
+        End If
+
     End Sub
 
     Private Sub lstContracts_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstContracts.SelectedIndexChanged
         Try
             If lstContracts.Items.Count >= 0 Then
-                Dim contract As New Contract()
+                Dim contract As Contract
+                Dim contracID As Integer
+                Dim seasonID As Integer
                 Dim auxDriver As New Driver()
 
                 If lstContracts.SelectedIndex >= 0 Then
                     Dim tokens As String() = lstContracts.SelectedItem.ToString.Split(" "c)
-                    contract.Season = Integer.Parse(lstSeasons.SelectedItem.ToString)
-                    contract.Team = Integer.Parse(tokens(0))
+                    seasonID = Integer.Parse(lstSeasons.SelectedItem.ToString)
+                    contracID = Integer.Parse(tokens(0))
+                    contract = New Contract(contracID, seasonID)
                     contract.ReadContract()
-
 
                     auxDriver.DriverID = contract.Driver1
                     auxDriver.ReadDriver()
@@ -206,10 +215,10 @@
 
         Dim season As New Season(seasonYear)
         season.ReadSeason()
-        Try
 
-            'Insert the season in the database
-            season.InsertSeason(numberTeams, numberGPs)
+
+        'Insert the season in the database
+        season.InsertSeason(numberTeams, numberGPs)
 
             'Recharge the seasons list
             season.ReadAllSeasons()
@@ -218,35 +227,22 @@
                 lstSeasons.Items.Add(season.SeasonID)
             Next
 
-        Catch ex As Exception
-            MessageBox.Show("Error while creating Season: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
-            ' Disable the controls if an error occurs
-            CmbBoxMaxGPs.Enabled = False
-            CmbBoxMinGPs.Enabled = False
-            CmbBoxMaxGPs.Enabled = False
-            CmbBoxMinGPs.Enabled = False
-            lblDriver2.Enabled = False
-            lblDriver2.Enabled = False
-            btnClear.Enabled = False
-            btnDelete.Enabled = False
-            btnDone.Enabled = False
-        End Try
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        Try
-            ' Delete the season selected in the list of seasons
-            Dim season As New Season(Integer.Parse(lstSeasons.SelectedItem.ToString))
+
+        ' Delete the season selected in the list of seasons
+        Dim season As New Season(Integer.Parse(lstSeasons.SelectedItem.ToString))
+            season.ReadSeason()
             season.DeleteSeason()
             lstSeasons.Items.Clear()
             season.ReadAllSeasons()
             For Each season In season.SeasonDAO.Seasons
                 lstSeasons.Items.Add(season.SeasonID)
             Next
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+            btnDelete.Enabled = False
+
 
     End Sub
 

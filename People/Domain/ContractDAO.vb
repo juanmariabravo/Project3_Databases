@@ -19,7 +19,7 @@
         Dim colContracts As Collection
         Dim aux As Collection
         colContracts = DBBroker.GetBroker.Read("SELECT * FROM Contracts WHERE Season='" & contract.Season & "' AND Team='" & contract.Team & "';")
-        If colContracts.Count > 1 Then
+        If colContracts.Count > 0 Then
             For Each aux In colContracts
                 contract.Driver1 = Integer.Parse(aux(3).ToString)
                 contract.Driver2 = Integer.Parse(aux(4).ToString)

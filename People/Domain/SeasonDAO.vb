@@ -10,50 +10,54 @@ Public Class SeasonDAO
 
     Public Sub ReadAll()
         Dim se As Season
-        Dim col, aux As Collection
+        Dim colSeasons, auxSeason As Collection
 
-        col = DBBroker.GetBroker().Read("SELECT DISTINCT Season FROM Calendar ORDER BY Season;")
-        If col.Count > 0 Then
-            For Each aux In col
-                se = New Season(Integer.Parse(aux(1).ToString))
+        colSeasons = DBBroker.GetBroker().Read("SELECT DISTINCT Season FROM Calendar ORDER BY Season;")
+        If colSeasons.Count > 0 Then
+            For Each auxSeason In colSeasons
+                se = New Season(Integer.Parse(auxSeason(1).ToString))
                 se.ReadSeason()
+
                 Me.Seasons.Add(se)
             Next
         End If
     End Sub
 
     Public Sub Read(ByRef se As Season)
-        Dim colTeams As New Collection
-        Dim idTeams As Collection
-        Dim aux As Collection
-        Dim auxTeam As Team
-        Dim colGPs As Collection
+        Dim colContractsID As Collection
+        Dim colGPsID As Collection
+
+        Dim auxContractTeamID As Collection
+        Dim auxGPID As Collection
+        Dim auxRaceData As Collection
         Dim colRaces As Collection
 
-        idTeams = DBBroker.GetBroker().Read("SELECT Team FROM Contracts WHERE Season = " & se.SeasonID & ";")
-        For Each aux In idTeams
-            auxTeam = New Team(Integer.Parse(aux(1).ToString))
-            auxTeam.ReadTeam()
-            colTeams.Add(auxTeam)
+
+        colContractsID = DBBroker.GetBroker().Read("SELECT Team FROM Contracts WHERE Season = " & se.SeasonID & ";")
+        For Each auxContractTeamID In colContractsID
+            'Adding the teamID to the collection, that is, the first element in the auxiliar collection
+            se.ListContractsTeamID.Add(Integer.Parse(auxContractTeamID(1).ToString()))
         Next
 
-        If colTeams.Count > 0 Then
-            se.ListContracts = colTeams
+
+        colGPsID = DBBroker.GetBroker().Read("SELECT GP FROM Calendar WHERE Season = " & se.SeasonID & ";")
+        If colGPsID.Count > 0 Then
+            'Adding all of the GPs ID to the collection
+            For Each auxGPID In colGPsID
+                se.ListGPsID.Add(Integer.Parse(auxGPID(1).ToString()))
+            Next
         End If
 
-        colGPs = DBBroker.GetBroker().Read("SELECT * FROM GPs WHERE GPID IN (SELECT GP FROM Calendar WHERE Season = " & se.SeasonID & ");")
-        If colGPs.Count > 1 Then
-            se.ListGPs = colGPs
-        End If
 
+        'Only take the GPID and the DriverID that participates in this season
         colRaces = DBBroker.GetBroker().Read("SELECT * FROM Races WHERE Season = " & se.SeasonID & ";")
-
-        If colRaces.Count > 1 Then
-            For Each raceData As Collection In colRaces
-
-                Dim race As New Race(se.SeasonID, Integer.Parse(raceData(2).ToString), Integer.Parse(raceData(3).ToString()))
-                race.ReadRace()
-                se.ListRaces.Add(race)
+        If colRaces.Count > 0 Then
+            For Each auxRaceData In colRaces
+                Dim auxRace As New Collection 'Create a new instance since if not it will take the same values over and over again
+                auxRace.Add(se.SeasonID) '(1) the season
+                auxRace.Add(Integer.Parse(auxRaceData(2).ToString)) '(2) the gp it is participating 
+                auxRace.Add(Integer.Parse(auxRaceData(3).ToString())) '(3) the driver that is participating
+                se.ListRaces.Add(auxRace)
             Next
         End If
 
@@ -63,37 +67,43 @@ Public Class SeasonDAO
     'To insert the season with random data ----------------------------------------
     Public Sub Insert(ByRef se As Season, ByVal numTeams As Integer, ByVal numGPs As Integer)
         ' Obtaining a list of all the teams in the database
-        Dim aux As New Collection
+        Dim auxTeamID As New Integer
+        Dim auxDriverID As Integer
+        Dim auxGPID As Integer
 
-        'Variables for asigning teams, contracts and gps ------------------------
-        Dim colTeams As Collection
-        Dim auxTeam As New Team
+        'Collections to store the id of teams, contracts and gps ------------------------
+        Dim colTeams As New Collection
+        Dim colGPs As New Collection
+        Dim colDrivers As New Collection
 
-        Dim colGPs As Collection
-        Dim auxGP As GP
-
-        Dim colDrivers As Collection
-        Dim auxDriver As Collection
-        Dim auxContract As New Contract
 
         'Variables for creating the races and its results------------------------
-        Dim auxRace As New Race
-        Dim ColDriversToRace As New Collection
-        Dim ColGPsToRace As New Collection
-        Dim numPositionsPerRace As Integer = 20
-        Dim numGPsOnSeason As New Integer
+        Dim auxRace As Race
+        Dim auxContract As New Contract
+
+        Dim numGPsOnSeason As Integer
 
         'Variables for random operations ------------------------
         Dim i As Integer
         Dim num As Integer
         Dim rnd As New Random
 
+        'Variables for creating the races and its results ------------------------
+        Dim DriverIDToAdd As Integer
+        Dim pointsForDriver As Integer
+        Dim AuxListDrivers As New Collection
+
+        Dim ColDriversToRace As New Collection
+        Dim ColGPsToRace As New Collection
+        Dim numPositionsPerRace As Integer = 20
+
+
         'Retrieval of information from the database ------------------------
-        colTeams = DBBroker.GetBroker().Read("SELECT * FROM Teams ORDER BY TeamID;")
-        colDrivers = DBBroker.GetBroker().Read("SELECT * FROM Drivers ORDER BY DriverID;")
-        colGPs = DBBroker.GetBroker().Read("SELECT * FROM GPs ORDER BY GPID;")
+        colTeams = DBBroker.GetBroker().Read("SELECT TeamID FROM Teams ORDER BY TeamID;")
+        colDrivers = DBBroker.GetBroker().Read("SELECT DriverID FROM Drivers ORDER BY DriverID;")
+        colGPs = DBBroker.GetBroker().Read("SELECT GPID FROM GPs ORDER BY GPID;")
 
-
+        MessageBox.Show("The number of elements in the lists are: " & colTeams.Count & " teams, " & colDrivers.Count & " drivers and " & colGPs.Count & " GPs.")
 
         'Choosing the random teams --------------------------------
         'Checking if there are enough teams in the database
@@ -103,32 +113,26 @@ Public Class SeasonDAO
         End If
 
         For i = 1 To numTeams
-            Try
-                rnd = New Random(rnd.Next(1, colTeams.Count + 1))
+
+            rnd = New Random(rnd.Next(1, colTeams.Count + 1))
                 num = rnd.Next(1, colTeams.Count + 1)
-                aux = CType(colTeams.Item(num), Collection)
+
+                auxTeamID = Integer.Parse(colTeams.Item(num).ToString)
                 colTeams.Remove(num)
 
-            Catch ex As Exception
-                MessageBox.Show("Error while gettting random number of teams: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
 
-            Try
-                auxTeam = New Team(Integer.Parse(aux(1).ToString))
-                auxTeam.ReadTeam()
 
-                auxContract = New Contract(auxTeam.TeamID, se.SeasonID)
-            Catch ex As Exception
-                MessageBox.Show("Error while creating the teams and contracts for first driver: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
+
+            auxContract = New Contract(auxTeamID, se.SeasonID)
+
 
 
             'Choosing the first driver for the contract
-            rnd = New Random(rnd.Next(1, colDrivers.Count + 1))
-            num = rnd.Next(1, colDrivers.Count + 1)
+            rnd = New Random(rnd.Next(1, colDrivers.Count))
+            num = rnd.Next(1, colDrivers.Count)
 
-            auxDriver = CType(colDrivers.Item(num), Collection)
-            auxContract.Driver1 = Integer.Parse(auxDriver(1).ToString)
+            auxDriverID = Integer.Parse(colTeams.Item(num).ToString)
+            auxContract.Driver1 = auxDriverID
             colDrivers.Remove(num)
 
 
@@ -137,43 +141,48 @@ Public Class SeasonDAO
             rnd = New Random(rnd.Next(1, colDrivers.Count + 1))
             num = rnd.Next(1, colDrivers.Count + 1)
 
-            auxDriver = CType(colDrivers.Item(num), Collection)
-            auxContract.Driver2 = Integer.Parse(auxDriver(1).ToString)
+            auxDriverID = Integer.Parse(colTeams.Item(num).ToString)
+            auxContract.Driver2 = auxDriverID
             colDrivers.Remove(num)
 
-            auxTeam.Contracts.Add(auxContract)
+            auxContract.InsertContract()
+
             ColDriversToRace.Add(auxContract.Driver1)
             ColDriversToRace.Add(auxContract.Driver2)
 
-            se.ListContracts.Add(auxTeam)
 
         Next
 
 
-        'Choosing the random GPs --------------------------------
 
+        'Choosing the random GPs --------------------------------
         'Checking if there are enough GPs in the database
+
         If numGPs > colGPs.Count Then
             MessageBox.Show("There are not enough GPs in the Database to perform the creation of the season.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
 
         For i = 1 To numGPs
+
             num = rnd.Next(1, colGPs.Count + 1)
-            aux = CType(colGPs.Item(num), Collection)
-            auxGP = New GP(Integer.Parse(aux(1).ToString))
-            auxGP.ReadGP()
-            se.ListGPs.Add(auxGP)
+            auxGPID = Integer.Parse(colGPs.Item(num).ToString())
+
             colGPs.Remove(num)
+
+            se.ListGPsID.Add(auxGPID)
         Next
 
-        'Choosing the random races --------------------------------
+        'Choosing the random races ----------------------------------------------------------------
 
-        ColGPsToRace = se.ListGPs
+        'Copying the GPs IDs to an auxiliar collection
+        For i = 1 To se.ListGPsID.Count
+            auxGPID = Integer.Parse(se.ListGPsID.Item(i).ToString)
+            ColGPsToRace.Add(auxGPID)
+        Next
+
+        'Getting the size of the auxiliar collection
         numGPsOnSeason = ColGPsToRace.Count
-        Dim DriverIDToAdd As Integer
-        Dim pointsForDriver As Integer
-        Dim AuxListDrivers As New Collection
 
 
         'Check that there are enough drivers to place all the positions, if not, adjust the number of positions to the number of drivers
@@ -181,23 +190,20 @@ Public Class SeasonDAO
             numPositionsPerRace = ColDriversToRace.Count
         End If
 
-
-
-
         For k = 1 To ColDriversToRace.Count
             AuxListDrivers.Add(ColDriversToRace.Item(k))
         Next
 
         For j = 1 To numGPsOnSeason
-            auxGP = CType(ColGPsToRace.Item(j), GP)
 
-
+            auxGPID = Integer.Parse(ColGPsToRace.Item(j).ToString)
 
             For i = 1 To numPositionsPerRace
 
                 num = rnd.Next(1, AuxListDrivers.Count + 1)
 
                 DriverIDToAdd = Integer.Parse(AuxListDrivers.Item(num).ToString)
+
                 If i <= 6 Then
                     Select Case i
                         Case 1
@@ -216,59 +222,69 @@ Public Class SeasonDAO
                 Else
                     pointsForDriver = 0
                 End If
-                auxRace = New Race(se.SeasonID, auxGP.GPID, DriverIDToAdd)
+                auxRace = New Race(se.SeasonID, auxGPID, DriverIDToAdd)
                 auxRace.Position = i
                 auxRace.Points = pointsForDriver
 
-                se.ListRaces.Add(auxRace)
+                auxRace.InsertRace()
 
                 AuxListDrivers.Remove(num)
             Next
+
             For k = 1 To ColDriversToRace.Count
                 AuxListDrivers.Add(ColDriversToRace.Item(k))
             Next
         Next
-        'Inserting the season into the database ------------------------
 
-        Dim teamToAdd As New Team
-        Dim contractToAdd As New Contract
-        For i = 1 To se.ListContracts.Count
-            teamToAdd = CType(se.ListContracts.Item(i), Team)
-            contractToAdd = CType(teamToAdd.Contracts.Item(teamToAdd.Contracts.Count - 1), Contract)
-            'Call to the method of contract to insert the contract to the database
-            contractToAdd.InsertContract()
-        Next
 
 
         'Inserting the data from the GPs of the season in the calendar ------------------------
-        Dim GPToAdd As GP
-        For i = 1 To se.ListGPs.Count
-            GPToAdd = CType(se.ListGPs.Item(i), GP)
-            'Insert the gp of the seasoin in the calendar
-            DBBroker.GetBroker().Change("INSERT INTO Calendar (Season, GP, `Order`) VALUES (" & se.SeasonID & ", " & GPToAdd.GPID & ", " & i & ");")
+        For i = 1 To se.ListGPsID.Count
+            auxGPID = Integer.Parse(se.ListGPsID.Item(i).ToString)
+            'Insert the gp of the season in the calendar
+            DBBroker.GetBroker().Change("INSERT INTO Calendar (Season, GP, `Order`) VALUES (" & se.SeasonID & ", " & auxGPID & ", " & i & ");")
         Next
-        Dim raceToAdd As Race
-        'Inserting the data for races
-        For i = 1 To se.ListRaces.Count
-            raceToAdd = CType(se.ListRaces.Item(i), Race)
-            raceToAdd.InsertRace()
-        Next
+
     End Sub
 
     'To delete the season selected ----------------------------------------
     Public Function Delete(ByVal se As Season) As Integer
+
+        Dim auxRaceCollectionToDelete As Collection
+        Dim auxContractTeamIDToDelete As Integer
+
+        Dim auxRaceGPIDToDelete As Integer
+        Dim auxRaceDriverIDToDelete As Integer
         Dim auxRaceToDelete As Race
+
         Dim auxContractToDelete As Contract
+
         For i = 1 To se.ListRaces.Count
-            'Take each race and delete it
-            auxRaceToDelete = CType(se.ListRaces(i), Race)
+
+            auxRaceCollectionToDelete = CType(se.ListRaces(i), Collection)
+
+            auxRaceGPIDToDelete = Integer.Parse(auxRaceCollectionToDelete.Item(2).ToString())
+            auxRaceDriverIDToDelete = Integer.Parse(auxRaceCollectionToDelete.Item(3).ToString())
+            auxRaceToDelete = New Race(se.SeasonID, auxRaceGPIDToDelete, auxRaceDriverIDToDelete)
+            auxRaceToDelete.ReadRace()
+
             auxRaceToDelete.DeleteRace()
+
         Next
-        For i = 1 To se.ListContracts.Count
-            'Take each contract and delete it
-            auxContractToDelete = CType(se.ListContracts(i), Contract)
+
+        For i = 1 To se.ListContractsTeamID.Count
+
+            auxContractTeamIDToDelete = Integer.Parse(se.ListContractsTeamID(i).ToString)
+
+            'Creates the contract to delete with the candidate keys
+            auxContractToDelete = New Contract(auxContractTeamIDToDelete, se.SeasonID)
+            auxContractToDelete.ReadContract()
+
             auxContractToDelete.DeleteContract()
         Next
-        Return DBBroker.GetBroker().Change("DELETE FROM Calendar WHERE SeasonID = " & se.SeasonID & ";")
+
+        'Delete the season entry from the database
+        Return DBBroker.GetBroker().Change("DELETE FROM Calendar WHERE Season = " & se.SeasonID & ";")
+
     End Function
 End Class
