@@ -17,6 +17,7 @@
             btnOpenRaces.Enabled = True
             btnOpenClassifications.Enabled = True
             btnOpenHistory.Enabled = True
+            btnConnectDB.Text = "Connected to the database:)"
         Catch ex As Exception
             MessageBox.Show("Connection not opened " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Me.Close()
@@ -55,7 +56,15 @@
     End Sub
 
     Private Sub frmFormulaOne_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        btnConnectDB.Enabled = True
+        btnOpenGPs.Enabled = False
+        BtnOpenDrivers.Enabled = False
+        btnOpenTeams.Enabled = False
+        btnOpenCountries.Enabled = False
+        btnOpenSeasons.Enabled = False
+        btnOpenRaces.Enabled = False
+        btnOpenClassifications.Enabled = False
+        btnOpenHistory.Enabled = False
     End Sub
 
     Private Sub btnOpenClassifications_Click(sender As Object, e As EventArgs) Handles btnOpenClassifications.Click
