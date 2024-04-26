@@ -21,7 +21,7 @@
             btnDeleteDriver.Enabled = True
 
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error while reading drivers: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -37,17 +37,18 @@
                 txtBxDriverCountry.Text = driver.DriverCountry.ToString()
             End If
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error while selecting driver: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
 
     Private Sub btnAddDriver_Click(sender As Object, e As EventArgs) Handles btnAddDriver.Click
+
+        driver = New Driver(Integer.Parse(txtBxDriverID.Text))
+        driver.DriverName = txtBxDriverName.Text
+        driver.DriverSurname = txtBxDriverSurname.Text
+        driver.DriverCountry = txtBxDriverCountry.Text
         Try
-            driver = New Driver(Integer.Parse(txtBxDriverID.Text))
-            driver.DriverName = txtBxDriverName.Text
-            driver.DriverSurname = txtBxDriverSurname.Text
-            driver.DriverCountry = txtBxDriverCountry.Text
             driver.InsertDriver()
             lstDrivers.Items.Clear()
             driver.ReadAllDrivers()
@@ -55,13 +56,14 @@
                 lstDrivers.Items.Add(driver.DriverID & " " & driver.DriverName & " " & driver.DriverSurname)
             Next
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error while inserting drivers: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
     Private Sub btnDeleteDriver_Click(sender As Object, e As EventArgs) Handles btnDeleteDriver.Click
+
+        driver = New Driver(Integer.Parse(txtBxDriverID.Text))
         Try
-            driver = New Driver(Integer.Parse(txtBxDriverID.Text))
             driver.DeleteDriver()
             lstDrivers.Items.Clear()
             driver.ReadAllDrivers()
@@ -69,16 +71,17 @@
                 lstDrivers.Items.Add(driver.DriverID & " " & driver.DriverName & " " & driver.DriverSurname)
             Next
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error while deleting the selected driver: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
     Private Sub btnUpdateDriver_Click(sender As Object, e As EventArgs) Handles btnUpdateDriver.Click
+
+        driver = New Driver(Integer.Parse(txtBxDriverID.Text))
+        driver.DriverName = txtBxDriverName.Text
+        driver.DriverSurname = txtBxDriverSurname.Text
+        driver.DriverCountry = txtBxDriverCountry.Text
         Try
-            driver = New Driver(Integer.Parse(txtBxDriverID.Text))
-            driver.DriverName = txtBxDriverName.Text
-            driver.DriverSurname = txtBxDriverSurname.Text
-            driver.DriverCountry = txtBxDriverCountry.Text
             driver.UpdateDriver()
             lstDrivers.Items.Clear()
             driver.ReadAllDrivers()
@@ -86,7 +89,7 @@
                 lstDrivers.Items.Add(driver.DriverID & " " & driver.DriverName & " " & driver.DriverSurname)
             Next
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error while updating the data: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 

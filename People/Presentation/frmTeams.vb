@@ -17,7 +17,7 @@
 
 
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error while reading the teams: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -34,29 +34,30 @@
             End If
 
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error while selecting the team: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
     Private Sub BtnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+
+
+        te = New Team(Integer.Parse(txtID.Text))
+        te.TeamName = txtName.Text
+        te.TeamCountry = txtcountryid.Text
+        te.CreationDate = Date.Parse(txtCreationDate.Text)
         Try
-            If lstTeams.SelectedIndex > 0 Then
-                te = New Team(Integer.Parse(txtID.Text))
-                te.TeamName = txtName.Text
-                te.TeamCountry = txtcountryid.Text
-                te.CreationDate = Date.Parse(txtCreationDate.Text)
-
-                te.InsertTeam()
-                lstTeams.Items.Clear()
-                te.ReadAllTeams()
-            End If
-
-            For Each te In te.TeDAO.Teams
-                lstTeams.Items.Add(te.TeamID)
-            Next
+            te.InsertTeam()
+            lstTeams.Items.Clear()
+            te.ReadAllTeams()
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error while inserting the team: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+
+
+        For Each te In te.TeDAO.Teams
+            lstTeams.Items.Add(te.TeamID & " " & te.TeamName)
+        Next
+
     End Sub
 
     Private Sub BtnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
@@ -70,10 +71,10 @@
             lstTeams.Items.Clear()
             te.ReadAllTeams()
             For Each te In te.TeDAO.Teams
-                lstTeams.Items.Add(te.TeamID)
+                lstTeams.Items.Add(te.TeamID & " " & te.TeamName)
             Next
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error while updating the data: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -84,10 +85,10 @@
             lstTeams.Items.Clear()
             te.ReadAllTeams()
             For Each te In te.TeDAO.Teams
-                lstTeams.Items.Add(te.TeamID)
+                lstTeams.Items.Add(te.TeamID & " " & te.TeamName)
             Next
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error while deleting the team: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 

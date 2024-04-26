@@ -19,7 +19,7 @@ Public Class frmRaces
                 lstSeasons.Items.Add(s.SeasonID)
             Next
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error while reading the races: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -43,7 +43,7 @@ Public Class frmRaces
                 Next
             End If
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error while selecting the season: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -55,43 +55,45 @@ Public Class frmRaces
             Dim raceSelected As Race
             Dim season As New Season()
             Dim auxSeasonID_GPID_Driver As Collection
+            Try
 
-            season.SeasonID = Integer.Parse(lstSeasons.SelectedItem.ToString)
-            season.ReadSeason()
-            gpID = Integer.Parse(lstGPs.SelectedItem.ToString.Split(" "c)(0))
+                season.SeasonID = Integer.Parse(lstSeasons.SelectedItem.ToString)
+                season.ReadSeason()
+                gpID = Integer.Parse(lstGPs.SelectedItem.ToString.Split(" "c)(0))
 
-            For Each auxSeasonID_GPID_Driver In season.ListRaces
+                For Each auxSeasonID_GPID_Driver In season.ListRaces
 
-                If Integer.Parse(auxSeasonID_GPID_Driver(1).ToString) = season.SeasonID Or Integer.Parse(auxSeasonID_GPID_Driver(2).ToString) = gpID Then
-                    raceSelected = New Race(season.SeasonID, gpID, Integer.Parse(auxSeasonID_GPID_Driver(3).ToString))
-                    raceSelected.ReadRace()
-                    Dim auxDriverForNames As New Driver(Integer.Parse(raceSelected.Driver.ToString))
-                    auxDriverForNames.ReadDriver()
-
-                    Select Case raceSelected.Position
-                        Case 1
-                            txtbxDriver1.Text = auxDriverForNames.DriverName & " " & auxDriverForNames.DriverSurname
-                        Case 2
-                            TxtBxDriver2.Text = auxDriverForNames.DriverName & " " & auxDriverForNames.DriverSurname
-                        Case 3
-                            TxtBxDriver3.Text = auxDriverForNames.DriverName & " " & auxDriverForNames.DriverSurname
-                        Case 4
-                            TxtBxDriver4.Text = auxDriverForNames.DriverName & " " & auxDriverForNames.DriverSurname
-                        Case 5
-                            TxtBxDriver5.Text = auxDriverForNames.DriverName & " " & auxDriverForNames.DriverSurname
-                        Case 6
-                            TxtBxDriver6.Text = auxDriverForNames.DriverName & " " & auxDriverForNames.DriverSurname
-                    End Select
-                End If
-            Next
-
-
-
-
-
-
+                    If Integer.Parse(auxSeasonID_GPID_Driver(1).ToString) = season.SeasonID Or Integer.Parse(auxSeasonID_GPID_Driver(2).ToString) = gpID Then
+                        raceSelected = New Race(season.SeasonID, gpID, Integer.Parse(auxSeasonID_GPID_Driver(3).ToString))
+                        raceSelected.ReadRace()
+                        Dim auxDriverForNames As New Driver(Integer.Parse(raceSelected.Driver.ToString))
+                        auxDriverForNames.ReadDriver()
+                        AssignDriverName(auxDriverForNames, raceSelected.Position)
+                    End If
+                Next
+            Catch ex As Exception
+                MessageBox.Show("Error while selecting the GP: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
         End If
 
+    End Sub
+    Private Sub AssignDriverName(driver As Driver, position As Integer)
+        Dim driverFullName As String = $"{driver.DriverName} {driver.DriverSurname}"
+
+        Select Case position
+            Case 1
+                txtbxDriver1.Text = driverFullName
+            Case 2
+                TxtBxDriver2.Text = driverFullName
+            Case 3
+                TxtBxDriver3.Text = driverFullName
+            Case 4
+                TxtBxDriver4.Text = driverFullName
+            Case 5
+                TxtBxDriver5.Text = driverFullName
+            Case 6
+                TxtBxDriver6.Text = driverFullName
+        End Select
     End Sub
 
 

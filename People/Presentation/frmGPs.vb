@@ -17,7 +17,7 @@
 
 
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error while rading the GPs: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -33,7 +33,7 @@
             End If
 
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error while selecting the GP: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -46,10 +46,11 @@
             lstGPs.Items.Clear()
             gp.ReadAllGPs()
             For Each gp In gp.GpDAO.GPs
-                lstGPs.Items.Add(gp.GPID)
+                lstGPs.Items.Add(gp.GPID & " " & gp.GPName)
+
             Next
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error while inserting the GP: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -62,10 +63,10 @@
             lstGPs.Items.Clear()
             gp.ReadAllGPs()
             For Each gp In gp.GpDAO.GPs
-                lstGPs.Items.Add(gp.GPID)
+                lstGPs.Items.Add(gp.GPID & " " & gp.GPName)
             Next
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error while updating the data: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -76,10 +77,10 @@
             lstGPs.Items.Clear()
             gp.ReadAllGPs()
             For Each gp In gp.GpDAO.GPs
-                lstGPs.Items.Add(gp.GPID)
+                lstGPs.Items.Add(gp.GPID & " " & gp.GPName)
             Next
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error while deleting the data: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 

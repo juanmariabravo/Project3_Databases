@@ -33,80 +33,88 @@ Public Class frmSeasons
             Dim season As New Season
 
             season.ReadAllSeasons()
+
             lstSeasons.Items.Clear()
             For Each season In season.SeasonDAO.Seasons
                 lstSeasons.Items.Add(season.SeasonID)
             Next
-
-
-            'Management of visual elements
-            btnDelete.Enabled = False
-            btnDone.Enabled = False
-            lstContracts.Enabled = False
-            lstGPs.Enabled = False
-            lblDriver1.Enabled = False
-            lblDriver2.Enabled = False
-            ' Initialize combo box with integers from 5 to 10
-
-            CmbBoxMinTeams.Items.Add(" ")
-            CmbBoxMaxTeams.Items.Add(" ")
-            CmbBoxMinGPs.Items.Add(" ")
-            CmbBoxMaxGPs.Items.Add(" ")
-            For i As Integer = 5 To 10
-                CmbBoxMinTeams.Items.Add(i)
-                CmbBoxMaxTeams.Items.Add(i)
-            Next
-
-            ' Initialize combo box with integers from 10 to 20
-            For i As Integer = 10 To 20
-                CmbBoxMinGPs.Items.Add(i)
-                CmbBoxMaxGPs.Items.Add(i)
-            Next
-            ' Avoid user input in the combo boxes, only allow selection of the values and set the default selected value
-            CmbBoxMinTeams.DropDownStyle = ComboBoxStyle.DropDownList
-            CmbBoxMaxTeams.DropDownStyle = ComboBoxStyle.DropDownList
-            CmbBoxMinGPs.DropDownStyle = ComboBoxStyle.DropDownList
-            CmbBoxMaxGPs.DropDownStyle = ComboBoxStyle.DropDownList
-
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error while reading seasons: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+
+
+        'Management of visual elements
+        btnDelete.Enabled = False
+        btnDone.Enabled = False
+        lstContracts.Enabled = False
+        lstGPs.Enabled = False
+        lblDriver1.Enabled = False
+        lblDriver2.Enabled = False
+        ' Initialize combo box with integers from 5 to 10
+
+        CmbBoxMinTeams.Items.Add(" ")
+        CmbBoxMaxTeams.Items.Add(" ")
+        CmbBoxMinGPs.Items.Add(" ")
+        CmbBoxMaxGPs.Items.Add(" ")
+        For i As Integer = 5 To 10
+            CmbBoxMinTeams.Items.Add(i)
+            CmbBoxMaxTeams.Items.Add(i)
+        Next
+
+        ' Initialize combo box with integers from 10 to 20
+        For i As Integer = 10 To 20
+            CmbBoxMinGPs.Items.Add(i)
+            CmbBoxMaxGPs.Items.Add(i)
+        Next
+        ' Avoid user input in the combo boxes, only allow selection of the values and set the default selected value
+        CmbBoxMinTeams.DropDownStyle = ComboBoxStyle.DropDownList
+        CmbBoxMaxTeams.DropDownStyle = ComboBoxStyle.DropDownList
+        CmbBoxMinGPs.DropDownStyle = ComboBoxStyle.DropDownList
+        CmbBoxMaxGPs.DropDownStyle = ComboBoxStyle.DropDownList
+
+
     End Sub
     Private Sub LstSeason_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstSeasons.SelectedIndexChanged
 
         If lstSeasons.SelectedIndex >= 0 AndAlso lstSeasons.SelectedItems.Count = 1 Then
+
             Dim season As New Season()
             Dim auxGPsID As Integer
             Dim auxTeam As Team
             Dim auxTeamID As Integer
             Dim auxGP As GP
             season.SeasonID = Integer.Parse(lstSeasons.SelectedItem.ToString)
-            season.ReadSeason()
+            Try
+                season.ReadSeason()
 
-            lstContracts.Items.Clear()
-            lstGPs.Items.Clear()
 
-            ' Enable the list of GPs and contracts to insert the names of the contracts and the names of the GPs
-            lstContracts.Enabled = True
-            lstGPs.Enabled = True
-            btnDelete.Enabled = True
+                lstContracts.Items.Clear()
+                lstGPs.Items.Clear()
 
-            ' Insert the ids + names of the teams that have a contract in the list of contracts
-            For Each auxTeamID In season.ListContractsTeamID
+                ' Enable the list of GPs and contracts to insert the names of the contracts and the names of the GPs
+                lstContracts.Enabled = True
+                lstGPs.Enabled = True
+                btnDelete.Enabled = True
 
-                auxTeam = New Team(auxTeamID)
-                auxTeam.ReadTeam()
+                ' Insert the ids + names of the teams that have a contract in the list of contracts
+                For Each auxTeamID In season.ListContractsTeamID
 
-                lstContracts.Items.Add(auxTeam.TeamID & " " & auxTeam.TeamName)
-            Next
+                    auxTeam = New Team(auxTeamID)
+                    auxTeam.ReadTeam()
 
-            ' Insert the names of the GPs in the list of GPs
-            For Each auxGPsID In season.ListGPsID
-                auxGP = New GP(auxGPsID)
-                auxGP.ReadGP()
+                    lstContracts.Items.Add(auxTeam.TeamID & " " & auxTeam.TeamName)
+                Next
 
-                lstGPs.Items.Add(auxGP.GPID & " " & auxGP.GPName)
-            Next
+                ' Insert the names of the GPs in the list of GPs
+                For Each auxGPsID In season.ListGPsID
+                    auxGP = New GP(auxGPsID)
+                    auxGP.ReadGP()
+
+                    lstGPs.Items.Add(auxGP.GPID & " " & auxGP.GPName)
+                Next
+            Catch ex As Exception
+                MessageBox.Show("Error while reading seasons: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
         End If
 
     End Sub
@@ -136,7 +144,7 @@ Public Class frmSeasons
                 End If
             End If
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error while reading contracts: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
     End Sub
@@ -236,15 +244,19 @@ Public Class frmSeasons
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         ' Delete the season selected in the list of seasons
-        Dim season As New Season(Integer.Parse(lstSeasons.SelectedItem.ToString))
-        season.ReadSeason()
-        season.DeleteSeason()
-        lstSeasons.Items.Clear()
-        season.ReadAllSeasons()
-        For Each season In season.SeasonDAO.Seasons
-            lstSeasons.Items.Add(season.SeasonID)
-        Next
-        btnDelete.Enabled = False
+        Try
+            Dim season As New Season(Integer.Parse(lstSeasons.SelectedItem.ToString))
+            season.ReadSeason()
+            season.DeleteSeason()
+            lstSeasons.Items.Clear()
+            season.ReadAllSeasons()
+            For Each season In season.SeasonDAO.Seasons
+                lstSeasons.Items.Add(season.SeasonID)
+            Next
+            btnDelete.Enabled = False
+        Catch ex As Exception
+            MessageBox.Show("Error while deleting the season: " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
 
