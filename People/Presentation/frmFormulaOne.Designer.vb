@@ -35,6 +35,8 @@ Partial Class frmFormulaOne
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnOpenClassifications = New System.Windows.Forms.Button()
         Me.btnOpenHistory = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnOpenGPs
@@ -80,7 +82,7 @@ Partial Class frmFormulaOne
         '
         Me.lblMsg.AutoSize = True
         Me.lblMsg.Font = New System.Drawing.Font("Gadugi", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMsg.Location = New System.Drawing.Point(52, 145)
+        Me.lblMsg.Location = New System.Drawing.Point(57, 145)
         Me.lblMsg.Name = "lblMsg"
         Me.lblMsg.Size = New System.Drawing.Size(319, 27)
         Me.lblMsg.TabIndex = 16
@@ -156,13 +158,23 @@ Partial Class frmFormulaOne
         Me.btnOpenHistory.Text = "Drivers and Teams History"
         Me.btnOpenHistory.UseVisualStyleBackColor = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.FormulaOne.My.Resources.Resources.fotomain
+        Me.PictureBox1.Location = New System.Drawing.Point(331, 347)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(831, 284)
+        Me.PictureBox1.TabIndex = 24
+        Me.PictureBox1.TabStop = False
+        '
         'frmFormulaOne
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.MintCream
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ClientSize = New System.Drawing.Size(1435, 562)
+        Me.ClientSize = New System.Drawing.Size(1435, 643)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnOpenHistory)
         Me.Controls.Add(Me.btnOpenClassifications)
         Me.Controls.Add(Me.Label2)
@@ -183,6 +195,7 @@ Partial Class frmFormulaOne
         Me.Name = "frmFormulaOne"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Formula One Main Menu"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -199,4 +212,5 @@ Partial Class frmFormulaOne
     Friend WithEvents Label2 As Label
     Friend WithEvents btnOpenClassifications As Button
     Friend WithEvents btnOpenHistory As Button
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

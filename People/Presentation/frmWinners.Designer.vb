@@ -24,15 +24,24 @@ Partial Class frmWinners
     Private Sub InitializeComponent()
         Me.comboBoxSeasons = New System.Windows.Forms.ComboBox()
         Me.lblSelectSeason = New System.Windows.Forms.Label()
-        Me.driversClassification = New System.Windows.Forms.ListBox()
-        Me.teamsClassification = New System.Windows.Forms.ListBox()
+        Me.lstDriversClassNameSur = New System.Windows.Forms.ListBox()
+        Me.lstTeamsClassificationTeams = New System.Windows.Forms.ListBox()
         Me.lblSelectCoutry = New System.Windows.Forms.Label()
         Me.comboBoxCountries = New System.Windows.Forms.ComboBox()
         Me.lblDriversClass = New System.Windows.Forms.Label()
         Me.lblTeamsClass = New System.Windows.Forms.Label()
         Me.lblWorldChampions = New System.Windows.Forms.Label()
-        Me.worldChampions = New System.Windows.Forms.ListBox()
+        Me.lstWCwinner = New System.Windows.Forms.ListBox()
         Me.btnMainMenuSeasons = New System.Windows.Forms.Button()
+        Me.lstDriversClassPoints = New System.Windows.Forms.ListBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.lstTeamsClassificationPoints = New System.Windows.Forms.ListBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lstWCgp = New System.Windows.Forms.ListBox()
+        Me.lstWCpoints = New System.Windows.Forms.ListBox()
+        Me.lstWCteam = New System.Windows.Forms.ListBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.lstWCseason = New System.Windows.Forms.ListBox()
         Me.SuspendLayout()
         '
         'comboBoxSeasons
@@ -52,25 +61,25 @@ Partial Class frmWinners
         Me.lblSelectSeason.TabIndex = 2
         Me.lblSelectSeason.Text = "Select season:"
         '
-        'driversClassification
+        'lstDriversClassNameSur
         '
-        Me.driversClassification.Enabled = False
-        Me.driversClassification.FormattingEnabled = True
-        Me.driversClassification.ItemHeight = 16
-        Me.driversClassification.Location = New System.Drawing.Point(25, 154)
-        Me.driversClassification.Name = "driversClassification"
-        Me.driversClassification.Size = New System.Drawing.Size(261, 388)
-        Me.driversClassification.TabIndex = 3
+        Me.lstDriversClassNameSur.Enabled = False
+        Me.lstDriversClassNameSur.FormattingEnabled = True
+        Me.lstDriversClassNameSur.ItemHeight = 16
+        Me.lstDriversClassNameSur.Location = New System.Drawing.Point(38, 176)
+        Me.lstDriversClassNameSur.Name = "lstDriversClassNameSur"
+        Me.lstDriversClassNameSur.Size = New System.Drawing.Size(170, 388)
+        Me.lstDriversClassNameSur.TabIndex = 3
         '
-        'teamsClassification
+        'lstTeamsClassificationTeams
         '
-        Me.teamsClassification.Enabled = False
-        Me.teamsClassification.FormattingEnabled = True
-        Me.teamsClassification.ItemHeight = 16
-        Me.teamsClassification.Location = New System.Drawing.Point(360, 154)
-        Me.teamsClassification.Name = "teamsClassification"
-        Me.teamsClassification.Size = New System.Drawing.Size(216, 388)
-        Me.teamsClassification.TabIndex = 4
+        Me.lstTeamsClassificationTeams.Enabled = False
+        Me.lstTeamsClassificationTeams.FormattingEnabled = True
+        Me.lstTeamsClassificationTeams.ItemHeight = 16
+        Me.lstTeamsClassificationTeams.Location = New System.Drawing.Point(336, 176)
+        Me.lstTeamsClassificationTeams.Name = "lstTeamsClassificationTeams"
+        Me.lstTeamsClassificationTeams.Size = New System.Drawing.Size(180, 388)
+        Me.lstTeamsClassificationTeams.TabIndex = 4
         '
         'lblSelectCoutry
         '
@@ -119,15 +128,15 @@ Partial Class frmWinners
         Me.lblWorldChampions.TabIndex = 10
         Me.lblWorldChampions.Text = "World Champions"
         '
-        'worldChampions
+        'lstWCwinner
         '
-        Me.worldChampions.Enabled = False
-        Me.worldChampions.FormattingEnabled = True
-        Me.worldChampions.ItemHeight = 16
-        Me.worldChampions.Location = New System.Drawing.Point(626, 154)
-        Me.worldChampions.Name = "worldChampions"
-        Me.worldChampions.Size = New System.Drawing.Size(553, 388)
-        Me.worldChampions.TabIndex = 9
+        Me.lstWCwinner.Enabled = False
+        Me.lstWCwinner.FormattingEnabled = True
+        Me.lstWCwinner.ItemHeight = 16
+        Me.lstWCwinner.Location = New System.Drawing.Point(617, 176)
+        Me.lstWCwinner.Name = "lstWCwinner"
+        Me.lstWCwinner.Size = New System.Drawing.Size(167, 388)
+        Me.lstWCwinner.TabIndex = 9
         '
         'btnMainMenuSeasons
         '
@@ -140,20 +149,119 @@ Partial Class frmWinners
         Me.btnMainMenuSeasons.Text = "Go to main menu"
         Me.btnMainMenuSeasons.UseVisualStyleBackColor = False
         '
+        'lstDriversClassPoints
+        '
+        Me.lstDriversClassPoints.Enabled = False
+        Me.lstDriversClassPoints.FormattingEnabled = True
+        Me.lstDriversClassPoints.ItemHeight = 16
+        Me.lstDriversClassPoints.Location = New System.Drawing.Point(214, 176)
+        Me.lstDriversClassPoints.Name = "lstDriversClassPoints"
+        Me.lstDriversClassPoints.Size = New System.Drawing.Size(64, 388)
+        Me.lstDriversClassPoints.TabIndex = 28
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Courier New", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(90, 155)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(189, 20)
+        Me.Label12.TabIndex = 30
+        Me.Label12.Text = "Driver      Points"
+        '
+        'lstTeamsClassificationPoints
+        '
+        Me.lstTeamsClassificationPoints.Enabled = False
+        Me.lstTeamsClassificationPoints.FormattingEnabled = True
+        Me.lstTeamsClassificationPoints.ItemHeight = 16
+        Me.lstTeamsClassificationPoints.Location = New System.Drawing.Point(522, 176)
+        Me.lstTeamsClassificationPoints.Name = "lstTeamsClassificationPoints"
+        Me.lstTeamsClassificationPoints.Size = New System.Drawing.Size(64, 388)
+        Me.lstTeamsClassificationPoints.TabIndex = 31
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Courier New", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(378, 155)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(209, 20)
+        Me.Label1.TabIndex = 32
+        Me.Label1.Text = "Team          Points"
+        '
+        'lstWCgp
+        '
+        Me.lstWCgp.Enabled = False
+        Me.lstWCgp.FormattingEnabled = True
+        Me.lstWCgp.ItemHeight = 16
+        Me.lstWCgp.Location = New System.Drawing.Point(1060, 176)
+        Me.lstWCgp.Name = "lstWCgp"
+        Me.lstWCgp.Size = New System.Drawing.Size(120, 468)
+        Me.lstWCgp.TabIndex = 37
+        '
+        'lstWCpoints
+        '
+        Me.lstWCpoints.Enabled = False
+        Me.lstWCpoints.FormattingEnabled = True
+        Me.lstWCpoints.ItemHeight = 16
+        Me.lstWCpoints.Location = New System.Drawing.Point(1011, 176)
+        Me.lstWCpoints.Name = "lstWCpoints"
+        Me.lstWCpoints.Size = New System.Drawing.Size(43, 468)
+        Me.lstWCpoints.TabIndex = 36
+        '
+        'lstWCteam
+        '
+        Me.lstWCteam.Enabled = False
+        Me.lstWCteam.FormattingEnabled = True
+        Me.lstWCteam.ItemHeight = 16
+        Me.lstWCteam.Location = New System.Drawing.Point(861, 176)
+        Me.lstWCteam.Name = "lstWCteam"
+        Me.lstWCteam.Size = New System.Drawing.Size(144, 468)
+        Me.lstWCteam.TabIndex = 35
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Courier New", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(657, 155)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(469, 20)
+        Me.Label9.TabIndex = 34
+        Me.Label9.Text = "Winner       Season      Team     Points    GP"
+        '
+        'lstWCseason
+        '
+        Me.lstWCseason.Enabled = False
+        Me.lstWCseason.FormattingEnabled = True
+        Me.lstWCseason.ItemHeight = 16
+        Me.lstWCseason.Location = New System.Drawing.Point(790, 176)
+        Me.lstWCseason.Name = "lstWCseason"
+        Me.lstWCseason.Size = New System.Drawing.Size(65, 468)
+        Me.lstWCseason.TabIndex = 33
+        '
         'frmWinners
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1221, 685)
+        Me.Controls.Add(Me.lstWCgp)
+        Me.Controls.Add(Me.lstWCpoints)
+        Me.Controls.Add(Me.lstWCteam)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.lstWCseason)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lstTeamsClassificationPoints)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.lstDriversClassPoints)
         Me.Controls.Add(Me.btnMainMenuSeasons)
         Me.Controls.Add(Me.lblWorldChampions)
-        Me.Controls.Add(Me.worldChampions)
+        Me.Controls.Add(Me.lstWCwinner)
         Me.Controls.Add(Me.lblTeamsClass)
         Me.Controls.Add(Me.lblDriversClass)
         Me.Controls.Add(Me.lblSelectCoutry)
         Me.Controls.Add(Me.comboBoxCountries)
-        Me.Controls.Add(Me.teamsClassification)
-        Me.Controls.Add(Me.driversClassification)
+        Me.Controls.Add(Me.lstTeamsClassificationTeams)
+        Me.Controls.Add(Me.lstDriversClassNameSur)
         Me.Controls.Add(Me.lblSelectSeason)
         Me.Controls.Add(Me.comboBoxSeasons)
         Me.Name = "frmWinners"
@@ -165,13 +273,22 @@ Partial Class frmWinners
 
     Friend WithEvents comboBoxSeasons As ComboBox
     Friend WithEvents lblSelectSeason As Label
-    Friend WithEvents driversClassification As ListBox
-    Friend WithEvents teamsClassification As ListBox
+    Friend WithEvents lstDriversClassNameSur As ListBox
+    Friend WithEvents lstTeamsClassificationTeams As ListBox
     Friend WithEvents lblSelectCoutry As Label
     Friend WithEvents comboBoxCountries As ComboBox
     Friend WithEvents lblDriversClass As Label
     Friend WithEvents lblTeamsClass As Label
     Friend WithEvents lblWorldChampions As Label
-    Friend WithEvents worldChampions As ListBox
+    Friend WithEvents lstWCwinner As ListBox
     Friend WithEvents btnMainMenuSeasons As Button
+    Friend WithEvents lstDriversClassPoints As ListBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents lstTeamsClassificationPoints As ListBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents lstWCgp As ListBox
+    Friend WithEvents lstWCpoints As ListBox
+    Friend WithEvents lstWCteam As ListBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents lstWCseason As ListBox
 End Class

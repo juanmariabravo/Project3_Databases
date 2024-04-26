@@ -38,7 +38,7 @@ Partial Class frmHistory
         Me.Label6 = New System.Windows.Forms.Label()
         Me.lstDrivers = New System.Windows.Forms.ListBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.lstRacesOfDriver = New System.Windows.Forms.ListBox()
+        Me.lstRacesOfDriverSeason = New System.Windows.Forms.ListBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -46,6 +46,10 @@ Partial Class frmHistory
         Me.lblPosition = New System.Windows.Forms.Label()
         Me.lblPoints = New System.Windows.Forms.Label()
         Me.btnMainMenuSeasons = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.lstRacesOfDriverGP = New System.Windows.Forms.ListBox()
+        Me.lstRacesOfDriverPosition = New System.Windows.Forms.ListBox()
+        Me.lstRacesOfDriverPoints = New System.Windows.Forms.ListBox()
         Me.SuspendLayout()
         '
         'lblSelectSeason
@@ -154,9 +158,9 @@ Partial Class frmHistory
         '
         Me.lstRaces.FormattingEnabled = True
         Me.lstRaces.ItemHeight = 16
-        Me.lstRaces.Location = New System.Drawing.Point(245, 61)
+        Me.lstRaces.Location = New System.Drawing.Point(195, 90)
         Me.lstRaces.Name = "lstRaces"
-        Me.lstRaces.Size = New System.Drawing.Size(151, 388)
+        Me.lstRaces.Size = New System.Drawing.Size(253, 468)
         Me.lstRaces.TabIndex = 15
         '
         'Label6
@@ -175,7 +179,7 @@ Partial Class frmHistory
         Me.lstDrivers.ItemHeight = 16
         Me.lstDrivers.Location = New System.Drawing.Point(642, 62)
         Me.lstDrivers.Name = "lstDrivers"
-        Me.lstDrivers.Size = New System.Drawing.Size(205, 388)
+        Me.lstDrivers.Size = New System.Drawing.Size(205, 500)
         Me.lstDrivers.TabIndex = 17
         '
         'Label7
@@ -188,15 +192,15 @@ Partial Class frmHistory
         Me.Label7.TabIndex = 18
         Me.Label7.Text = "Drivers of the team"
         '
-        'lstRacesOfDriver
+        'lstRacesOfDriverSeason
         '
-        Me.lstRacesOfDriver.Enabled = False
-        Me.lstRacesOfDriver.FormattingEnabled = True
-        Me.lstRacesOfDriver.ItemHeight = 16
-        Me.lstRacesOfDriver.Location = New System.Drawing.Point(865, 93)
-        Me.lstRacesOfDriver.Name = "lstRacesOfDriver"
-        Me.lstRacesOfDriver.Size = New System.Drawing.Size(419, 356)
-        Me.lstRacesOfDriver.TabIndex = 19
+        Me.lstRacesOfDriverSeason.Enabled = False
+        Me.lstRacesOfDriverSeason.FormattingEnabled = True
+        Me.lstRacesOfDriverSeason.ItemHeight = 16
+        Me.lstRacesOfDriverSeason.Location = New System.Drawing.Point(865, 93)
+        Me.lstRacesOfDriverSeason.Name = "lstRacesOfDriverSeason"
+        Me.lstRacesOfDriverSeason.Size = New System.Drawing.Size(90, 468)
+        Me.lstRacesOfDriverSeason.TabIndex = 19
         '
         'Label8
         '
@@ -214,9 +218,9 @@ Partial Class frmHistory
         Me.Label9.Font = New System.Drawing.Font("Courier New", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(877, 70)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(389, 20)
+        Me.Label9.Size = New System.Drawing.Size(399, 20)
         Me.Label9.TabIndex = 21
-        Me.Label9.Text = "Season       GP       Position  Points"
+        Me.Label9.Text = "Season        GP        Position Points"
         '
         'Label10
         '
@@ -265,7 +269,7 @@ Partial Class frmHistory
         'btnMainMenuSeasons
         '
         Me.btnMainMenuSeasons.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.btnMainMenuSeasons.Location = New System.Drawing.Point(589, 489)
+        Me.btnMainMenuSeasons.Location = New System.Drawing.Point(455, 480)
         Me.btnMainMenuSeasons.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
         Me.btnMainMenuSeasons.Name = "btnMainMenuSeasons"
         Me.btnMainMenuSeasons.Size = New System.Drawing.Size(156, 81)
@@ -273,11 +277,55 @@ Partial Class frmHistory
         Me.btnMainMenuSeasons.Text = "Go to main menu"
         Me.btnMainMenuSeasons.UseVisualStyleBackColor = False
         '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Courier New", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(203, 70)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(159, 20)
+        Me.Label12.TabIndex = 29
+        Me.Label12.Text = "Season       GP"
+        '
+        'lstRacesOfDriverGP
+        '
+        Me.lstRacesOfDriverGP.Enabled = False
+        Me.lstRacesOfDriverGP.FormattingEnabled = True
+        Me.lstRacesOfDriverGP.ItemHeight = 16
+        Me.lstRacesOfDriverGP.Location = New System.Drawing.Point(961, 93)
+        Me.lstRacesOfDriverGP.Name = "lstRacesOfDriverGP"
+        Me.lstRacesOfDriverGP.Size = New System.Drawing.Size(163, 468)
+        Me.lstRacesOfDriverGP.TabIndex = 30
+        '
+        'lstRacesOfDriverPosition
+        '
+        Me.lstRacesOfDriverPosition.Enabled = False
+        Me.lstRacesOfDriverPosition.FormattingEnabled = True
+        Me.lstRacesOfDriverPosition.ItemHeight = 16
+        Me.lstRacesOfDriverPosition.Location = New System.Drawing.Point(1130, 94)
+        Me.lstRacesOfDriverPosition.Name = "lstRacesOfDriverPosition"
+        Me.lstRacesOfDriverPosition.Size = New System.Drawing.Size(74, 468)
+        Me.lstRacesOfDriverPosition.TabIndex = 31
+        '
+        'lstRacesOfDriverPoints
+        '
+        Me.lstRacesOfDriverPoints.Enabled = False
+        Me.lstRacesOfDriverPoints.FormattingEnabled = True
+        Me.lstRacesOfDriverPoints.ItemHeight = 16
+        Me.lstRacesOfDriverPoints.Location = New System.Drawing.Point(1210, 93)
+        Me.lstRacesOfDriverPoints.Name = "lstRacesOfDriverPoints"
+        Me.lstRacesOfDriverPoints.Size = New System.Drawing.Size(74, 468)
+        Me.lstRacesOfDriverPoints.TabIndex = 32
+        '
         'frmHistory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1332, 600)
+        Me.Controls.Add(Me.lstRacesOfDriverPoints)
+        Me.Controls.Add(Me.lstRacesOfDriverPosition)
+        Me.Controls.Add(Me.lstRacesOfDriverGP)
+        Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.btnMainMenuSeasons)
         Me.Controls.Add(Me.lblPoints)
         Me.Controls.Add(Me.lblPosition)
@@ -285,7 +333,7 @@ Partial Class frmHistory
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.lstRacesOfDriver)
+        Me.Controls.Add(Me.lstRacesOfDriverSeason)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.lstDrivers)
         Me.Controls.Add(Me.Label6)
@@ -325,7 +373,7 @@ Partial Class frmHistory
     Friend WithEvents Label6 As Label
     Friend WithEvents lstDrivers As ListBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents lstRacesOfDriver As ListBox
+    Friend WithEvents lstRacesOfDriverSeason As ListBox
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
@@ -333,4 +381,8 @@ Partial Class frmHistory
     Friend WithEvents lblPosition As Label
     Friend WithEvents lblPoints As Label
     Friend WithEvents btnMainMenuSeasons As Button
+    Friend WithEvents Label12 As Label
+    Friend WithEvents lstRacesOfDriverGP As ListBox
+    Friend WithEvents lstRacesOfDriverPosition As ListBox
+    Friend WithEvents lstRacesOfDriverPoints As ListBox
 End Class

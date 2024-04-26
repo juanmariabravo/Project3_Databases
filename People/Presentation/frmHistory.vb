@@ -42,5 +42,4 @@
         frmFormulaOne.Enabled = True
     End Sub
 
-
 End Class
