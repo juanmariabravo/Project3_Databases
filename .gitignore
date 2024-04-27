@@ -12,3 +12,6 @@ People/Persistence/DBBroker.vb
 People/Persistence/DBBroker.vb
 People/Persistence/DBBroker.vb
 *.pdb
+/People/obj/Release
+*.sqlite
+.vs/FormulaOne/v17/.suo

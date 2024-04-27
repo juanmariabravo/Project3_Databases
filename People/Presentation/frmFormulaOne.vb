@@ -17,6 +17,7 @@
             btnOpenRaces.Enabled = True
             btnOpenClassifications.Enabled = True
             btnOpenHistory.Enabled = True
+            btnConnectDB.Text = "Connected to the database:)"
         Catch ex As Exception
             MessageBox.Show("Connection not opened " & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Me.Close()

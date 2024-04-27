@@ -37,7 +37,7 @@ Partial Class frmWinners
         Me.Label12 = New System.Windows.Forms.Label()
         Me.lstTeamsClassificationPoints = New System.Windows.Forms.ListBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.lstWCgp = New System.Windows.Forms.ListBox()
+        Me.lstWCwonraces = New System.Windows.Forms.ListBox()
         Me.lstWCpoints = New System.Windows.Forms.ListBox()
         Me.lstWCteam = New System.Windows.Forms.ListBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -139,13 +139,13 @@ Partial Class frmWinners
         Me.lstWCwinner.ItemHeight = 16
         Me.lstWCwinner.Location = New System.Drawing.Point(617, 176)
         Me.lstWCwinner.Name = "lstWCwinner"
-        Me.lstWCwinner.Size = New System.Drawing.Size(167, 388)
+        Me.lstWCwinner.Size = New System.Drawing.Size(167, 468)
         Me.lstWCwinner.TabIndex = 9
         '
         'btnMainMenuSeasons
         '
         Me.btnMainMenuSeasons.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.btnMainMenuSeasons.Location = New System.Drawing.Point(617, 594)
+        Me.btnMainMenuSeasons.Location = New System.Drawing.Point(1200, 42)
         Me.btnMainMenuSeasons.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
         Me.btnMainMenuSeasons.Name = "btnMainMenuSeasons"
         Me.btnMainMenuSeasons.Size = New System.Drawing.Size(156, 81)
@@ -193,22 +193,22 @@ Partial Class frmWinners
         Me.Label1.TabIndex = 32
         Me.Label1.Text = "Team          Points"
         '
-        'lstWCgp
+        'lstWCwonraces
         '
-        Me.lstWCgp.Enabled = False
-        Me.lstWCgp.FormattingEnabled = True
-        Me.lstWCgp.ItemHeight = 16
-        Me.lstWCgp.Location = New System.Drawing.Point(1087, 176)
-        Me.lstWCgp.Name = "lstWCgp"
-        Me.lstWCgp.Size = New System.Drawing.Size(93, 468)
-        Me.lstWCgp.TabIndex = 37
+        Me.lstWCwonraces.Enabled = False
+        Me.lstWCwonraces.FormattingEnabled = True
+        Me.lstWCwonraces.ItemHeight = 16
+        Me.lstWCwonraces.Location = New System.Drawing.Point(1116, 176)
+        Me.lstWCwonraces.Name = "lstWCwonraces"
+        Me.lstWCwonraces.Size = New System.Drawing.Size(93, 468)
+        Me.lstWCwonraces.TabIndex = 37
         '
         'lstWCpoints
         '
         Me.lstWCpoints.Enabled = False
         Me.lstWCpoints.FormattingEnabled = True
         Me.lstWCpoints.ItemHeight = 16
-        Me.lstWCpoints.Location = New System.Drawing.Point(1011, 176)
+        Me.lstWCpoints.Location = New System.Drawing.Point(1029, 176)
         Me.lstWCpoints.Name = "lstWCpoints"
         Me.lstWCpoints.Size = New System.Drawing.Size(59, 468)
         Me.lstWCpoints.TabIndex = 36
@@ -285,12 +285,12 @@ Partial Class frmWinners
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1221, 685)
+        Me.ClientSize = New System.Drawing.Size(1392, 740)
         Me.Controls.Add(Me.lblWorldTeamChampion)
         Me.Controls.Add(Me.lblWorldDriverChampions)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.lstWCgp)
+        Me.Controls.Add(Me.lstWCwonraces)
         Me.Controls.Add(Me.lstWCpoints)
         Me.Controls.Add(Me.lstWCteam)
         Me.Controls.Add(Me.Label9)
@@ -332,7 +332,7 @@ Partial Class frmWinners
     Friend WithEvents Label12 As Label
     Friend WithEvents lstTeamsClassificationPoints As ListBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents lstWCgp As ListBox
+    Friend WithEvents lstWCwonraces As ListBox
     Friend WithEvents lstWCpoints As ListBox
     Friend WithEvents lstWCteam As ListBox
     Friend WithEvents Label9 As Label
