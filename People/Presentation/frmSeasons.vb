@@ -189,8 +189,6 @@ Public Class frmSeasons
             MessageBox.Show("Error when inserting the season:" & ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error)
             season.DeleteSeason()
         End Try
-
-
     End Sub
 
     Private Sub getSeasonYear(ByRef seasonYear As Integer)
@@ -230,8 +228,6 @@ Public Class frmSeasons
                 numberTeams = New Random().Next(minTeams, maxTeams + 1)
             End If
         Catch ex As Exception
-            MessageBox.Show("Error while getting random numbers: An error occurred while generating random numbers.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-
         End Try
     End Sub
 
@@ -251,7 +247,7 @@ Public Class frmSeasons
                 numberGPs = New Random().Next(minGps, maxGps + 1)
             End If
         Catch ex As Exception
-            MessageBox.Show("Error while getting random numbers: An error occurred while generating random numbers.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
         End Try
     End Sub
     Private Sub ControlNumberTeamsValues(ByRef minTeams As Integer, ByRef maxTeams As Integer)
