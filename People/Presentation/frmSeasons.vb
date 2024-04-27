@@ -174,8 +174,10 @@ Public Class frmSeasons
         season.ReadSeason()
 
         Try
-            'Insert the season in the database
-            season.InsertSeason(numberTeams, numberGPs)
+            'If Season (id) is valid (not 0) , insert the season in the database
+            If Not seasonYear = 0 Then
+                season.InsertSeason(numberTeams, numberGPs)
+            End If
 
             'Recharge the seasons list
             season.ReadAllSeasons()
@@ -215,7 +217,6 @@ Public Class frmSeasons
 
     Private Sub getnumTeams(ByRef minTeams As Integer, ByRef maxTeams As Integer)
         Try
-
             ControlNumberTeamsValues(minTeams, maxTeams)
             'Check for the selection of the number of teams and GPs
             If CmbBoxMinTeams.SelectedItem IsNot " " AndAlso CmbBoxMaxTeams.SelectedItem IsNot " " AndAlso CmbBoxMinTeams.SelectedIndex <= CmbBoxMaxTeams.SelectedIndex Then

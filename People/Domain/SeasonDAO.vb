@@ -1,7 +1,4 @@
-﻿Imports System.Windows.Media
-Imports Microsoft.VisualBasic.Devices
-Imports Org.BouncyCastle.Utilities
-
+﻿
 Public Class SeasonDAO
 
     Public ReadOnly Property Seasons As Collection
@@ -116,8 +113,6 @@ Public Class SeasonDAO
 
         'Choosing the random teams ------------------------------------------------------------------------------------------------------------------------------------     
         For i = 1 To numTeams
-            'CHECKEAR QUE HAY SUFICIENTES EQUIPOS EN LA BASE DE DATOS (AUNQUE NO TIENE POR QUÉ HACER FALTA ESTO)
-
             Dim rand As New Random
             Dim randomIndexTeamSelected As Integer = rand.Next(0, auxTeamID.Count)
 
@@ -208,13 +203,7 @@ Public Class SeasonDAO
 
             'We remove this gp so that it can't be get selected again
             auxGPID.Remove(gpID)
-
-
-
         Next
-
-
-
     End Sub
 
     'To delete the season selected ----------------------------------------
