@@ -25,47 +25,50 @@ Public Class SeasonDAO
         End If
     End Sub
 
-    Public Sub Read(ByRef se As Season)
+    Public Sub ReadContracts(season As Season)
         Dim colContractsID As Collection
-        Dim colGPsID As Collection
-
         Dim auxContractTeamID As Collection
-        Dim auxGPID As Collection
-        Dim auxRaceData As Collection
-        Dim colRaces As Collection
 
-
-        colContractsID = DBBroker.GetBroker().Read("SELECT Team FROM Contracts WHERE Season = " & se.SeasonID & ";")
+        colContractsID = DBBroker.GetBroker().Read("SELECT Team FROM Contracts WHERE Season = " & season.SeasonID & ";")
         For Each auxContractTeamID In colContractsID
             'Adding the teamID to the collection, that is, the first element in the auxiliar collection
-            se.ListContractsTeamID.Add(Integer.Parse(auxContractTeamID(1).ToString()))
+            season.ListContractsTeamID.Add(Integer.Parse(auxContractTeamID(1).ToString()))
         Next
+    End Sub
 
-
-        colGPsID = DBBroker.GetBroker().Read("SELECT GP FROM Calendar WHERE Season = " & se.SeasonID & ";")
+    Public Sub ReadGPs(season As Season)
+        Dim colGPsID As Collection
+        Dim auxGPID As Collection
+        colGPsID = DBBroker.GetBroker().Read("SELECT GP FROM Calendar WHERE Season = " & season.SeasonID & ";")
         If colGPsID.Count > 0 Then
             'Adding all of the GPs ID to the collection
             For Each auxGPID In colGPsID
-                se.ListGPsID.Add(Integer.Parse(auxGPID(1).ToString()))
+                season.ListGPsID.Add(Integer.Parse(auxGPID(1).ToString()))
             Next
         End If
+    End Sub
 
-
+    Public Sub ReadRaces(season As Season)
+        Dim colRaces As Collection
+        Dim auxRaceData As Collection
         'Only take the GPID and the DriverID that participates in this season
-        colRaces = DBBroker.GetBroker().Read("SELECT * FROM Races WHERE Season = " & se.SeasonID & ";")
+        colRaces = DBBroker.GetBroker().Read("SELECT * FROM Races WHERE Season = " & season.SeasonID & ";")
         If colRaces.Count > 0 Then
             For Each auxRaceData In colRaces
                 Dim auxRace As New Collection 'Create a new instance since if not it will take the same values over and over again
-                auxRace.Add(se.SeasonID) '(1) the season
+                auxRace.Add(season.SeasonID) '(1) the season
                 auxRace.Add(Integer.Parse(auxRaceData(2).ToString)) '(2) the gp it is participating 
                 auxRace.Add(Integer.Parse(auxRaceData(3).ToString())) '(3) the driver that is participating
-                se.ListRaces.Add(auxRace)
+                season.ListRaces.Add(auxRace)
             Next
         End If
-
-
     End Sub
 
+    Public Sub Read(season As Season)
+        ReadContracts(season)
+        ReadGPs(season)
+        ReadRaces(season)
+    End Sub
     Public Sub Insert(ByRef se As Season, ByVal numTeams As Integer, ByVal numGPs As Integer)
 
         'Variables for creating the races and its results------------------------------------------------------------------------------------------------------------------------------------
@@ -208,12 +211,7 @@ Public Class SeasonDAO
 
             'We remove this gp so that it can't be get selected again
             auxGPID.Remove(gpID)
-
-
-
         Next
-
-
 
     End Sub
 
