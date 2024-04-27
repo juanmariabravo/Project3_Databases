@@ -160,7 +160,7 @@ Partial Class frmHistory
         Me.lstRaces.ItemHeight = 16
         Me.lstRaces.Location = New System.Drawing.Point(195, 90)
         Me.lstRaces.Name = "lstRaces"
-        Me.lstRaces.Size = New System.Drawing.Size(253, 468)
+        Me.lstRaces.Size = New System.Drawing.Size(253, 532)
         Me.lstRaces.TabIndex = 15
         '
         'Label6
@@ -179,7 +179,7 @@ Partial Class frmHistory
         Me.lstDrivers.ItemHeight = 16
         Me.lstDrivers.Location = New System.Drawing.Point(642, 62)
         Me.lstDrivers.Name = "lstDrivers"
-        Me.lstDrivers.Size = New System.Drawing.Size(205, 500)
+        Me.lstDrivers.Size = New System.Drawing.Size(205, 564)
         Me.lstDrivers.TabIndex = 17
         '
         'Label7
@@ -199,7 +199,7 @@ Partial Class frmHistory
         Me.lstRacesOfDriverSeason.ItemHeight = 16
         Me.lstRacesOfDriverSeason.Location = New System.Drawing.Point(865, 93)
         Me.lstRacesOfDriverSeason.Name = "lstRacesOfDriverSeason"
-        Me.lstRacesOfDriverSeason.Size = New System.Drawing.Size(90, 468)
+        Me.lstRacesOfDriverSeason.Size = New System.Drawing.Size(90, 532)
         Me.lstRacesOfDriverSeason.TabIndex = 19
         '
         'Label8
@@ -269,7 +269,7 @@ Partial Class frmHistory
         'btnMainMenuSeasons
         '
         Me.btnMainMenuSeasons.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.btnMainMenuSeasons.Location = New System.Drawing.Point(455, 480)
+        Me.btnMainMenuSeasons.Location = New System.Drawing.Point(455, 538)
         Me.btnMainMenuSeasons.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
         Me.btnMainMenuSeasons.Name = "btnMainMenuSeasons"
         Me.btnMainMenuSeasons.Size = New System.Drawing.Size(156, 81)
@@ -294,7 +294,7 @@ Partial Class frmHistory
         Me.lstRacesOfDriverGP.ItemHeight = 16
         Me.lstRacesOfDriverGP.Location = New System.Drawing.Point(961, 93)
         Me.lstRacesOfDriverGP.Name = "lstRacesOfDriverGP"
-        Me.lstRacesOfDriverGP.Size = New System.Drawing.Size(163, 468)
+        Me.lstRacesOfDriverGP.Size = New System.Drawing.Size(163, 532)
         Me.lstRacesOfDriverGP.TabIndex = 30
         '
         'lstRacesOfDriverPosition
@@ -304,7 +304,7 @@ Partial Class frmHistory
         Me.lstRacesOfDriverPosition.ItemHeight = 16
         Me.lstRacesOfDriverPosition.Location = New System.Drawing.Point(1130, 94)
         Me.lstRacesOfDriverPosition.Name = "lstRacesOfDriverPosition"
-        Me.lstRacesOfDriverPosition.Size = New System.Drawing.Size(74, 468)
+        Me.lstRacesOfDriverPosition.Size = New System.Drawing.Size(74, 532)
         Me.lstRacesOfDriverPosition.TabIndex = 31
         '
         'lstRacesOfDriverPoints
@@ -314,14 +314,14 @@ Partial Class frmHistory
         Me.lstRacesOfDriverPoints.ItemHeight = 16
         Me.lstRacesOfDriverPoints.Location = New System.Drawing.Point(1210, 93)
         Me.lstRacesOfDriverPoints.Name = "lstRacesOfDriverPoints"
-        Me.lstRacesOfDriverPoints.Size = New System.Drawing.Size(74, 468)
+        Me.lstRacesOfDriverPoints.Size = New System.Drawing.Size(74, 532)
         Me.lstRacesOfDriverPoints.TabIndex = 32
         '
         'frmHistory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1332, 600)
+        Me.ClientSize = New System.Drawing.Size(1332, 653)
         Me.Controls.Add(Me.lstRacesOfDriverPoints)
         Me.Controls.Add(Me.lstRacesOfDriverPosition)
         Me.Controls.Add(Me.lstRacesOfDriverGP)

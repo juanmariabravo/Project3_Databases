@@ -1,4 +1,4 @@
-﻿' TODO: Add the attributes of the reports and calendars
+﻿
 Public Class Season
     Public Property ListContractsTeamID As New Collection
     Public Property ListGPsID As New Collection

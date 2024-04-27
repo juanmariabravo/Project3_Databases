@@ -91,7 +91,6 @@
     End Sub
     Private Sub btnMainMenu_Click(sender As Object, e As EventArgs) Handles btnMainMenu.Click
         frmFormulaOne.Enabled = True
-        ' Close the current form
         Me.Close()
     End Sub
 
@@ -108,7 +107,7 @@
         End If
     End Sub
 
-    ' Enable main form if this form is closed
+
     Private Sub FrmGPs_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         frmFormulaOne.Enabled = True
     End Sub

@@ -43,7 +43,7 @@
         Return DBBroker.GetBroker.Change("INSERT INTO Races VALUES('" & race.Season & "', '" & race.GPID & "', '" & race.Driver & "', '" & race.Position & "', '" & race.Points & "');")
     End Function
 
-    'Create the function to delete the race
+
     Public Function Delete(ByVal race As Race) As Integer
         Return DBBroker.GetBroker.Change("DELETE FROM Races WHERE Season='" & race.Season & "' AND GP='" & race.GPID & "' AND Driver='" & race.Driver & "';")
     End Function

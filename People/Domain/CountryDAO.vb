@@ -7,9 +7,9 @@
     End Sub
 
     Public Sub ReadAll()
-        Dim c As Country : Dim col, aux As Collection ' : is used to separate statements in the same line
+        Dim c As Country : Dim col, aux As Collection
         col = DBBroker.GetBroker().Read("SELECT * FROM Countries ORDER BY CountryID;")
-        For Each aux In col ' for each element I get in the collection, I create a new Country object and add it to the collection
+        For Each aux In col
             c = New Country(aux(1).ToString)
             c.ReadCountry()
             Me.Countries.Add(c)

@@ -11,7 +11,6 @@
         col = DBBroker.GetBroker().Read("SELECT * FROM Drivers ORDER BY DriverID;")
         For Each aux In col
             d = New Driver(Integer.Parse(aux(1).ToString()))
-            'Here we read for assigning the data with the Read method
             d.DrvDAO.Read(d)
             Me.Drivers.Add(d)
         Next
@@ -43,12 +42,10 @@
     Public Function GetAllDrivers() As List(Of Driver)
         Dim drivers As New List(Of Driver)()
 
-        ' Consulta SQL para seleccionar todos los conductores
         Dim query As String = "SELECT DriverID, DriverName, DriverSurname, DriverCountry FROM Drivers ORDER BY DriverID;"
         Dim db As DBBroker = DBBroker.GetBroker()
         Dim result As Collection = db.Read(query)
 
-        ' Iterar sobre los resultados de la consulta
         For Each row As Collection In result
             Dim driver As New Driver()
             driver.DriverID = Integer.Parse(row(0).ToString())

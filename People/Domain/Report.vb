@@ -60,14 +60,17 @@
                                         WHERE r.Season = c.Season
                                         AND r.Season >= " & startSeason & " 
                                         AND r.Season <= " & endSeason & "
+                                        AND (c.Driver1 = r.Driver OR c.Driver2 = r.Driver)
                                         AND c.Team = " & TeamID & ";")
     End Function
-    Public Function HistoryTeamsGetItsRaces(ByVal TeamID As Integer, ByVal startSeason As Integer, ByVal endSeason As Integer) As Collection
+    Public Function HistoryTeamsGetItsRaces(ByVal DriverID As Integer, ByVal teamID As Integer, ByVal startSeason As Integer, ByVal endSeason As Integer) As Collection
         Return DBBroker.GetBroker.Read("SELECT r.Season, r.GP, r.Position, r.Points
                                         FROM races r, contracts c
-                                        WHERE Driver = " & TeamID & "
-                                    	AND r.Season >= " & startSeason & " AND r.Season <= " & endSeason & "
-                                    	AND r.Season = c.Season;")
+                                        WHERE r.Driver='" & DriverID & "'
+                                    	AND r.Season>='" & startSeason & "' AND r.Season<='" & endSeason & "'
+                                    	AND r.Season=c.Season
+                                        AND c.Team='" & teamID & "'
+                                        AND (c.Driver1=r.Driver OR c.Driver2=r.Driver);")
     End Function
 
     Public Function WorldChampionshipGetAllSeasonsWinners(ByVal countryID As String) As Collection

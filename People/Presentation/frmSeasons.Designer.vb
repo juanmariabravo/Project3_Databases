@@ -28,7 +28,6 @@ Partial Class frmSeasons
         Me.btnGenerateSeasonInfo = New System.Windows.Forms.Button()
         Me.lblNumGPs = New System.Windows.Forms.Label()
         Me.btnClear = New System.Windows.Forms.Button()
-        Me.btnDone = New System.Windows.Forms.Button()
         Me.lstSeasons = New System.Windows.Forms.ListBox()
         Me.lblNumTeams = New System.Windows.Forms.Label()
         Me.btnMainMenuSeasons = New System.Windows.Forms.Button()
@@ -43,7 +42,6 @@ Partial Class frmSeasons
         Me.lblDriver1 = New System.Windows.Forms.Label()
         Me.CmbBoxMaxGPs = New System.Windows.Forms.ComboBox()
         Me.CmbBoxMinGPs = New System.Windows.Forms.ComboBox()
-        Me.btnClassifications = New System.Windows.Forms.Button()
         Me.seasonsLstBxTitle = New System.Windows.Forms.Label()
         Me.contractsLstBxTitle = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -95,16 +93,6 @@ Partial Class frmSeasons
         Me.btnClear.TabIndex = 10
         Me.btnClear.Text = "Clear"
         Me.btnClear.UseVisualStyleBackColor = True
-        '
-        'btnDone
-        '
-        Me.btnDone.Location = New System.Drawing.Point(404, 428)
-        Me.btnDone.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnDone.Name = "btnDone"
-        Me.btnDone.Size = New System.Drawing.Size(117, 42)
-        Me.btnDone.TabIndex = 12
-        Me.btnDone.Text = "Done"
-        Me.btnDone.UseVisualStyleBackColor = True
         '
         'lstSeasons
         '
@@ -249,16 +237,6 @@ Partial Class frmSeasons
         Me.CmbBoxMinGPs.TabIndex = 37
         Me.CmbBoxMinGPs.Text = "Min"
         '
-        'btnClassifications
-        '
-        Me.btnClassifications.Location = New System.Drawing.Point(1182, 374)
-        Me.btnClassifications.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnClassifications.Name = "btnClassifications"
-        Me.btnClassifications.Size = New System.Drawing.Size(154, 83)
-        Me.btnClassifications.TabIndex = 39
-        Me.btnClassifications.Text = "Open Races And Show Classifications"
-        Me.btnClassifications.UseVisualStyleBackColor = True
-        '
         'seasonsLstBxTitle
         '
         Me.seasonsLstBxTitle.AutoSize = True
@@ -310,7 +288,6 @@ Partial Class frmSeasons
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1696, 682)
-        Me.Controls.Add(Me.btnClassifications)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.contractsLstBxTitle)
         Me.Controls.Add(Me.seasonsLstBxTitle)
@@ -328,7 +305,6 @@ Partial Class frmSeasons
         Me.Controls.Add(Me.btnMainMenuSeasons)
         Me.Controls.Add(Me.lblNumTeams)
         Me.Controls.Add(Me.lstSeasons)
-        Me.Controls.Add(Me.btnDone)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.lblNumGPs)
@@ -346,7 +322,6 @@ Partial Class frmSeasons
     Friend WithEvents btnGenerateSeasonInfo As Button
     Friend WithEvents lblNumGPs As Label
     Friend WithEvents btnClear As Button
-    Friend WithEvents btnDone As Button
     Friend WithEvents lstSeasons As ListBox
     Friend WithEvents lblNumTeams As Label
     Friend WithEvents btnMainMenuSeasons As Button
@@ -361,7 +336,6 @@ Partial Class frmSeasons
     Friend WithEvents lblDriver1 As Label
     Friend WithEvents CmbBoxMaxGPs As ComboBox
     Friend WithEvents CmbBoxMinGPs As ComboBox
-    Friend WithEvents btnClassifications As Button
     Friend WithEvents seasonsLstBxTitle As Label
     Friend WithEvents contractsLstBxTitle As Label
     Friend WithEvents Label2 As Label

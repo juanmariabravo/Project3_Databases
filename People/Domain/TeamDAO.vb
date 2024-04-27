@@ -34,7 +34,7 @@
             Next
 
             colContracts = DBBroker.GetBroker().Read("SELECT * FROM Contracts WHERE team = " & te.TeamID & ";")
-            'Meter en objContacts los contratos
+
             For Each aux In colContracts
                 Dim c As New Contract()
                 c.Team = Integer.Parse(aux(1).ToString)

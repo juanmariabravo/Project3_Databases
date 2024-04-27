@@ -15,15 +15,13 @@ Public Class frmSeasons
 
     Private Sub btnMainMenuSeasons_Click(sender As Object, e As EventArgs) Handles btnMainMenuSeasons.Click
         frmFormulaOne.Enabled = True
-        'Close this form
         Me.Close()
     End Sub
 
     Private Sub frmFormulaOne_Closed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        ' Reopen the main menu form
         frmFormulaOne.Enabled = True
     End Sub
-    Private Sub btnClassifications_Click(sender As Object, e As EventArgs) Handles btnClassifications.Click
+    Private Sub btnClassifications_Click(sender As Object, e As EventArgs)
         Dim races As New frmRaces()
         races.Show()
 
@@ -51,7 +49,6 @@ Public Class frmSeasons
 
     Private Sub DisableControls()
         btnDelete.Enabled = False
-        btnDone.Enabled = False
         lstContracts.Enabled = False
         lstGPs.Enabled = False
         lblDriver1.Enabled = False

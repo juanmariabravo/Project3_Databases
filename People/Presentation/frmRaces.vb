@@ -1,4 +1,4 @@
-﻿Imports Org.BouncyCastle.Bcpg.OpenPgp
+﻿
 
 Public Class frmRaces
     Private season As Season
@@ -6,7 +6,6 @@ Public Class frmRaces
 
 
     Private Sub btnPreviousfrm_Click(sender As Object, e As EventArgs) Handles btnPreviousfrm.Click
-        'Cerrar este formulario
         frmFormulaOne.Enabled = True
         Me.Close()
     End Sub
@@ -97,7 +96,7 @@ Public Class frmRaces
     End Sub
 
 
-    ' Enable main form if this form is closed
+
     Private Sub frmRaces_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         frmFormulaOne.Enabled = True
     End Sub

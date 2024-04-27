@@ -26,7 +26,6 @@
 
     Private Sub btnMainMenuSeasons_Click(sender As Object, e As EventArgs) Handles btnMainMenuSeasons.Click
         frmFormulaOne.Enabled = True
-        'Close this form
         Me.Close()
     End Sub
 
@@ -75,7 +74,8 @@
                 lstTeamsClassificationTeams.Items.Add(t.TeamName)
                 lstTeamsClassificationPoints.Items.Add(Integer.Parse(team_row(2).ToString()))
             Next
-
+            lblWorldDriverChampions.Text = lstDriversClassNameSur.Items(0).ToString
+            lblWorldTeamChampion.Text = lstTeamsClassificationTeams.Items(0).ToString
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
         End Try

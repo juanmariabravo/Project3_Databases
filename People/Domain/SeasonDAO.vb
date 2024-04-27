@@ -34,21 +34,18 @@ Public Class SeasonDAO
 
         colContractsID = DBBroker.GetBroker().Read("SELECT Team FROM Contracts WHERE Season = " & se.SeasonID & ";")
         For Each auxContractTeamID In colContractsID
-            'Adding the teamID to the collection, that is, the first element in the auxiliar collection
             se.ListContractsTeamID.Add(Integer.Parse(auxContractTeamID(1).ToString()))
         Next
 
 
         colGPsID = DBBroker.GetBroker().Read("SELECT GP FROM Calendar WHERE Season = " & se.SeasonID & ";")
         If colGPsID.Count > 0 Then
-            'Adding all of the GPs ID to the collection
             For Each auxGPID In colGPsID
                 se.ListGPsID.Add(Integer.Parse(auxGPID(1).ToString()))
             Next
         End If
 
 
-        'Only take the GPID and the DriverID that participates in this season
         colRaces = DBBroker.GetBroker().Read("SELECT * FROM Races WHERE Season = " & se.SeasonID & ";")
         If colRaces.Count > 0 Then
             For Each auxRaceData In colRaces
@@ -73,7 +70,7 @@ Public Class SeasonDAO
         Dim colGPs As Collection
         Dim colDrivers As Collection
 
-        'ArrayList para almacenar las filas
+        'ArrayList for storing the data
         Dim auxTeamID As New ArrayList
         Dim auxDriverID As New ArrayList
         Dim auxGPID As New ArrayList

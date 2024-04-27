@@ -2,7 +2,6 @@
 Public Class frmCountries
     Private Sub btnMainMenu_Click(sender As Object, e As EventArgs) Handles btnMainMenu.Click
         frmFormulaOne.Enabled = True
-        ' Close the current form
         Me.Close()
     End Sub
 
@@ -42,13 +41,13 @@ Public Class frmCountries
         End Try
     End Sub
 
-    ' when the name text  box is changed, the id is automatically generated
+
     Private Sub txtCountryName_TextChanged(sender As Object, e As EventArgs) Handles txtCountryName.TextChanged
         Try
             Dim automatic_id As String = ""
-            ' if the id is disabled (no attemps to insert manually), the automatic id is written in the id field
+            'If the id is disabled (no attemps to insert manually), the automatic id is written in the id field
             If txtCountryID.Enabled = False AndAlso txtCountryName.TextLength > 2 Then
-                ' the automatic id is the name of the country 3 first letters in uppercase
+                'The automatic id is the name of the country 3 first letters in uppercase
                 automatic_id = txtCountryName.Text.Substring(0, 3).ToUpper
                 txtCountryID.Text = automatic_id
             End If
@@ -69,7 +68,6 @@ Public Class frmCountries
 
             txtCountryID.Enabled = False
 
-            ' update the list
             lstCountries.Items.Clear()
             country.ReadAllCountries()
             For Each country In country.CouDAO.Countries

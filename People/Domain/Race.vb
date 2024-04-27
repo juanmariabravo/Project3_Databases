@@ -22,7 +22,6 @@
     Public Sub ReadAllRaces()
         Me.RaceDAO.ReadAll()
     End Sub
-    'Metodo para leer
     Public Sub ReadRace()
         Me.RaceDAO.Read(Me)
     End Sub

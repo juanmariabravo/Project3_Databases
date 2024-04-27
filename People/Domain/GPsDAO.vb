@@ -15,7 +15,6 @@
         If col.Count > 0 Then
             For Each aux In col
                 gp = New GP(Integer.Parse(aux(1).ToString))
-                'This method is used for assigning the values to the GP object
                 gp.ReadGP()
                 Me.GPs.Add(gp)
             Next
