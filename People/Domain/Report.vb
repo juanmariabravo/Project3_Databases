@@ -52,13 +52,7 @@
                                         AND Season >= " & startSeason & " 
                                         AND Season <= " & endSeason & ";")
     End Function
-    Public Function HistoryDriversGetItsResults(ByVal driverID As Integer, ByVal seasonID As Integer, ByVal GPID As Integer) As Collection
-        Return DBBroker.GetBroker.Read("SELECT Position, Points
-                                        FROM races
-                                        WHERE Driver = " & driverID & "
-                                        AND Season = " & seasonID & "
-                                        AND GP = " & GPID & ";")
-    End Function
+
 
     Public Function HistoryTeamsGetItsDriverRacesResults(ByVal TeamID As Integer, ByVal startSeason As Integer, ByVal endSeason As Integer) As Collection
         Return DBBroker.GetBroker.Read("SELECT DISTINCT r.Driver
